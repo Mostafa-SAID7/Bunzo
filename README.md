@@ -22,7 +22,7 @@ A modern food recipe platform built with **React**, **TypeScript**, and **Vite**
 
 ## ✨ Overview
 
-Foodieland is a **single-page application (SPA)** designed for food enthusiasts. It offers a seamless experience for Browse recipes, reading blogs, and managing content. **Admin users** have comprehensive control to add, edit, and delete recipes and blogs, while **regular users** can explore content and interact with the platform.
+Foodieland is a web application designed for food enthusiasts. It offers a seamless experience for Browse recipes, reading blogs, and managing content. **Admin users** have comprehensive control to add, edit, and delete recipes and blogs, while **regular users** can explore content and interact with the platform.
 
 -----
 
