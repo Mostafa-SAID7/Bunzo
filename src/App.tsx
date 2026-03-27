@@ -253,7 +253,7 @@ function App() {
         <div className="w-[95%] sm:w-[90%] flex flex-col justify-center items-center gap-10 rounded-2xl">
           <div className="flex flex-col justify-center items-center gap-6">
             <Heading
-              text="Check out @foodieland on Instagram"
+              text="Check out @bunzo on Instagram"
               customClass="text-center"
               animation="fade-right"
             />

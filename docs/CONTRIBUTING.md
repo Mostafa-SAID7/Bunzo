@@ -1,4 +1,4 @@
-# Contributing to Foodieland
+# Contributing to Bunzo
 
 Thank you for your interest in contributing! This document provides guidelines for contributing to the project.
 
@@ -27,8 +27,8 @@ This project adheres to a [Code of Conduct](./CODE_OF_CONDUCT.md). By participat
 
 ```bash
 # Fork and clone the repository
-git clone https://github.com/yourusername/foodieland.git
-cd foodieland
+git clone https://github.com/yourusername/Bunzo.git
+cd Bunzo
 
 # Install dependencies
 npm install

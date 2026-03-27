@@ -10,7 +10,7 @@ export default function About() {
         <div className="w-[95%] sm:w-[90%] mx-auto flex flex-col items-center gap-6">
           <Heading text="About Us" customClass="text-center text-white" />
           <SubHeading
-            text="Discover the story behind Foodieland and our passion for food."
+            text="Discover the story behind Bunzo and our passion for food."
             customClass="text-center text-gray-200 max-w-3xl"
           />
         </div>
@@ -21,11 +21,11 @@ export default function About() {
         <div className="w-[95%] sm:w-[90%] mx-auto flex flex-col gap-10">
           <Heading text="Who We Are" customClass="text-center text-gray-800" />
           <p className="text-gray-600 text-center leading-relaxed max-w-4xl mx-auto">
-            At Foodieland, we are passionate about bringing people together
+            At Bunzo, we are passionate about bringing people together
             through the love of food. Our platform is dedicated to providing
             easy-to-follow recipes, cooking tips, and a community for food
             enthusiasts to share their culinary creations. Whether you're a
-            seasoned chef or just starting your cooking journey, Foodieland is
+            seasoned chef or just starting your cooking journey, Bunzo is
             here to inspire and guide you every step of the way.
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function About() {
               rewarding. We aim to empower individuals to explore their
               creativity in the kitchen by providing them with the tools and
               resources they need to succeed. From quick and easy meals to
-              gourmet dishes, Foodieland is your go-to destination for all
+              gourmet dishes, Bunzo is your go-to destination for all
               things food.
             </p>
           </div>
@@ -79,7 +79,7 @@ export default function About() {
             />
             <p className="text-gray-600 text-center lg:text-left leading-relaxed max-w-4xl">
               Our team is made up of passionate food enthusiasts, chefs, and
-              developers who are dedicated to making Foodieland the best
+              developers who are dedicated to making Bunzo the best
               platform for food lovers. We work tirelessly to bring you the
               best recipes, tips, and tools to enhance your cooking experience.
             </p>

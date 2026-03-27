@@ -11,7 +11,7 @@
 
 **Please do NOT report security vulnerabilities through public GitHub issues.**
 
-Instead, please report them via email to: **security@foodieland.com**
+Instead, please report them via email to: **security@bunzo.com**
 
 ### What to Include
 
@@ -72,7 +72,7 @@ Instead, please report them via email to: **security@foodieland.com**
 
 ## Contact
 
-- **Security Team**: security@foodieland.com
+- **Security Team**: security@bunzo.com
 
 ---
 

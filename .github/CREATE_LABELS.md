@@ -1,8 +1,8 @@
-# Create GitHub Labels for Foodieland
+# Create GitHub Labels for Bunzo
 
 ## Quick Create (GitHub Web UI)
 
-Go to: https://github.com/joesef127/foodieland/labels
+Go to: https://github.com/Mostafa-SAID7/Bunzo/labels
 
 Click "New label" and create these 13 labels:
 

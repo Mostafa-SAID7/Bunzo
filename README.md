@@ -1,25 +1,25 @@
 <div align="center">
 
-# 🍳 Foodieland - Modern Recipe Platform
+# 🍳 Bunzo - Modern Recipe Platform
 
 ### Discover, Share, and Create Amazing Recipes
 
-[![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge&logo=vercel)](https://foodieland-demo.vercel.app)
+[![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge&logo=vercel)](https://bunzo-demo.vercel.app)
 [![React](https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.3-646CFF?style=for-the-badge&logo=vite)](https://vitejs.dev)
 [![Tailwind](https://img.shields.io/badge/Tailwind-4.1-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
 
-[🌐 Live Demo](#) • [📖 Documentation](./docs) • [🐛 Report Bug](https://github.com/joesef127/foodieland/issues) • [✨ Request Feature](https://github.com/joesef127/foodieland/issues)
+[🌐 Live Demo](#) • [📖 Documentation](./docs) • [🐛 Report Bug](https://github.com/Mostafa-SAID7/Bunzo/issues) • [✨ Request Feature](https://github.com/Mostafa-SAID7/Bunzo/issues)
 
 </div>
 
 ---
 
-## 🎯 About Foodieland
+## 🎯 About Bunzo
 
-Foodieland is a modern food recipe platform that brings together food enthusiasts, home cooks, and culinary experts. Built with cutting-edge web technologies, it offers a seamless experience for discovering, sharing, and managing recipes and cooking blogs.
+Bunzo is a modern food recipe platform that brings together food enthusiasts, home cooks, and culinary experts. Built with cutting-edge web technologies, it offers a seamless experience for discovering, sharing, and managing recipes and cooking blogs.
 
 ### ✨ Key Features
 
@@ -31,7 +31,7 @@ Foodieland is a modern food recipe platform that brings together food enthusiast
 - 🎨 **Beautiful Animations** - Smooth scroll animations with AOS
 - ⚡ **Lightning Fast** - Optimized performance with Vite
 - 📝 **Rich Text Editor** - Draft.js powered blog editor with WYSIWYG
-- � **Interactive Sliders** - Swiper.js for engaging content presentation
+- 🎠 **Interactive Sliders** - Swiper.js for engaging content presentation
 
 ---
 
@@ -68,10 +68,10 @@ Foodieland is a modern food recipe platform that brings together food enthusiast
 
 ```bash
 # Clone the repository
-git clone https://github.com/joesef127/foodieland.git
+git clone https://github.com/Mostafa-SAID7/Bunzo.git
 
 # Navigate to project
-cd foodieland
+cd Bunzo
 
 # Install dependencies
 npm install
@@ -125,10 +125,10 @@ Visit `http://localhost:5173` to see the app running!
 
 ---
 
-## � Project Structure
+## 📁 Project Structure
 
 ```
-foodieland/
+Bunzo/
 ├── src/
 │   ├── assets/          # Images, icons, and static files
 │   ├── components/      # Reusable React components
@@ -155,7 +155,7 @@ foodieland/
 Create a `.env` file in the root directory:
 
 ```env
-VITE_API_BASE_URL=https://foodielandbackend.vercel.app
+VITE_API_BASE_URL=https://bunzo-backend.vercel.app
 ```
 
 ---
@@ -164,7 +164,7 @@ VITE_API_BASE_URL=https://foodielandbackend.vercel.app
 
 ### Deploy to Vercel (Recommended)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/joesef127/foodieland)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Mostafa-SAID7/Bunzo)
 
 1. Click the button above
 2. Sign in to Vercel
@@ -196,7 +196,7 @@ Please read our [Contributing Guidelines](./docs/CONTRIBUTING.md) for details.
 
 ---
 
-## � License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -215,9 +215,9 @@ If you find this project useful, please consider:
 
 ## 📞 Contact & Links
 
-- **Repository**: [github.com/joesef127/foodieland](https://github.com/joesef127/foodieland)
-- **Issues**: [Report a bug or request a feature](https://github.com/joesef127/foodieland/issues)
-- **Author**: [joesef127](https://github.com/joesef127)
+- **Repository**: [github.com/Mostafa-SAID7/Bunzo](https://github.com/Mostafa-SAID7/Bunzo)
+- **Issues**: [Report a bug or request a feature](https://github.com/Mostafa-SAID7/Bunzo/issues)
+- **Author**: [Mostafa-SAID7](https://github.com/Mostafa-SAID7)
 
 ---
 
@@ -235,7 +235,7 @@ If you find this project useful, please consider:
 
 <div align="center">
 
-**Made with ❤️ by [joesef127](https://github.com/joesef127)**
+**Made with ❤️ by [Mostafa-SAID7](https://github.com/Mostafa-SAID7)**
 
 ⭐ Star this repo if you find it useful!
 

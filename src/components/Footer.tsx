@@ -1,5 +1,5 @@
 import SocialMediaBox from "./SocialMediaBox";
-import foodieland_logo from "../assets/foodieland_logo.svg";
+import bunzo_logo from "../assets/bunzo_logo.svg";
 import { NavLink } from "react-router-dom";
 import useAOS from "../hooks/useAOS";
 
@@ -14,9 +14,9 @@ export default function Footer() {
           <div className="flex flex-col items-start gap-4 md:text-left">
             <figure>
               <img
-                src={foodieland_logo}
-                alt="foodieland"
-                className="w-24 md:w-28"
+                src={bunzo_logo}
+                alt="Bunzo"
+                className="w-32 md:w-36"
                 data-aos="fade-right"
               />
             </figure>
@@ -52,7 +52,7 @@ export default function Footer() {
             <p>
               &copy; {currentYear} Created by
               <a
-                href="https://www.github.com/joesef127/foodieland"
+                href="https://www.github.com/Mostafa-SAID7/Bunzo"
                 className="text-[#FF7967]"
               >
                 {" "}

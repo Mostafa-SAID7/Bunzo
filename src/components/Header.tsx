@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import foodieland_logo from "../assets/foodieland_logo.svg";
+import bunzo_logo from "../assets/bunzo_logo.svg";
 import SocialMediaBox from "./SocialMediaBox";
 
 export default function Header() {
@@ -11,9 +11,9 @@ export default function Header() {
       <div className="py-8 w-[90%] max-w-[1440px] flex gap-2.5 justify-between items-center">
         <figure>
           <img
-            src={foodieland_logo}
-            alt="foodieland"
-            className="w-24 md:w-28"
+            src={bunzo_logo}
+            alt="Bunzo"
+            className="w-32 md:w-36"
           />
         </figure>
 

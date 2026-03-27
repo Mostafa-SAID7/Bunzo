@@ -1,4 +1,4 @@
-# Foodieland - Project Status Report
+# Bunzo - Project Status Report
 
 **Date:** January 2025  
 **Version:** 1.0.0  
@@ -8,10 +8,10 @@
 
 ## 🎯 Project Overview
 
-**Foodieland** is a modern recipe and cooking blog platform built with React 18, Vite 6, and TypeScript, featuring a beautiful UI with Tailwind CSS and rich content editing capabilities.
+**Bunzo** is a modern recipe and cooking blog platform built with React 18, Vite 6, and TypeScript, featuring a beautiful UI with Tailwind CSS and rich content editing capabilities.
 
-- **Live URL:** https://foodieland-demo.vercel.app
-- **Repository:** https://github.com/joesef127/foodieland
+- **Live URL:** https://bunzo-demo.vercel.app
+- **Repository:** https://github.com/Mostafa-SAID7/Bunzo
 - **Tech Stack:** React 18, Vite 6, TypeScript 5.7, Tailwind CSS 4.1, React Router v7
 
 ---
@@ -306,5 +306,5 @@ The following 13 labels are configured for automated PR labeling:
 
 **Status:** ✅ **PRODUCTION READY**
 
-Foodieland is a fully functional recipe platform with modern architecture, comprehensive features, and production-ready deployment configuration.
+Bunzo is a fully functional recipe platform with modern architecture, comprehensive features, and production-ready deployment configuration.
 

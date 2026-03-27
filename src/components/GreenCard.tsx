@@ -18,7 +18,7 @@ export default function GreenCard({ animation }: { animation?: string }) {
         <figure>
           <img src={green_food} className="" />
         </figure>
-        <p className="text-white/60 text-sm font-medium">www.foodieland.com</p>
+        <p className="text-white/60 text-sm font-medium">www.bunzo.com</p>
       </div>
     </div>
   );
