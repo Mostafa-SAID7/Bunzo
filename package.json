@@ -12,7 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.2",
     "@heroicons/react": "^2.2.0",
-    "@tailwindcss/vite": "^4.1.4",
+    "@tailwindcss/vite": "^4.2.2",
     "aos": "^2.3.4",
     "draft-js": "^0.11.7",
     "draft-js-export-html": "^1.4.1",
