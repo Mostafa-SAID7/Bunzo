@@ -1,71 +1,110 @@
 # Styles Guide
 
-Styling guidelines and conventions for Foodieland.
+Styling guidelines and conventions for Bunzo.
 
 ## Design System
 
 ### Color Palette
 
 ```css
-/* Primary Colors */
---primary: #10b981;         /* Green accent */
---primary-dark: #059669;    /* Darker green */
+/* Primary Colors - Bunzo Brand */
+--primary: #10b981;         /* Emerald green (main brand) */
+--primary-dark: #059669;    /* Darker emerald */
+--primary-light: #34d399;   /* Lighter emerald */
 --background: #ffffff;      /* Main background */
 --surface: #f9fafb;         /* Card backgrounds */
 
 /* Text Colors */
---text-primary: #111827;    /* Main text */
---text-secondary: #6b7280;  /* Secondary text */
---text-muted: #9ca3af;      /* Muted text */
+--text-primary: #111827;    /* Main text (gray-900) */
+--text-secondary: #6b7280;  /* Secondary text (gray-500) */
+--text-muted: #9ca3af;      /* Muted text (gray-400) */
 
 /* Border Colors */
---border: #e5e7eb;          /* Subtle borders */
---border-dark: #d1d5db;     /* Darker borders */
+--border: #e5e7eb;          /* Subtle borders (gray-200) */
+--border-dark: #d1d5db;     /* Darker borders (gray-300) */
 
 /* Status Colors */
---success: #10b981;         /* Success state */
---error: #ef4444;           /* Error state */
---warning: #f59e0b;         /* Warning state */
---info: #3b82f6;            /* Info state */
+--success: #10b981;         /* Success state (emerald-500) */
+--error: #ef4444;           /* Error state (red-500) */
+--warning: #f59e0b;         /* Warning state (amber-500) */
+--info: #3b82f6;            /* Info state (blue-500) */
+
+/* Background Gradients */
+--gradient-primary: linear-gradient(135deg, #10b981, #059669);
+--gradient-hero: linear-gradient(135deg, #064e3b, #10b981);
 ```
 
 ### Typography
 
 **Fonts**:
-- **Primary**: System font stack (sans-serif)
-- **Fallback**: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif
+- **Primary**: Inter (sans-serif) - Modern, clean, readable
+- **Secondary**: Public Sans (monospace) - Technical content
+- **Accent**: Lobster (cursive) - Decorative headings
+- **Fallback**: System font stack
 
 **Font Sizes**:
 ```css
-text-xs: 0.75rem;    /* 12px */
-text-sm: 0.875rem;   /* 14px */
-text-base: 1rem;     /* 16px */
-text-lg: 1.125rem;   /* 18px */
-text-xl: 1.25rem;    /* 20px */
-text-2xl: 1.5rem;    /* 24px */
-text-3xl: 1.875rem;  /* 30px */
-text-4xl: 2.25rem;   /* 36px */
-text-5xl: 3rem;      /* 48px */
+text-xs: 0.75rem;    /* 12px - Small labels */
+text-sm: 0.875rem;   /* 14px - Body text */
+text-base: 1rem;     /* 16px - Default */
+text-lg: 1.125rem;   /* 18px - Large body */
+text-xl: 1.25rem;    /* 20px - Small headings */
+text-2xl: 1.5rem;    /* 24px - Medium headings */
+text-3xl: 1.875rem;  /* 30px - Large headings */
+text-4xl: 2.25rem;   /* 36px - Hero headings */
+text-5xl: 3rem;      /* 48px - Display headings */
 ```
 
 **Font Weights**:
 ```css
-font-normal: 400;
-font-medium: 500;
-font-semibold: 600;
-font-bold: 700;
+font-normal: 400;    /* Regular text */
+font-medium: 500;    /* Emphasized text */
+font-semibold: 600;  /* Subheadings */
+font-bold: 700;      /* Headings */
 ```
 
-### Spacing
+### Spacing System
 
 ```css
-gap-1: 0.25rem;   /* 4px */
-gap-2: 0.5rem;    /* 8px */
-gap-4: 1rem;      /* 16px */
-gap-6: 1.5rem;    /* 24px */
-gap-8: 2rem;      /* 32px */
-gap-12: 3rem;     /* 48px */
-gap-16: 4rem;     /* 64px */
+gap-1: 0.25rem;   /* 4px - Tight spacing */
+gap-2: 0.5rem;    /* 8px - Small spacing */
+gap-4: 1rem;      /* 16px - Default spacing */
+gap-6: 1.5rem;    /* 24px - Medium spacing */
+gap-8: 2rem;      /* 32px - Large spacing */
+gap-12: 3rem;     /* 48px - Extra large spacing */
+gap-16: 4rem;     /* 64px - Section spacing */
+```
+
+## Bunzo Brand Elements
+
+### Logo Usage
+- **Primary Logo**: `bunzo_logo.svg` (140x48px)
+- **Favicon**: `favicon.svg` (32x32px)
+- **Colors**: Emerald green (#10b981) on white/transparent
+- **Minimum Size**: 80px width for readability
+
+### Scrollbar Styling
+```css
+/* Custom Bunzo Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 4px;
+  border: 1px solid #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+}
 ```
 
 ## Tailwind CSS
@@ -125,8 +164,8 @@ gap-16: 4rem;     /* 64px */
 ### Buttons
 
 ```tsx
-{/* Primary Button */}
-<button className="px-6 py-3 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark transition-all duration-300">
+{/* Primary Button - Bunzo Brand */}
+<button className="px-6 py-3 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg">
   Button Text
 </button>
 
@@ -135,31 +174,53 @@ gap-16: 4rem;     /* 64px */
   Button Text
 </button>
 
-{/* Outline Button */}
+{/* Outline Button - Bunzo Style */}
 <button className="px-6 py-3 text-sm font-medium text-primary border border-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300">
   Button Text
 </button>
+
+{/* Gradient Button */}
+<button className="px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-primary to-primary-dark rounded-lg hover:from-primary-dark hover:to-emerald-800 transition-all duration-300">
+  Gradient Button
+</button>
 ```
 
-### Cards
+### Cards - Recipe Style
 
 ```tsx
-<div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-  {/* Card content */}
+<div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-gray-100">
+  <img 
+    src={recipe.image} 
+    alt={recipe.title}
+    className="w-full h-48 object-cover"
+  />
+  <div className="p-6">
+    <h3 className="text-lg font-semibold text-gray-900 mb-2">{recipe.title}</h3>
+    <p className="text-sm text-gray-600 mb-4">{recipe.description}</p>
+    <div className="flex items-center justify-between">
+      <span className="text-xs text-gray-500 flex items-center gap-1">
+        <ClockIcon className="w-4 h-4" />
+        {recipe.cookingTime} min
+      </span>
+      <button className="text-primary hover:text-primary-dark transition-colors">
+        <HeartIcon className="w-5 h-5" />
+      </button>
+    </div>
+  </div>
 </div>
 ```
 
-### Forms
+### Forms - Bunzo Style
 
 ```tsx
 <input 
   type="text"
-  className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+  className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder-gray-400"
   placeholder="Enter text"
 />
 
 <textarea
-  className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+  className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none placeholder-gray-400"
   rows={4}
   placeholder="Enter description"
 />
@@ -171,26 +232,23 @@ gap-16: 4rem;     /* 64px */
 </select>
 ```
 
-### Recipe Cards
+### Navigation - Bunzo Header
 
 ```tsx
-<div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-  <img 
-    src={recipe.image} 
-    alt={recipe.title}
-    className="w-full h-48 object-cover"
-  />
-  <div className="p-4">
-    <h3 className="text-lg font-semibold text-gray-900">{recipe.title}</h3>
-    <p className="text-sm text-gray-600 mt-2">{recipe.description}</p>
-    <div className="flex items-center justify-between mt-4">
-      <span className="text-xs text-gray-500">{recipe.cookingTime} min</span>
-      <button className="text-primary hover:text-primary-dark">
-        <HeartIcon className="w-5 h-5" />
-      </button>
+<nav className="bg-white shadow-sm border-b border-gray-100">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex justify-between items-center h-16">
+      <div className="flex items-center">
+        <img src={bunzo_logo} alt="Bunzo" className="w-32 md:w-36" />
+      </div>
+      <div className="hidden md:flex items-center space-x-8">
+        <a href="/" className="text-gray-700 hover:text-primary transition-colors">Home</a>
+        <a href="/recipes" className="text-gray-700 hover:text-primary transition-colors">Recipes</a>
+        <a href="/blog" className="text-gray-700 hover:text-primary transition-colors">Blog</a>
+      </div>
     </div>
   </div>
-</div>
+</nav>
 ```
 
 ## Responsive Breakpoints

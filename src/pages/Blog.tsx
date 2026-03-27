@@ -70,7 +70,7 @@ export default function Blog() {
   return (
     <>
       {blog ? (
-        <div className="pb-20 overflow-y-scroll relative inter">
+        <div className="pb-20 relative inter">
           <section className="relative flex justify-center items-center mt-10 gap-20">
             <div className="w-[95%] sm:w-[90%] flex flex-col gap-5">
               <div className="flex flex-col justify-between items-center mb-2 sm:mb-10">

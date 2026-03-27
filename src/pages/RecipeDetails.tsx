@@ -73,7 +73,7 @@ export default function RecipeDetails() {
       {isLoading ? (
         <LoadingSpinner />
       ) : recipe ? (
-        <div className="pb-20 overflow-y-scroll relative inter">
+        <div className="pb-20 relative inter">
           <section className="relative flex justify-center items-center mt-10 gap-20">
             <div className="w-[95%] sm:w-[90%] flex flex-col justify-center items-center gap-5">
               <div className="w-full flex flex-col sm:grid sm:grid-cols-4 justify-between gap-4 md:gap-6">

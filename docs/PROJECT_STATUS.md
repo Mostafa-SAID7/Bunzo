@@ -10,7 +10,7 @@
 
 **Bunzo** is a modern recipe and cooking blog platform built with React 18, Vite 6, and TypeScript, featuring a beautiful UI with Tailwind CSS and rich content editing capabilities.
 
-- **Live URL:** https://bunzo-demo.vercel.app
+- **Live URL:** https://bunzo-vert.vercel.app
 - **Repository:** https://github.com/Mostafa-SAID7/Bunzo
 - **Tech Stack:** React 18, Vite 6, TypeScript 5.7, Tailwind CSS 4.1, React Router v7
 

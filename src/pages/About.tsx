@@ -4,7 +4,7 @@ import happy_chef from "../assets/images/happy_chef.png";
 
 export default function About() {
   return (
-    <div className="pb-20 overflow-y-scroll relative inter">
+    <div className="pb-20 relative inter">
       
       <section className="relative bg-gradient-to-r from-indigo-500 to-purple-500 text-white py-20">
         <div className="w-[95%] sm:w-[90%] mx-auto flex flex-col items-center gap-6">
