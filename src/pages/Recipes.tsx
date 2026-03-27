@@ -116,7 +116,7 @@ export default function Recipes() {
               placeholder="Search for a recipe..."
               value={selectedSearch}
               onChange={(e) => setSelectedSearch(e.target.value)}
-              className="w-full sm:w-[50%] rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full sm:w-[50%] rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
@@ -149,7 +149,7 @@ export default function Recipes() {
             <div className="flex flex-col" data-aos="fade-left" data-aos-delay="200">
               <h5 className={`block `}>Filter by favorites</h5>
               <button
-                className={`flex gap-2.5 justify-between items-center w-full cursor-default rounded bg-white text-left text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 text-xs sm:text-sm py-2 px-1 lg:py-4 lg:px-3 mt-2`}
+                className={`flex gap-2.5 justify-between items-center w-full cursor-default rounded bg-white text-left text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-600 text-xs sm:text-sm py-2 px-1 lg:py-4 lg:px-3 mt-2`}
                 onClick={() => setShowFavorites(!showFavorites)}
               >
                 {showFavorites ? "Show All Recipes" : "Show Favorites"}
@@ -183,7 +183,6 @@ export default function Recipes() {
                     handleDeleteItem={() => deleteRecipe(recipe.id)}
                     handleOpenEditForm={() => handleOpenEditForm(recipe)}
                     handleToggleFavorite={() => toggleFavorite(recipe.id)}
-                    bgColor="#E7FAFE"
                     animation={recipe.id && recipe.id % 2 === 0 ? "fade-up" : "fade-down"}
                   />
                 ))}
@@ -228,22 +227,12 @@ export default function Recipes() {
 
 const categoryOptions = [
   { id: "all", name: "All Categories" },
-  { id: "breakfast", name: "Breakfast" },
-  { id: "snack", name: "Snack" },
+  { id: "signature", name: "Signature" },
+  { id: "classic", name: "Classic" },
+  { id: "vegetarian", name: "Vegetarian" },
+  { id: "spicy", name: "Spicy" },
   { id: "seafood", name: "Seafood" },
-  { id: "italian", name: "Italian" },
-  { id: "salad", name: "Salad" },
-  { id: "appetizer", name: "Appetizer" },
-  { id: "dessert", name: "Dessert" },
-  { id: "asian", name: "Asian" },
-  { id: "mexican", name: "Mexican" },
-  { id: "vegan", name: "Vegan" },
-  { id: "healthy", name: "Healthy" },
-  { id: "meat", name: "Meat" },
-  { id: "noodles", name: "Noodles" },
-  { id: "sweet", name: "Sweet" },
-  { id: "western", name: "Western" },
-  { id: "japanese", name: "Japanese" },
+  { id: "traditional", name: "Traditional" },
 ];
 
 const timeOptions = [

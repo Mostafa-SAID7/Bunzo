@@ -9,13 +9,23 @@ export default function Header() {
   return (
     <header className="flex justify-center items-center sticky top-0 z-[50] backdrop-blur-3xl inter border-b border-black/20 bg-white">
       <div className="py-8 w-[90%] max-w-[1440px] flex gap-2.5 justify-between items-center">
-        <figure>
-          <img
-            src={bunzo_logo}
-            alt="Bunzo"
-            className="w-32 md:w-36"
-          />
-        </figure>
+        <div className="flex items-center gap-3">
+          <figure>
+            <img
+              src={bunzo_logo}
+              alt="Bunzo Egyptian Burgers"
+              className="w-12 h-12 md:w-14 md:h-14"
+            />
+          </figure>
+          <div className="flex flex-col">
+            <h1 className="text-xl md:text-2xl font-bold text-gray-900 lobster-regular">
+              Bunzo
+            </h1>
+            <p className="text-xs md:text-sm text-emerald-600 font-medium">
+              Egyptian Street Burgers
+            </p>
+          </div>
+        </div>
 
         <button
           className="sm:hidden flex flex-col gap-1.5 items-center justify-center w-8 h-8"
@@ -46,39 +56,69 @@ export default function Header() {
         >
           <NavLink
             to={"/"}
-            className="text-gray-800 text-xs sm:text-sm md:text-base hover:bg-indigo-600 focus:bg-indigo-600 hover:text-white focus:text-white transition-colors py-1 md:py-2 px-2 md:px-3 rounded-lg"
+            className={({ isActive }) =>
+              `text-xs sm:text-sm md:text-base transition-colors py-1 md:py-2 px-2 md:px-3 rounded-lg ${
+                isActive
+                  ? "bg-emerald-600 text-white"
+                  : "text-gray-800 hover:bg-emerald-600 focus:bg-emerald-600 hover:text-white focus:text-white"
+              }`
+            }
             onClick={() => setIsMenuOpen(false)}
           >
             Home
           </NavLink>
           <NavLink
             to={"/recipes"}
-            className="text-gray-800 text-xs sm:text-sm md:text-base hover:bg-indigo-600 focus:bg-indigo-600 hover:text-white focus:text-white transition-colors py-1 md:py-2 px-2 md:px-3 rounded-lg"
+            className={({ isActive }) =>
+              `text-xs sm:text-sm md:text-base transition-colors py-1 md:py-2 px-2 md:px-3 rounded-lg ${
+                isActive
+                  ? "bg-emerald-600 text-white"
+                  : "text-gray-800 hover:bg-emerald-600 focus:bg-emerald-600 hover:text-white focus:text-white"
+              }`
+            }
             onClick={() => setIsMenuOpen(false)}
           >
-            Recipes
+            Burgers
+          </NavLink>
+          <NavLink
+            to={"/menu"}
+            className={({ isActive }) =>
+              `text-xs sm:text-sm md:text-base transition-colors py-1 md:py-2 px-2 md:px-3 rounded-lg ${
+                isActive
+                  ? "bg-emerald-600 text-white"
+                  : "text-gray-800 hover:bg-emerald-600 focus:bg-emerald-600 hover:text-white focus:text-white"
+              }`
+            }
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Menu
           </NavLink>
           <NavLink
             to={"/blog"}
-            className="text-gray-800 text-xs sm:text-sm md:text-base hover:bg-indigo-600 focus:bg-indigo-600 hover:text-white focus:text-white transition-colors py-1 md:py-2 px-2 md:px-3 rounded-lg"
+            className={({ isActive }) =>
+              `text-xs sm:text-sm md:text-base transition-colors py-1 md:py-2 px-2 md:px-3 rounded-lg ${
+                isActive
+                  ? "bg-emerald-600 text-white"
+                  : "text-gray-800 hover:bg-emerald-600 focus:bg-emerald-600 hover:text-white focus:text-white"
+              }`
+            }
             onClick={() => setIsMenuOpen(false)}
           >
             Blog
           </NavLink>
           <NavLink
             to={"/contact"}
-            className="text-gray-800 text-xs sm:text-sm md:text-base hover:bg-indigo-600 focus:bg-indigo-600 hover:text-white focus:text-white transition-colors py-1 md:py-2 px-2 md:px-3 rounded-lg"
+            className={({ isActive }) =>
+              `text-xs sm:text-sm md:text-base transition-colors py-1 md:py-2 px-2 md:px-3 rounded-lg ${
+                isActive
+                  ? "bg-emerald-600 text-white"
+                  : "text-gray-800 hover:bg-emerald-600 focus:bg-emerald-600 hover:text-white focus:text-white"
+              }`
+            }
             onClick={() => setIsMenuOpen(false)}
           >
             Contact
           </NavLink>
-          {/* <NavLink
-            to={"/about"}
-            className="text-gray-800 text-xs sm:text-sm md:text-base hover:bg-indigo-600 focus:bg-indigo-600 hover:text-white focus:text-white transition-colors py-1 md:py-2 px-2 md:px-3 rounded-lg"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            About
-          </NavLink> */}
         </nav>
 
         <div className="hidden sm:block">

@@ -1,13 +1,12 @@
 import { useParams } from "react-router-dom";
-import { BaseUrl, Heading, LoadingSpinner, UserBox } from "../utils/Utils";
+import { Heading, LoadingSpinner, UserBox } from "../utils/Utils";
 import Newsletter from "../components/Newsletter";
 import RecipeShortList from "../utils/RecipeShortList";
 import { useState, useEffect } from "react";
 import { BlogCardProps } from "../utils/Types";
+import { blogPosts } from "../data/blog";
 import user_dp from "../assets/images/user_dp.png";
 import SocialMediaBox from "../components/SocialMediaBox";
-import { convertFromRaw } from "draft-js";
-import { stateToHTML } from "draft-js-export-html";
 import useAOS from "../hooks/useAOS";
 
 export default function Blog() {
@@ -25,12 +24,26 @@ export default function Blog() {
     const fetchBlogPost = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`${BaseUrl}blogs/${id}`);
-        if (!response.ok) {
-          throw new Error("Failed to fetch blog details");
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        const blogPost = blogPosts.find(post => post.id === parseInt(id || '0'));
+        if (!blogPost) {
+          throw new Error("Blog post not found");
         }
-        const blogPost: BlogCardProps = await response.json();
-        setBlog(blogPost);
+        
+        // Convert BlogPost to BlogCardProps format
+        const blogData: BlogCardProps = {
+          id: blogPost.id,
+          title: blogPost.title,
+          excerpt: blogPost.excerpt,
+          image: blogPost.image,
+          author: blogPost.author.name,
+          date: blogPost.publishedDate,
+          content: blogPost.content
+        };
+        
+        setBlog(blogData);
       } catch (err: unknown) {
         if (err instanceof Error) {
           setError(err.message);
@@ -56,16 +69,6 @@ export default function Blog() {
       </div>
     );
   }
-
-  const renderBlogContent = (rawContent: string) => {
-    try {
-      const contentState = convertFromRaw(JSON.parse(rawContent));
-      return stateToHTML(contentState);
-    } catch (err) {
-      console.error("Error rendering blog content:", err);
-      return <p>Failed to render content.</p>;
-    }
-  };
 
   return (
     <>
@@ -110,11 +113,11 @@ export default function Blog() {
                   <div className="py-4">
                     <h2 className="font-bold text-xl" data-aos="fade-right" data-aos-delay="100">Blog Content</h2>
                     <div
-                      className="mt-4 text-gray-700 text-sm sm:text-base"
+                      className="mt-4 text-gray-700 text-sm sm:text-base prose prose-emerald max-w-none"
                       data-aos="fade-up"
                       data-aos-delay="200"
                       dangerouslySetInnerHTML={{
-                        __html: renderBlogContent(blog.content || ""),
+                        __html: blog.content || "",
                       }}
                     />
                   </div>

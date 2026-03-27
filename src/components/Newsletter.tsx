@@ -7,17 +7,16 @@ export default function Newsletter() {
   useAOS({ duration: 500, easing: "ease-out-back" });
   return (
     <section className="flex justify-center items-center">
-      <div className="w-[95%] sm:w-[90%] relative bg-[#E7F9FD] flex flex-col justify-center items-center gap-16 rounded-3xl pt-18 px-4 overflow-hidden">
+      <div className="w-[95%] sm:w-[90%] relative bg-gradient-to-br from-emerald-50 to-emerald-100 flex flex-col justify-center items-center gap-16 rounded-3xl pt-18 px-4 overflow-hidden">
         <div className="flex flex-col justify-center items-center gap-6">
           <Heading
-            text="Deliciousness to your inbox"
+            text="Egyptian flavors to your inbox"
             customClass="text-black text-center"
             animation="fade-right"
           />
           <SubHeading
-            text="Join our community of food lovers and share your favorite recipes
-                  with us. We can't wait to see what you create!"
-            customClass="text-center text-gray-500 max-w-4/5"
+            text="Join the Bunzo family and be the first to know about new Egyptian burger creations, special offers, and authentic street food stories from Cairo!"
+            customClass="text-center text-gray-600 max-w-4/5"
             animation="fade-left"
             data-aos-delay="300"
           />
@@ -27,25 +26,24 @@ export default function Newsletter() {
           <div className="bg-white flex justify-between items-center py-4 px-6 w-full h-full col-span-3">
             <input
               type="email"
-              placeholder="Your email address"
+              placeholder="Enter your email for Egyptian updates"
               className="text-xs sm:text-sm md:text-base leading-normal text-gray-700 outline-0 w-full h-full placeholder:text-gray-400"
               data-aos="fade-right"
             />
           </div>
           <button
             type="submit"
-            className="h-full bg-black px-3 py-2 text-xs sm:text-sm text-white"
+            className="h-full bg-emerald-600 hover:bg-emerald-700 px-3 py-2 text-xs sm:text-sm text-white transition-colors"
             data-aos="fade-left"
           >
-            {" "}
-            Join
+            Join Family
           </button>
         </form>
 
         <figure>
           <img
             src={two_fork_salad}
-            alt="salad"
+            alt="Egyptian cuisine"
             className="absolute w-40 sm:w-60 lg:w-96 -bottom-20 -left-10 lg:-bottom-40 lg:-left-20"
             data-aos="fade-up"
           />
@@ -53,7 +51,7 @@ export default function Newsletter() {
         <figure>
           <img
             src={food20}
-            alt="salad"
+            alt="Egyptian burger"
             className="absolute w-40 sm:w-60 lg:w-96 -bottom-20 -right-10 lg:-bottom-40 lg:-right-20"
             data-aos="fade-up"
           />

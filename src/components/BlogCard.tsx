@@ -36,7 +36,7 @@ export default function BlogCard({
         <div className="flex flex-col gap-2 justify-center items-center sm:justify-start sm:items-start w-full">
           <Link
             to={`/blog/${id}`}
-            className="text-sm sm:text-base lg:text-lg font-semibold hover:text-indigo-600"
+            className="text-sm sm:text-base lg:text-lg font-semibold hover:text-emerald-600 transition-colors"
           >
             {title}
           </Link>

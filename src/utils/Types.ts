@@ -17,7 +17,6 @@ export interface RecipeCardType {
   time: number | string;
   category: string;
   isFavorite: boolean;
-  bgColor?: string;
   customClass?: string;
   animation?: string;
   handleDeleteItem?: () => void;

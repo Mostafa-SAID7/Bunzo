@@ -9,12 +9,12 @@ const GlobalContext = createContext<GlobalContextType | null>(null);
 
 export const GlobalProvider = ({
   children,
-  isEndpointsWorking,
-  role,
+  isEndpointsWorking = true, // Default to true since we're using local data
+  role = "user",
 }: {
   children: ReactNode;
-  isEndpointsWorking: boolean;
-  role: string;
+  isEndpointsWorking?: boolean;
+  role?: string;
 }) => {
   return (
     <GlobalContext.Provider value={{ isEndpointsWorking, role }}>

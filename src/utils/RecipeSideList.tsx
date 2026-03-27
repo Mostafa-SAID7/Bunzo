@@ -32,7 +32,7 @@ export default function RecipeSideList() {
               />
             </figure>
             <div className="flex flex-col justify-between items-start gap-3">
-              <p className="text-sm sm:text-base font-semibold hover:text-blue-500/70">
+              <p className="text-sm sm:text-base font-semibold hover:text-emerald-600 transition-colors">
                 {recipe.name}
               </p>
               <p className="text-xs sm:text-sm text-black/60">By John Smith </p>

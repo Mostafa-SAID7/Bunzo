@@ -4,10 +4,7 @@ import green_food from "../assets/images/green_food.svg";
 export default function GreenCard({ animation }: { animation?: string }) {
   return (
     <div
-      className="relative flex justify-center items-center p-8 h-fit overflow-hidden"
-      style={{
-        background: "linear-gradient(to bottom, #336F53, #1E4B3D)",
-      }}
+      className="relative flex justify-center items-center p-8 h-fit overflow-hidden bg-gradient-bunzo-green"
       data-aos={animation}
     >
       <img src={green_star} className="absolute z-[1] w-[120%]" />

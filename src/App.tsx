@@ -14,7 +14,6 @@ import post1 from "./assets/images/post1.png";
 import post2 from "./assets/images/post2.png";
 import post3 from "./assets/images/post3.png";
 import post4 from "./assets/images/post4.png";
-import community_bg from "./assets/images/community_bg.png";
 
 import {
   Button,
@@ -52,18 +51,18 @@ function App() {
   const [selectedRecipe, setSelectedRecipe] = useState<RecipeType | null>(null);
 
   const categories = [
-    { image: rice, name: "Rice", bgColor: "#F7F8F4" },
-    { image: veggies, name: "Veggies", bgColor: "#FAFDF8" },
+    { image: rice, name: "Classic", bgColor: "#F7F8F4" },
+    { image: veggies, name: "Veggie", bgColor: "#FAFDF8" },
     { image: beef, name: "Beef", bgColor: "#FBECEB" },
-    { image: cake, name: "Cake", bgColor: "#FEF7E9" },
-    { image: bread, name: "Bread", bgColor: "#F4F4F4" },
-    { image: chocolate, name: "Chocolate", bgColor: "#F5F5F5" },
+    { image: cake, name: "Chicken", bgColor: "#FEF7E9" },
+    { image: bread, name: "Egyptian", bgColor: "#F4F4F4" },
+    { image: chocolate, name: "Spicy", bgColor: "#F5F5F5" },
   ];
   const posts = [
-    { image: post1, name: "Post 1" },
-    { image: post2, name: "Post 2" },
-    { image: post3, name: "Post 3" },
-    { image: post4, name: "Post 4" },
+    { image: post1, name: "Cairo Street Burger" },
+    { image: post2, name: "Pharaoh's Special" },
+    { image: post3, name: "Nile Valley Veggie" },
+    { image: post4, name: "Spicy Sahara" },
   ];
 
 
@@ -78,17 +77,17 @@ function App() {
   }
 
   return (
-    <div className="pt-10 pb-40 overflow-y-scroll overflow-x-hidden relative inter">
+    <div className="pt-10 pb-40 overflow-x-hidden relative inter">
       <HeroSection />
 
       <section className="flex justify-center items-center mt-40">
         <div className="w-[95%] sm:w-[90%] flex flex-col gap-18">
           <div className="flex justify-between items-center mb-10">
-            <Heading text="Categories" animation="fade-right" />
+            <Heading text="Burger Categories" animation="fade-right" />
 
             <Button
-              text="View All Categories"
-              customClass="bg-[#E7FAFE] text-black shadow-md hover:bg-[#D1F1F5]"
+              text="Explore All Flavors"
+              customClass="bg-emerald-100 text-emerald-800 shadow-md hover:bg-emerald-200"
               animation="fade-left"
             />
           </div>
@@ -112,13 +111,12 @@ function App() {
         <div className="w-[95%] sm:w-[90%] flex flex-col justify-center items-center gap-18">
           <div className="flex flex-col justify-between items-center">
             <Heading
-              text="Simple and tasty recipes"
+              text="Authentic Egyptian Street Burgers"
               customClass="mb-6"
               animation="fade-left"
             />
             <SubHeading
-              text="Explore a variety of delicious recipes that we offer. We have a
-            variety of recipes that are easy to make and delicious to eat."
+              text="Experience the rich flavors of Egypt with our signature burgers. Each bite tells a story of ancient spices, modern techniques, and the vibrant street food culture that makes Cairo legendary."
               customClass="text-center text-gray-500"
               animation="fade-right"
             />
@@ -143,7 +141,6 @@ function App() {
                     handleOpenEditForm={() => handleOpenEditForm(recipe)}
                     handleToggleFavorite={() => toggleFavorite(recipe.id)}
                     customClass="p-2.5"
-                    bgColor="#E7FAFE"
                     animation={
                       recipe.id && recipe.id % 2 === 0 ? "fade-up" : "fade-down"
                     }
@@ -169,31 +166,27 @@ function App() {
           <div className="w-full sm:w-1/2 flex flex-col justify-center items-start gap-8 sm:gap-12 md:gap-14 lg:gap-18">
             <div className="flex flex-col justify-center items-start gap-6">
               <Heading
-                text="Everyone can be a chef in their own kitchen"
+                text="Every Egyptian deserves the perfect burger experience"
                 customClass="tracking-tight max-w-[90%]"
                 animation="fade-left"
               />
               <SubHeading
-                text="Explore a variety of delicious recipes that we offer. We have a
-            variety of recipes that are easy to make and delicious to eat."
+                text="From the bustling streets of Cairo to modern kitchens, we've perfected the art of Egyptian street food. Our burgers blend traditional spices with contemporary techniques, creating flavors that celebrate our heritage while appealing to the modern palate."
                 customClass="max-w-[90%] text-gray-500"
                 animation="fade-right"
               />
             </div>
 
             <Button
-              text="Learn More"
+              text="Discover Our Story"
               textColor="text-white"
-              customClass="bg-black"
+              customClass="bg-emerald-600 hover:bg-emerald-700"
               animation="fade-up"
             />
           </div>
 
           <div
-            className="w-11/12 sm:w-1/2 relative rounded-3xl shadow-md flex justify-center items-center"
-            style={{
-              background: "linear-gradient(to bottom, white, #EDFAFD)",
-            }}
+            className="w-11/12 sm:w-1/2 relative rounded-3xl shadow-md flex justify-center items-center bg-gradient-bunzo-light"
             data-aos="fade-left"
           >
             <img
@@ -213,19 +206,17 @@ function App() {
 
       <section className="mb-28 flex justify-center items-center">
         <div
-          className="relative w-[95%] sm:w-[90%] bg-black flex flex-col justify-center items-center gap-10 rounded-2xl py-14 bg-cover bg-center bg-no-repeat overflow-hidden"
-          style={{ backgroundImage: `url(${community_bg})` }}
+          className="relative w-[95%] sm:w-[90%] bg-black flex flex-col justify-center items-center gap-10 rounded-2xl py-14 bg-cover bg-center bg-no-repeat overflow-hidden bg-community"
         >
           <div className="absolute w-full h-full bg-black backdrop-3xl opacity-80"></div>
           <div className="flex flex-col justify-center items-center gap-6 z-10">
             <Heading
-              text="Join our community"
+              text="Join the Bunzo Family"
               customClass="mb-6 text-white text-center max-w-5/6"
               animation="fade-up"
             />
             <SubHeading
-              text="Join our community of food lovers and share your favorite recipes
-            with us. We can't wait to see what you create!"
+              text="Become part of Egypt's most beloved burger community. Share your street food stories, discover new flavors, and connect with fellow food lovers who appreciate authentic Egyptian cuisine."
               customClass="text-center text-white max-w-5/6"
               animation="fade-up"
               data-aos-delay="300"
@@ -234,9 +225,9 @@ function App() {
 
           <div className="flex justify-center items-center mt-10 z-10">
             <Button
-              text="Join Now"
-              textColor="text-black"
-              customClass="bg-white"
+              text="Join Our Community"
+              textColor="text-emerald-800"
+              customClass="bg-white hover:bg-gray-100"
               animation="fade-up"
               data-aos-delay="500"
             />
@@ -245,21 +236,17 @@ function App() {
       </section>
 
       <section
-        className="mb-32 flex justify-center items-center py-18"
-        style={{
-          background: "linear-gradient(to bottom, white, #E7F9FD)",
-        }}
+        className="mb-32 flex justify-center items-center py-18 bg-gradient-bunzo-instagram"
       >
         <div className="w-[95%] sm:w-[90%] flex flex-col justify-center items-center gap-10 rounded-2xl">
           <div className="flex flex-col justify-center items-center gap-6">
             <Heading
-              text="Check out @bunzo on Instagram"
+              text="Follow @bunzo_egypt on Instagram"
               customClass="text-center"
               animation="fade-right"
             />
             <SubHeading
-              text="Follow us on Instagram for the latest updates and recipes. We
-              post daily recipes and tips to help you cook like a pro."
+              text="Get inspired by our daily burger creations, behind-the-scenes stories from Egyptian kitchens, and the vibrant street food culture that defines our brand. See how tradition meets innovation!"
               customClass="text-center text-gray-500"
               animation="fade-left"
               data-aos-delay="300"
@@ -285,7 +272,7 @@ function App() {
               text="Visit Our Instagram"
               icon={instagram_white}
               textColor="text-white"
-              customClass="bg-black"
+              customClass="bg-emerald-600 hover:bg-emerald-700"
               animation="fade-up"
             />
           </div>
@@ -296,14 +283,12 @@ function App() {
         <div className="w-[95%] sm:w-[90%] flex flex-col justify-center items-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 w-full gap-5 sm:gap-20">
             <Heading
-              text="Try this delicious recipe to make your day"
+              text="Taste the authentic flavors that make Egypt legendary"
               customClass="w-full"
               animation="fade-right"
             />
             <SubHeading
-              text="Discover new flavors and enjoy cooking with our easy-to-follow recipes. 
-                  Whether you're a beginner or an experienced chef, our recipes are designed 
-                  to inspire creativity in the kitchen."
+              text="Every burger is a journey through Egyptian culinary heritage. From ancient spice blends passed down through generations to modern cooking techniques that enhance traditional flavors - experience the taste that connects past and present."
               customClass="w-full text-gray-500"
               animation="fade-left"
               data-aos-delay="300"

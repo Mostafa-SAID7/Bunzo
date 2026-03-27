@@ -82,13 +82,22 @@ export const UserBox = ({
 };
 
 export const CategoryItem = ({ image, name, animation, bgColor }: CategoryItemProps) => {
+  // Map bgColor to Tailwind gradient classes
+  const getGradientClass = (color: string) => {
+    switch (color) {
+      case "#F7F8F4": return "bg-gradient-category-rice";
+      case "#FAFDF8": return "bg-gradient-category-veggies";
+      case "#FBECEB": return "bg-gradient-category-beef";
+      case "#FEF7E9": return "bg-gradient-category-cake";
+      case "#F4F4F4": return "bg-gradient-category-bread";
+      case "#F5F5F5": return "bg-gradient-category-chocolate";
+      default: return "bg-gradient-bunzo-card";
+    }
+  };
   
   return (
     <div
-      className={`flex flex-col justify-center items-center w-full gap-4 md:gap-6 lg:gap-8 py-5 px-8 rounded-3xl shadow-md`}
-      style={{
-        background: `linear-gradient(to bottom, white, ${bgColor})`,
-      }}
+      className={`flex flex-col justify-center items-center w-full gap-4 md:gap-6 lg:gap-8 py-5 px-8 rounded-3xl shadow-md ${getGradientClass(bgColor)}`}
       data-aos={animation}
     >
       <figure>
@@ -248,13 +257,13 @@ export const FormInput = ({
           placeholder={placeholder}
           value={value}
           required={required}
-          className={`w-full rounded-md shadow-sm py-2 px-3 lg:py-4 lg:px-5 text-sm border border-gray-300 bg-transparent focus:border-indigo-500 focus:ring-indigo-500 ${inputStyle}`}
+          className={`w-full rounded-md shadow-sm py-2 px-3 lg:py-4 lg:px-5 text-sm border border-gray-300 bg-transparent focus:border-emerald-500 focus:ring-emerald-500 ${inputStyle}`}
         ></textarea>
       ) : (
         <input
           type={type}
           placeholder={placeholder}
-          className={`w-full rounded-md shadow-sm py-2 px-3 lg:py-4 lg:px-5 text-sm border border-gray-300 bg-transparent focus:border-indigo-500 focus:ring-indigo-500 ${inputStyle}`}
+          className={`w-full rounded-md shadow-sm py-2 px-3 lg:py-4 lg:px-5 text-sm border border-gray-300 bg-transparent focus:border-emerald-500 focus:ring-emerald-500 ${inputStyle}`}
           onChange={customFunction}
           value={value}
           name={name}

@@ -9,92 +9,92 @@ import user_dp from "../assets/images/user_dp.png";
 
 export const heroSlides: HeroSlideType[] = [
   {
-    title: "Spicy and Delicious Chicken Wings",
+    title: "The Pharaoh's Burger - A Royal Egyptian Experience",
     description:
-      "Discover new flavors and cooking techniques to elevate your culinary skills and enjoy them with a variety of dipping sauces for an extra kick!",
+      "Indulge in our signature burger featuring spiced beef, tahini sauce, and traditional Egyptian herbs. A taste that has ruled the streets of Cairo for generations!",
     badges: [
-      { icon: "timer", text: "30 minutes" },
-      { icon: "forkKnife", text: "Chicken" },
+      { icon: "timer", text: "15 minutes" },
+      { icon: "forkKnife", text: "Egyptian Beef" },
     ],
     user: {
-      name: "John Smith",
+      name: "Chef Ahmed",
       profilePicture: user_dp,
     },
     backgroundImage: food3,
     button: {
-      text: "View Recipes",
+      text: "Order Now",
       icon: "play_icon",
     },
   },
   {
-    title: "Sweet and Savory Pancakes",
+    title: "Cairo Street Classic - Authentic & Bold",
     description:
-      "Indulge in the perfect balance of sweetness and savoriness with our pancake recipes, perfect for breakfast or brunch!",
+      "Experience the authentic flavors of Egyptian street food with our classic burger blend of traditional spices, fresh vegetables, and our secret sauce!",
     badges: [
-      { icon: "timer", text: "20 minutes" },
-      { icon: "forkKnife", text: "Pancakes" },
+      { icon: "timer", text: "12 minutes" },
+      { icon: "forkKnife", text: "Street Style" },
     ],
     user: {
-      name: "Jane Doe",
+      name: "Chef Fatma",
       profilePicture: user_dp,
     },
     backgroundImage: food7,
     button: {
-      text: "Explore Recipes",
+      text: "Taste Tradition",
       icon: "play_icon",
     },
   },
   {
-    title: "Healthy and Refreshing Salads",
+    title: "Nile Valley Veggie - Fresh & Flavorful",
     description:
-      "Enjoy a variety of fresh and healthy salad recipes that are perfect for any meal of the day!",
+      "Discover our plant-based masterpiece featuring Egyptian falafel, fresh herbs, and vegetables straight from the Nile Valley farms!",
     badges: [
-      { icon: "timer", text: "15 minutes" },
-      { icon: "forkKnife", text: "Salad" },
+      { icon: "timer", text: "10 minutes" },
+      { icon: "forkKnife", text: "Vegetarian" },
     ],
     user: {
-      name: "Alice Green",
+      name: "Chef Yasmin",
       profilePicture: user_dp,
     },
     backgroundImage: food10,
     button: {
-      text: "Try Now",
+      text: "Go Green",
       icon: "play_icon",
     },
   },
   {
-    title: "Juicy and Tender Steaks",
+    title: "Spicy Sahara - Fire from the Desert",
     description:
-      "Master the art of cooking the perfect steak with our easy-to-follow recipes and tips!",
+      "For the brave souls! Our spiciest creation with harissa-marinated chicken, jalapeños, and our fiery desert sauce that brings the heat of the Sahara!",
     badges: [
-      { icon: "timer", text: "40 minutes" },
-      { icon: "forkKnife", text: "Steak" },
+      { icon: "timer", text: "18 minutes" },
+      { icon: "forkKnife", text: "Spicy Chicken" },
     ],
     user: {
-      name: "Robert Brown",
+      name: "Chef Omar",
       profilePicture: user_dp,
     },
     backgroundImage: food12,
     button: {
-      text: "Cook Now",
+      text: "Feel the Heat",
       icon: "play_icon",
     },
   },
   {
-    title: "Delicious and Creamy Pastas",
+    title: "Alexandria Seafood Delight - Mediterranean Fusion",
     description:
-      "Savor the taste of Italy with our creamy and delicious pasta recipes that are perfect for any occasion!",
+      "Taste the Mediterranean coast of Egypt with our seafood burger featuring fresh fish, Egyptian spices, and coastal herbs from Alexandria!",
     badges: [
-      { icon: "timer", text: "25 minutes" },
-      { icon: "forkKnife", text: "Pasta" },
+      { icon: "timer", text: "20 minutes" },
+      { icon: "forkKnife", text: "Seafood" },
     ],
     user: {
-      name: "Sophia White",
+      name: "Chef Mariam",
       profilePicture: user_dp,
     },
     backgroundImage: food5,
     button: {
-      text: "Discover More",
+      text: "Dive In",
       icon: "play_icon",
     },
   },

@@ -1,11 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  fetchRecipe,
-  AddRecipe,
-  handleEditRecipe,
-  handleDeleteRecipe,
-  handleToggleFavorite,
-} from "../utils/RecipeCrud";
+import { egyptianBurgers, BurgerData } from "../data/burgers";
 import { RecipeType } from "../utils/Types";
 
 const useRecipe = () => {
@@ -13,22 +7,33 @@ const useRecipe = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Convert BurgerData to RecipeType format
+  const convertBurgerToRecipe = (burger: BurgerData): RecipeType => ({
+    id: burger.id,
+    name: burger.name,
+    image: burger.image,
+    time: burger.cookingTime,
+    category: burger.category,
+    isFavorite: burger.isFavorite,
+    ingredients: burger.ingredients,
+    directions: [burger.story], // Use story as directions
+    nutritionInfo: [
+      { name: "Calories", measure: `${burger.nutritionInfo.calories} kcal` },
+      { name: "Protein", measure: burger.nutritionInfo.protein },
+      { name: "Carbs", measure: burger.nutritionInfo.carbs },
+      { name: "Fat", measure: burger.nutritionInfo.fat }
+    ]
+  });
+
   const fetchRecipes = async () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetchRecipe();
-      if (!response.ok) {
-        if (response.status === 404) {
-          throw new Error("Recipes not found.");
-        } else if (response.status === 500) {
-          throw new Error("Server error. Please try again later.");
-        } else {
-          throw new Error(`Unexpected error: ${response.statusText}`);
-        }
-      }
-      const data: RecipeType[] = await response.json();
-      setRecipeData(data);
+      // Simulate API delay for realistic experience
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      const convertedData = egyptianBurgers.map(convertBurgerToRecipe);
+      setRecipeData(convertedData);
     } catch (error: unknown) {
       if (error instanceof Error) {
         setError(error.message);
@@ -43,20 +48,16 @@ const useRecipe = () => {
 
 
   const addRecipe = async (recipe: RecipeType): Promise<RecipeType | null> => {
-    
     setError(null);
     try {
-      const response = await AddRecipe(recipe);
-      if (!response.ok) {
-        if (response.status === 422) {
-          throw new Error("Validation error. Please check your input.");
-        } else if (response.status === 500) {
-          throw new Error("Server error. Please try again later.");
-        } else {
-          throw new Error(`Unexpected error: ${response.statusText}`);
-        }
-      }
-      const newRecipe = await response.json();
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 300));
+      
+      const newRecipe = {
+        ...recipe,
+        id: Math.max(...recipeData.map(r => r.id || 0)) + 1
+      };
+      
       setRecipeData((prevRecipes) => [...prevRecipes, newRecipe]);
       return newRecipe;
     } catch (error: unknown) {
@@ -76,22 +77,14 @@ const useRecipe = () => {
     id: number | undefined,
     recipe: RecipeType
   ): Promise<RecipeType | void> => {
-   
     setError(null);
     try {
-      const response = await handleEditRecipe(id, recipe);
-      if (!response.ok) {
-        if (response.status === 404) {
-          throw new Error("Recipe not found.");
-        } else if (response.status === 500) {
-          throw new Error("Server error. Please try again later.");
-        } else {
-          throw new Error(`Unexpected error: ${response.statusText}`);
-        }
-      }
-      const updatedRecipe = await response.json();
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 300));
+      
+      const updatedRecipe = { ...recipe, id };
       setRecipeData((prevRecipes) =>
-        prevRecipes.map((recipe) => (recipe.id === id ? updatedRecipe : recipe))
+        prevRecipes.map((r) => (r.id === id ? updatedRecipe : r))
       );
       return updatedRecipe;
     } catch (error: unknown) {
@@ -107,19 +100,11 @@ const useRecipe = () => {
   };
 
   const deleteRecipe = async (id: number | undefined): Promise<boolean> => {
-    
     setError(null);
     try {
-      const response = await handleDeleteRecipe(id);
-      if (!response.ok) {
-        if (response.status === 404) {
-          throw new Error("Recipe not found.");
-        } else if (response.status === 500) {
-          throw new Error("Server error. Please try again later.");
-        } else {
-          throw new Error(`Unexpected error: ${response.statusText}`);
-        }
-      }
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 300));
+      
       setRecipeData((prevRecipes) =>
         prevRecipes.filter((recipe) => recipe.id !== id)
       );
@@ -140,22 +125,20 @@ const useRecipe = () => {
   const toggleFavorite = async (
     id: number | undefined
   ): Promise<RecipeType | null> => {
-    
     setError(null);
     try {
-      const response = await handleToggleFavorite(id);
-      if (!response.ok) {
-        if (response.status === 404) {
-          throw new Error("Recipe not found.");
-        } else if (response.status === 500) {
-          throw new Error("Server error. Please try again later.");
-        } else {
-          throw new Error(`Unexpected error: ${response.statusText}`);
-        }
-      }
-      const updatedRecipe = await response.json();
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 300));
+      
+      let updatedRecipe: RecipeType | null = null;
       setRecipeData((prevRecipes) =>
-        prevRecipes.map((recipe) => (recipe.id === id ? updatedRecipe : recipe))
+        prevRecipes.map((recipe) => {
+          if (recipe.id === id) {
+            updatedRecipe = { ...recipe, isFavorite: !recipe.isFavorite };
+            return updatedRecipe;
+          }
+          return recipe;
+        })
       );
       return updatedRecipe;
     } catch (error: unknown) {

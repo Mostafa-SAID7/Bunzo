@@ -16,7 +16,6 @@ const Recipe = React.memo(
     time,
     category,
     isFavorite,
-    bgColor,
     customClass,
     handleDeleteItem,
     handleOpenEditForm,
@@ -27,12 +26,7 @@ const Recipe = React.memo(
 
     return (
       <div
-        className={`relative flex flex-col justify-between gap-4 rounded-2xl p-3 w-full h-full max-w-80 max-h-96 cursor-pointer ${customClass}`}
-        style={{
-          background: `linear-gradient(to bottom, white, ${
-            bgColor ? bgColor : "transparent"
-          })`,
-        }}
+        className={`relative flex flex-col justify-between gap-4 rounded-2xl p-3 w-full h-full max-w-80 max-h-96 cursor-pointer bg-gradient-bunzo-card ${customClass}`}
         data-aos={animation}
       >
         <div className="flex flex-col gap-4 ">
@@ -55,7 +49,7 @@ const Recipe = React.memo(
           <div className="flex flex-col gap-4">
             <Link
               to={`/recipes/${id}`}
-              className="text-xl font-semibold hover:text-blue-500/70 transition"
+              className="text-xl font-semibold hover:text-emerald-600 transition-colors"
             >
               {name}
             </Link>

@@ -2,13 +2,13 @@ import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 
 import { RecipeType } from "../utils/Types";
+import { egyptianBurgers } from "../data/burgers";
 import {
   Heading,
   UserBox,
   Badge,
   LoadingSpinner,
   OutputIcon,
-  BaseUrl,
 } from "../utils/Utils";
 
 import Newsletter from "../components/Newsletter";
@@ -36,13 +36,43 @@ export default function RecipeDetails() {
 
   const fetchRecipeDetails = useCallback(async () => {
     setIsLoading(true);
+    setError(null);
     try {
-      const res = await fetch(`${BaseUrl}recipes/${id}`);
-      if (!res.ok) {
-        throw new Error("Failed to fetch recipe details");
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      const burgerData = egyptianBurgers.find(burger => burger.id === parseInt(id || '0'));
+      if (!burgerData) {
+        throw new Error("Recipe not found");
       }
-      const data: RecipeType = await res.json();
-      setRecipe(data);
+      
+      // Convert BurgerData to RecipeType format
+      const recipeData: RecipeType = {
+        id: burgerData.id,
+        name: burgerData.name,
+        image: burgerData.image,
+        time: burgerData.cookingTime,
+        category: burgerData.category,
+        isFavorite: burgerData.isFavorite,
+        ingredients: burgerData.ingredients,
+        directions: [
+          burgerData.story,
+          "Prepare all ingredients and let them come to room temperature.",
+          "Season the meat with our signature Egyptian spice blend.",
+          "Cook the patty to perfection using traditional techniques.",
+          "Toast the bun lightly for the perfect texture.",
+          "Assemble with fresh vegetables and our special sauces.",
+          "Serve immediately while hot and enjoy the authentic flavors!"
+        ],
+        nutritionInfo: [
+          { name: "Calories", measure: `${burgerData.nutritionInfo.calories} kcal` },
+          { name: "Protein", measure: burgerData.nutritionInfo.protein },
+          { name: "Carbs", measure: burgerData.nutritionInfo.carbs },
+          { name: "Fat", measure: burgerData.nutritionInfo.fat }
+        ]
+      };
+      
+      setRecipe(recipeData);
     } catch (err: unknown) {
       if (err instanceof Error) {
         setError(

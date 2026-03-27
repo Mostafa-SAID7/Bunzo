@@ -1,5 +1,7 @@
 {
-  "name": "bunzo",
+  "name": "bunzo-egyptian-burgers",
+  "description": "Bunzo - Authentic Egyptian Street Burgers. Modern Egyptian identity with traditional flavors, youth-focused culture, and tourist appeal.",
+  "keywords": ["egyptian", "burgers", "street-food", "cairo", "restaurant", "heritage", "modern", "youth", "tourists", "authentic"],
   "private": true,
   "version": "1.0.0",
   "type": "module",
