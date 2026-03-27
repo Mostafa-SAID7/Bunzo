@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  bunzo-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bunzo-recipe-platform
+    ports:
+      - "80:80"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.bunzo.rule=Host(`bunzo.local`)"
+      - "traefik.http.services.bunzo.loadbalancer.server.port=80"
+
+  # Optional: Add a reverse proxy
+  nginx-proxy:
+    image: nginx:alpine
+    container_name: bunzo-proxy
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx-proxy.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - bunzo-app
+    restart: unless-stopped
+
+networks:
+  default:
+    name: bunzo-network

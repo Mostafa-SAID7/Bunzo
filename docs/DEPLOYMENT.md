@@ -1,6 +1,6 @@
 # Deployment Guide
 
-Complete guide for deploying Foodieland to various platforms.
+Complete guide for deploying Bunzo to various platforms.
 
 ## Table of Contents
 
@@ -175,8 +175,8 @@ server {
 ### Build and Run
 
 ```bash
-docker build -t foodieland:latest .
-docker run -d -p 80:80 foodieland:latest
+docker build -t bunzo:latest .
+docker run -d -p 80:80 bunzo:latest
 ```
 
 ---
