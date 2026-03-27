@@ -3,7 +3,7 @@ import { Button, FormInput, Heading, SubHeading } from "../utils/Utils";
 import smiling_chef from "../assets/images/smiling_chef.png";
 import Newsletter from "../components/Newsletter";
 import SelectDropdown from "../utils/SelectDropdown";
-import { OptionType } from "../utils/Types";
+import { OptionType } from "../types/form";
 import RecipeShortList from "../utils/RecipeShortList";
 import useAOS from "../hooks/useAOS";
 

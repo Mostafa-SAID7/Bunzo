@@ -8,7 +8,7 @@ import {
 } from "@headlessui/react";
 import { ChevronUpDownIcon } from "@heroicons/react/16/solid";
 import { CheckIcon } from "@heroicons/react/20/solid";
-import { SelectDropdownProps } from "../utils/Types";
+import { SelectDropdownProps } from "../types/form";
 
 export default function SelectDropdown({
   label,

@@ -7,7 +7,7 @@ import GreenCard from "../components/GreenCard";
 import RecipeSideList from "../utils/RecipeSideList";
 import AddBlog from "../components/AddBlog";
 import useBlog from "../hooks/useBlog";
-import { BlogCardProps } from "../utils/Types";
+import { BlogCardProps } from "../types/blog";
 import EditBlog from "../components/EditBlog";
 import { useGlobalContext } from "../GlobalContext";
 import useAOS from "../hooks/useAOS";

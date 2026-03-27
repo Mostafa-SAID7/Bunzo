@@ -23,7 +23,7 @@ import {
   StickyObject,
   SubHeading,
 } from "./utils/Utils";
-import { RecipeType } from "./utils/Types";
+import { RecipeType } from "./types/recipe";
 
 import Recipe from "./components/RecipeCard";
 import Newsletter from "./components/Newsletter";

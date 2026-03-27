@@ -1,4 +1,4 @@
-import { ItemsListProps } from "../utils/Types";
+import { ItemsListProps } from "../types/common";
 import { Heading } from "../utils/Utils";
 import useAOS from "../hooks/useAOS";
 

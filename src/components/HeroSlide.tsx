@@ -5,7 +5,7 @@ import user_dp from "../assets/images/user_dp.png";
 import play_icon from "../assets/icons/play_icon.svg";
 import thumbs_badge from "../assets/images/thumbs_badge.png";
 import { Badge, Button, UserBox } from "../utils/Utils";
-import { HeroSlideProps } from "../utils/Types";
+import { HeroSlideProps } from "../types/hero";
 
 export default function HeroSlide({
   title,

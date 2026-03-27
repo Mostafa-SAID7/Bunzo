@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BlogCardProps } from "../utils/Types";
+import { BlogCardProps } from "../types/blog";
 import { Dropdown } from "../utils/Utils";
 import { formatDate } from "../utils/utilFunctions";
 import { useGlobalContext } from "../GlobalContext";

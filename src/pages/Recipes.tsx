@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button, Heading, LoadingSpinner, SubHeading } from "../utils/Utils";
 import RecipeCard from "../components/RecipeCard";
 import Pagination from "../utils/Pagination";
-import { RecipeType } from "../utils/Types";
+import { RecipeType } from "../types/recipe";
 import SelectDropdown from "../utils/SelectDropdown";
 import useRecipe from "../hooks/useRecipe";
 import EditRecipeForm from "../components/EditRecipe";

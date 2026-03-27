@@ -5,7 +5,7 @@ import {
   DialogPanel,
   DialogTitle,
 } from "@headlessui/react";
-import { RecipeType } from "../utils/Types";
+import { RecipeType } from "../types/recipe";
 
 export default function AddRecipeForm({
   handleForm,

@@ -1,32 +1,18 @@
 import { useState, useEffect } from "react";
-import { blogPosts, BlogPost } from "../data/blog";
-import { BlogCardProps } from "../utils/Types"; 
+import { BlogService } from "../services/blogService";
+import { BlogCardProps } from "../types/blog"; 
 
 const useBlog = () => {
   const [blogData, setBlogData] = useState<BlogCardProps[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Convert BlogPost to BlogCardProps format
-  const convertBlogPostToBlogCard = (post: BlogPost): BlogCardProps => ({
-    id: post.id,
-    title: post.title,
-    excerpt: post.excerpt,
-    image: post.image,
-    author: post.author.name,
-    date: post.publishedDate,
-    content: post.content
-  });
-
   const fetchAllBlogs = async () => {
     setIsLoading(true);
     setError(null);
     try {
-      // Simulate API delay for realistic experience
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
-      const convertedData = blogPosts.map(convertBlogPostToBlogCard);
-      setBlogData(convertedData);
+      const data = await BlogService.getAllBlogs();
+      setBlogData(data);
     } catch (error: unknown) {
       if (error instanceof Error) {
         setError(error.message);
@@ -43,16 +29,8 @@ const useBlog = () => {
     setIsLoading(true);
     setError(null);
     try {
-      // Simulate API delay
-      await new Promise(resolve => setTimeout(resolve, 300));
-      
-      const blogPost = blogPosts.find(post => post.id === id);
-      if (!blogPost) {
-        throw new Error("Blog not found.");
-      }
-      
-      const convertedBlog = convertBlogPostToBlogCard(blogPost);
-      return convertedBlog;
+      const blog = await BlogService.getBlogById(id);
+      return blog;
     } catch (error: unknown) {
       if (error instanceof Error) {
         setError(error.message);

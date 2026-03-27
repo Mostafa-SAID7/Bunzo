@@ -12,7 +12,7 @@ import {
   SubHeadingProps,
   UserBoxProps,
   // UserType,
-} from "./Types";
+} from "../types";
 import { formatDate } from "./utilFunctions";
 
 // export const BaseUrl = "http://127.0.0.1:8000/";

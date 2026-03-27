@@ -1,5 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
-import { PaginationProps } from "./Types";
+import { PaginationProps } from "../types/ui";
 import useAOS from "../hooks/useAOS";
 
 

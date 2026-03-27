@@ -6,7 +6,7 @@ import {
   DialogTitle,
 } from "@headlessui/react";
 import RichTextEditor from "./RichTextEditor";
-import { BlogCardProps } from "../utils/Types";
+import { BlogCardProps } from "../types/blog";
 
 export default function EditBlog({
   handleForm,

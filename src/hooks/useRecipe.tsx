@@ -1,39 +1,18 @@
 import { useState, useEffect } from "react";
-import { egyptianBurgers, BurgerData } from "../data/burgers";
-import { RecipeType } from "../utils/Types";
+import { RecipeService } from "../services/recipeService";
+import { RecipeType } from "../types/recipe";
 
 const useRecipe = () => {
   const [recipeData, setRecipeData] = useState<RecipeType[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Convert BurgerData to RecipeType format
-  const convertBurgerToRecipe = (burger: BurgerData): RecipeType => ({
-    id: burger.id,
-    name: burger.name,
-    image: burger.image,
-    time: burger.cookingTime,
-    category: burger.category,
-    isFavorite: burger.isFavorite,
-    ingredients: burger.ingredients,
-    directions: [burger.story], // Use story as directions
-    nutritionInfo: [
-      { name: "Calories", measure: `${burger.nutritionInfo.calories} kcal` },
-      { name: "Protein", measure: burger.nutritionInfo.protein },
-      { name: "Carbs", measure: burger.nutritionInfo.carbs },
-      { name: "Fat", measure: burger.nutritionInfo.fat }
-    ]
-  });
-
   const fetchRecipes = async () => {
     setIsLoading(true);
     setError(null);
     try {
-      // Simulate API delay for realistic experience
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
-      const convertedData = egyptianBurgers.map(convertBurgerToRecipe);
-      setRecipeData(convertedData);
+      const data = await RecipeService.getAllRecipes();
+      setRecipeData(data);
     } catch (error: unknown) {
       if (error instanceof Error) {
         setError(error.message);

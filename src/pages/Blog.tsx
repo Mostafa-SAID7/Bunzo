@@ -3,8 +3,8 @@ import { Heading, LoadingSpinner, UserBox } from "../utils/Utils";
 import Newsletter from "../components/Newsletter";
 import RecipeShortList from "../utils/RecipeShortList";
 import { useState, useEffect } from "react";
-import { BlogCardProps } from "../utils/Types";
-import { blogPosts } from "../data/blog";
+import { BlogCardProps } from "../types/blog";
+import { BlogService } from "../services/blogService";
 import user_dp from "../assets/images/user_dp.png";
 import SocialMediaBox from "../components/SocialMediaBox";
 import useAOS from "../hooks/useAOS";
@@ -24,25 +24,10 @@ export default function Blog() {
     const fetchBlogPost = async () => {
       try {
         setIsLoading(true);
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 500));
-        
-        const blogPost = blogPosts.find(post => post.id === parseInt(id || '0'));
-        if (!blogPost) {
+        const blogData = await BlogService.getBlogById(parseInt(id || '0'));
+        if (!blogData) {
           throw new Error("Blog post not found");
         }
-        
-        // Convert BlogPost to BlogCardProps format
-        const blogData: BlogCardProps = {
-          id: blogPost.id,
-          title: blogPost.title,
-          excerpt: blogPost.excerpt,
-          image: blogPost.image,
-          author: blogPost.author.name,
-          date: blogPost.publishedDate,
-          content: blogPost.content
-        };
-        
         setBlog(blogData);
       } catch (err: unknown) {
         if (err instanceof Error) {
