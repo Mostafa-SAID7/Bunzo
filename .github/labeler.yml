@@ -1,0 +1,92 @@
+# Automatic PR labeling configuration
+
+# Documentation
+documentation:
+  - changed-files:
+    - any-glob-to-any-file: 
+      - 'docs/**/*'
+      - '**/*.md'
+
+# Source code
+source:
+  - changed-files:
+    - any-glob-to-any-file: 'src/**/*'
+
+# Components
+components:
+  - changed-files:
+    - any-glob-to-any-file: 
+      - 'src/components/**/*'
+      - 'src/pages/**/*'
+
+# Styles
+styles:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.css'
+      - 'src/index.css'
+      - 'src/App.css'
+      - 'src/styles/**/*'
+
+# TypeScript/React
+typescript:
+  - changed-files:
+    - any-glob-to-any-file: 
+      - '**/*.ts'
+      - '**/*.tsx'
+
+# Configuration
+configuration:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'vite.config.ts'
+      - 'tsconfig*.json'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vercel.json'
+
+# GitHub Actions
+github-actions:
+  - changed-files:
+    - any-glob-to-any-file: '.github/workflows/**/*'
+
+# Assets
+assets:
+  - changed-files:
+    - any-glob-to-any-file: 
+      - 'src/assets/**/*'
+      - 'public/**/*'
+
+# Tests
+tests:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.spec.ts'
+      - '**/*.spec.tsx'
+      - '**/*.test.ts'
+      - '**/*.test.tsx'
+
+# SEO
+seo:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'public/sitemap.xml'
+      - 'public/robots.txt'
+      - 'index.html'
+
+# Security
+security:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'docs/SECURITY.md'
+      - '.github/workflows/security.yml'
+
+# Hooks
+hooks:
+  - changed-files:
+    - any-glob-to-any-file: 'src/hooks/**/*'
+
+# Utils
+utils:
+  - changed-files:
+    - any-glob-to-any-file: 'src/utils/**/*'
