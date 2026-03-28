@@ -1,10 +1,10 @@
 // Egyptian Burger Restaurant Data
-import food3 from "../assets/images/food3.png";
-import food5 from "../assets/images/food5.png";
-import food7 from "../assets/images/food7.png";
-import food10 from "../assets/images/food10.png";
-import food12 from "../assets/images/food12.png";
-import food20 from "../assets/images/food20.png";
+import pharaoh_burger from "../assets/images/The Pharaoh's Burger.jpg";
+import cairo_classic from "../assets/images/Cairo Street Classic.jpg";
+import nile_veggie from "../assets/images/VegBurger.jpg";
+import spicy_sahara from "../assets/images/Spicy Sahara.jpg";
+import seafood_delight from "../assets/images/Alexandria Seafood Delight.jpg";
+import lamb_special from "../assets/images/Bedouin Lamb Special.jpg";
 
 export interface BurgerData {
   id: number;
@@ -30,7 +30,7 @@ export const egyptianBurgers: BurgerData[] = [
     name: "The Pharaoh's Burger",
     description: "Royal Egyptian experience with spiced beef, tahini sauce, and traditional herbs",
     price: 85,
-    image: food3,
+    image: pharaoh_burger,
     category: "beef",
     spiceLevel: "Medium",
     time: 15, // Changed from cookingTime to time
@@ -65,7 +65,7 @@ export const egyptianBurgers: BurgerData[] = [
     name: "Cairo Street Classic",
     description: "Authentic street food flavors with traditional spices and our secret sauce",
     price: 65,
-    image: food7,
+    image: cairo_classic,
     category: "beef",
     spiceLevel: "Mild",
     time: 12,
@@ -100,7 +100,7 @@ export const egyptianBurgers: BurgerData[] = [
     name: "Nile Valley Veggie",
     description: "Fresh falafel and herbs straight from the Nile Valley farms",
     price: 55,
-    image: food10,
+    image: nile_veggie,
     category: "vegan",
     spiceLevel: "Mild",
     time: 10,
@@ -135,7 +135,7 @@ export const egyptianBurgers: BurgerData[] = [
     name: "Spicy Sahara",
     description: "Harissa-marinated chicken with jalapeños and fiery desert sauce",
     price: 75,
-    image: food12,
+    image: spicy_sahara,
     category: "chicken",
     spiceLevel: "Sahara Fire",
     time: 18,
@@ -170,7 +170,7 @@ export const egyptianBurgers: BurgerData[] = [
     name: "Alexandria Seafood Delight",
     description: "Fresh fish with Egyptian spices and coastal herbs from Alexandria",
     price: 95,
-    image: food5,
+    image: seafood_delight,
     category: "specialty",
     spiceLevel: "Medium",
     time: 20,
@@ -205,7 +205,7 @@ export const egyptianBurgers: BurgerData[] = [
     name: "Bedouin Lamb Special",
     description: "Traditional lamb with desert spices and mint yogurt sauce",
     price: 90,
-    image: food20,
+    image: lamb_special,
     category: "lamb",
     spiceLevel: "Medium",
     time: 22,

@@ -129,7 +129,7 @@ export default function BurgerDetails() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6 md:p-4 lg:p-6 bg-[#E7FAFE] rounded-3xl flex flex-col justify-between gap-6" data-aos="fade-left" data-aos-delay="200">
+                <div className="p-6 md:p-4 lg:p-6 bg-emerald-50 rounded-3xl flex flex-col justify-between gap-6 border border-emerald-100" data-aos="fade-left" data-aos-delay="200">
                   <div className="flex flex-col gap-3  lg:gap-6 ">
                     <h2 className="font-bold text-base md:text-lg lg:text-2xl">
                       Nutrition Information
@@ -148,20 +148,16 @@ export default function BurgerDetails() {
                       })}
                     </ul>
                   </div>
-                  <p className="text-xs sm:text-sm lg:text-base">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Culpa placeat vitae.
+                  <p className="text-xs sm:text-sm lg:text-base text-gray-500 italic">
+                    * Values may vary based on exact portion weights and local ingredient seasonal variations.
                   </p>
                 </div>
               </div>
-              <p className="mt-2 sm:mt-4 lg:mt-6 text-black/60 text-xs sm:text-sm md:text-base" data-aos="fade-right" data-aos-delay="100">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex et
-                ab veniam perferendis recusandae eveniet modi debitis non
-                aspernatur. Aliquid tenetur ducimus voluptatem iure maxime,
-                vitae placeat blanditiis beatae porro. Accusamus, dolores.
-                Magnam explicabo ipsa placeat qui molestias modi a alias facilis
-                voluptatibus libero at repellendus impedit consectetur tempore,
-                magni aut est!
+              <p className="mt-2 sm:mt-4 lg:mt-6 text-black/60 text-xs sm:text-sm md:text-base leading-relaxed" data-aos="fade-right" data-aos-delay="100">
+                Each Bunzo burger is a labor of love, crafted using a proprietary blend of 12 Egyptian spices 
+                and the finest locally-sourced meats. We take pride in our slow-prep techniques that ensure 
+                every bite delivers the authentic street-food crunch and rich heritage flavors that 
+                generations of Cairenes have come to adore.
               </p>
             </div>
           </section>

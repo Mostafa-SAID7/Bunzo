@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Heading, Button, SubHeading } from "../components/ui";
 import useAOS from "../hooks/useAOS";
-import missingBurger from "../assets/images/food3.png";
+import missingBurger from "../assets/images/The Pharaoh's Burger.jpg";
 
 export default function NotFound() {
   const navigate = useNavigate();

@@ -1,6 +1,7 @@
 import { Heading, SubHeading } from "../components/ui";
-import lady_cooking from "../assets/images/lady_cooking.png";
-import happy_chef from "../assets/images/happy_chef.png";
+import heart_story_img from "../assets/images/The Heart of Every Bunzo Burger Experience.jpg";
+import ancient_flavors_img from "../assets/images/Where Ancient Flavors Meet Contemporary Taste.jpg";
+import { chefTeam } from "../data/restaurant";
 
 export default function About() {
   return (
@@ -36,9 +37,9 @@ export default function About() {
           <Heading text="Our Egyptian Mission" customClass="text-center text-gray-800" />
           <div className="flex flex-col lg:flex-row items-center gap-10">
             <img
-              src={happy_chef}
-              alt="Egyptian Chef"
-              className="rounded-lg shadow-md max-w-full sm:max-w-md"
+              src={heart_story_img}
+              alt="The Bunzo Heart"
+              className="rounded-2xl shadow-xl max-w-full sm:max-w-xl object-cover"
             />
             <div className="text-gray-600 leading-relaxed max-w-4xl">
               <p className="mb-4">
@@ -77,32 +78,25 @@ export default function About() {
           <Heading text="Meet Our Egyptian Chefs" customClass="text-center text-gray-800" />
           <div className="flex flex-col lg:flex-row items-center gap-10">
             <img
-              src={lady_cooking}
-              alt="Egyptian Kitchen Team"
-              className="rounded-lg shadow-md max-w-full sm:max-w-md"
+              src={ancient_flavors_img}
+              alt="Egyptian Culinary Heritage"
+              className="rounded-2xl shadow-xl max-w-full sm:max-w-xl object-cover"
             />
             <div className="text-gray-600 leading-relaxed max-w-4xl">
               <p className="mb-4">
-                Our team consists of passionate Egyptian chefs, food historians, and culinary innovators 
-                who are dedicated to bringing authentic Egyptian flavors to the modern burger experience.
+                Our kitchen is where ancient secrets meet contemporary burger art. 
+                Our team of dedicated chefs works tirelessly to bring you the soul of Cairo in every bite.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-semibold text-emerald-600">Chef Ahmed</h4>
-                  <p className="text-sm">Master of The Pharaoh's Burger</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-emerald-600">Chef Fatma</h4>
-                  <p className="text-sm">Cairo Street Classic Creator</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-emerald-600">Chef Yasmin</h4>
-                  <p className="text-sm">Nile Valley Veggie Specialist</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-emerald-600">Chef Omar</h4>
-                  <p className="text-sm">Spicy Sahara Innovator</p>
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {chefTeam.map((chef) => (
+                  <div key={chef.id} className="flex items-center gap-4 group">
+                    <img src={chef.image} alt={chef.name} className="size-16 rounded-full object-cover border-2 border-emerald-100 group-hover:border-emerald-500 transition-colors" />
+                    <div>
+                      <h4 className="font-semibold text-emerald-600">{chef.name}</h4>
+                      <p className="text-xs text-gray-500">{chef.specialty}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

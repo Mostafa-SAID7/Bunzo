@@ -1,4 +1,6 @@
 // Restaurant Information Data
+import smiling_chef from "../assets/images/smiling_chef.png";
+import user_dp from "../assets/images/user_dp.png";
 export interface RestaurantLocation {
   id: number;
   name: string;
@@ -109,7 +111,7 @@ export const chefTeam = [
     role: "Head Chef & Spice Master",
     specialty: "The Pharaoh's Burger & Traditional Spice Blends",
     bio: "With over 15 years of experience in Egyptian cuisine, Chef Ahmed brings authentic flavors from his grandmother's kitchen to modern burger creations.",
-    image: "/images/chef-ahmed.jpg"
+    image: smiling_chef
   },
   {
     id: 2,
@@ -117,7 +119,7 @@ export const chefTeam = [
     role: "Street Food Specialist",
     specialty: "Cairo Street Classic & Traditional Techniques",
     bio: "Born and raised in Old Cairo, Chef Fatma learned the secrets of street food from the masters of Khan el-Khalili market.",
-    image: "/images/chef-fatma.jpg"
+    image: user_dp
   },
   {
     id: 3,
@@ -125,7 +127,7 @@ export const chefTeam = [
     role: "Vegetarian Innovation Chef",
     specialty: "Nile Valley Veggie & Plant-Based Creations",
     bio: "A pioneer in Egyptian vegetarian cuisine, Chef Yasmin creates plant-based masterpieces that celebrate the fertility of the Nile Valley.",
-    image: "/images/chef-yasmin.jpg"
+    image: user_dp
   },
   {
     id: 4,
@@ -133,7 +135,7 @@ export const chefTeam = [
     role: "Spice & Heat Specialist",
     specialty: "Spicy Sahara & Fiery Desert Sauces",
     bio: "Known for his fearless approach to heat and spice, Chef Omar brings the fire of the Sahara to every dish he creates.",
-    image: "/images/chef-omar.jpg"
+    image: user_dp
   },
   {
     id: 5,
@@ -141,7 +143,7 @@ export const chefTeam = [
     role: "Seafood & Coastal Cuisine Chef",
     specialty: "Alexandria Seafood Delight & Mediterranean Fusion",
     bio: "Hailing from Alexandria, Chef Mariam brings the fresh flavors of Egypt's Mediterranean coast to our seafood creations.",
-    image: "/images/chef-mariam.jpg"
+    image: user_dp
   }
 ];
 

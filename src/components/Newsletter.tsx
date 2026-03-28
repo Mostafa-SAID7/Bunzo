@@ -1,6 +1,6 @@
 import { Heading, SubHeading } from "./ui";
-import food20 from "../assets/images/food20.png";
-import two_fork_salad from "../assets/images/two_fork_salad.png";
+import spicy_burger from "../assets/images/Spicy.png";
+import classic_icon from "../assets/images/Classic.png";
 import useAOS from "../hooks/useAOS";
 
 export default function Newsletter() {
@@ -42,7 +42,7 @@ export default function Newsletter() {
 
         <figure>
           <img
-            src={two_fork_salad}
+            src={classic_icon}
             alt="Egyptian cuisine"
             className="absolute w-40 sm:w-60 lg:w-96 -bottom-20 -left-10 lg:-bottom-40 lg:-left-20"
             data-aos="fade-up"
@@ -50,7 +50,7 @@ export default function Newsletter() {
         </figure>
         <figure>
           <img
-            src={food20}
+            src={spicy_burger}
             alt="Egyptian burger"
             className="absolute w-40 sm:w-60 lg:w-96 -bottom-20 -right-10 lg:-bottom-40 lg:-right-20"
             data-aos="fade-up"

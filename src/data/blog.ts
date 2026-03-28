@@ -1,8 +1,8 @@
 // Egyptian Restaurant Blog Data
-import post1 from "../assets/images/post1.png";
-import post2 from "../assets/images/post2.png";
-import post3 from "../assets/images/post3.png";
-import post4 from "../assets/images/post4.png";
+import post1 from "../assets/images/The Secret Behind Our Signature Egyptian Burger Spices.jpg";
+import post2 from "../assets/images/From Cairo Streets to Gourmet BurgersTheBunzoStory.jpg";
+import post3 from "../assets/images/The Heart of Every Bunzo Burger Experience.jpg";
+import post4 from "../assets/images/Where Ancient Flavors Meet Contemporary Taste.jpg";
 import user_dp from "../assets/images/user_dp.png";
 
 export interface BlogPost {

@@ -1,9 +1,9 @@
 import { HeroSlideType } from "../types/hero";
-import food3 from "../assets/images/food3.png";
-import food5 from "../assets/images/food5.png";
-import food7 from "../assets/images/food7.png";
-import food10 from "../assets/images/food10.png";
-import food12 from "../assets/images/food12.png";
+import pharaoh_burger from "../assets/images/The Pharaoh's Burger.jpg";
+import cairo_classic from "../assets/images/Cairo Street Classic.jpg";
+import nile_veggie from "../assets/images/VegBurger.jpg";
+import spicy_sahara from "../assets/images/Spicy Sahara.jpg";
+import seafood_delight from "../assets/images/Alexandria Seafood Delight.jpg";
 import user_dp from "../assets/images/user_dp.png";
 
 
@@ -20,7 +20,7 @@ export const heroSlides: HeroSlideType[] = [
       name: "Chef Ahmed",
       profilePicture: user_dp,
     },
-    backgroundImage: food3,
+    backgroundImage: pharaoh_burger,
     button: {
       text: "Order Now",
       icon: "play_icon",
@@ -38,7 +38,7 @@ export const heroSlides: HeroSlideType[] = [
       name: "Chef Fatma",
       profilePicture: user_dp,
     },
-    backgroundImage: food7,
+    backgroundImage: cairo_classic,
     button: {
       text: "Taste Tradition",
       icon: "play_icon",
@@ -56,7 +56,7 @@ export const heroSlides: HeroSlideType[] = [
       name: "Chef Yasmin",
       profilePicture: user_dp,
     },
-    backgroundImage: food10,
+    backgroundImage: nile_veggie,
     button: {
       text: "Go Green",
       icon: "play_icon",
@@ -74,7 +74,7 @@ export const heroSlides: HeroSlideType[] = [
       name: "Chef Omar",
       profilePicture: user_dp,
     },
-    backgroundImage: food12,
+    backgroundImage: spicy_sahara,
     button: {
       text: "Feel the Heat",
       icon: "play_icon",
@@ -92,7 +92,7 @@ export const heroSlides: HeroSlideType[] = [
       name: "Chef Mariam",
       profilePicture: user_dp,
     },
-    backgroundImage: food5,
+    backgroundImage: seafood_delight,
     button: {
       text: "Dive In",
       icon: "play_icon",

@@ -1,16 +1,21 @@
 import { useState } from "react";
 
-import veggies from "./assets/images/veggies.png";
-import beef from "./assets/images/beef.png";
-import bread from "./assets/images/bread.png";
-import happy_chef from "./assets/images/happy_chef.png";
+import signature_icon from "./assets/images/Signature.png";
+import classic_icon from "./assets/images/Classic.png";
+import vegetarian_icon from "./assets/images/Vegetarian.png";
+import spicy_icon from "./assets/images/Spicy.png";
+import seafood_icon from "./assets/images/Seafood.png";
+import traditional_icon from "./assets/images/Traditional.png";
+
+import pharaoh_burger_img from "./assets/images/The Pharaoh's Burger.jpg";
+import cairo_classic_img from "./assets/images/Cairo Street Classic.jpg";
+import nile_veggie_img from "./assets/images/VegBurger.jpg";
+import spicy_sahara_img from "./assets/images/Spicy Sahara.jpg";
+
+import smiling_chef from "./assets/images/smiling_chef.png";
 import tomato from "./assets/images/tomato.png";
 import onion from "./assets/images/onion.png";
 import instagram_white from "./assets/icons/instagram_white.svg";
-import post1 from "./assets/images/post1.png";
-import post2 from "./assets/images/post2.png";
-import post3 from "./assets/images/post3.png";
-import post4 from "./assets/images/post4.png";
 
 import {
   Button,
@@ -48,18 +53,18 @@ function App() {
   const [selectedBurger, setSelectedBurger] = useState<BurgerType | null>(null);
 
   const categories = [
-    { image: beef, name: "Signature", bgColor: "#F7F8F4" },
-    { image: veggies, name: "Classic", bgColor: "#FAFDF8" },
-    { image: bread, name: "Vegetarian", bgColor: "#FBECEB" },
-    { image: tomato, name: "Spicy", bgColor: "#FEF7E9" },
-    { image: onion, name: "Seafood", bgColor: "#F4F4F4" },
-    { image: beef, name: "Traditional", bgColor: "#F5F5F5" },
+    { image: signature_icon, name: "Signature", bgColor: "#F7F8F4" },
+    { image: classic_icon, name: "Classic", bgColor: "#FAFDF8" },
+    { image: vegetarian_icon, name: "Vegetarian", bgColor: "#FBECEB" },
+    { image: spicy_icon, name: "Spicy", bgColor: "#FEF7E9" },
+    { image: seafood_icon, name: "Seafood", bgColor: "#F4F4F4" },
+    { image: traditional_icon, name: "Traditional", bgColor: "#F5F5F5" },
   ];
   const posts = [
-    { image: post1, name: "The Pharaoh's Burger Special" },
-    { image: post2, name: "Cairo Street Classic Burger" },
-    { image: post3, name: "Nile Valley Veggie Burger" },
-    { image: post4, name: "Spicy Sahara Burger Heat" },
+    { image: pharaoh_burger_img, name: "The Pharaoh's Burger Special" },
+    { image: cairo_classic_img, name: "Cairo Street Classic Burger" },
+    { image: nile_veggie_img, name: "Nile Valley Veggie Burger" },
+    { image: spicy_sahara_img, name: "Spicy Sahara Burger Heat" },
   ];
 
 
@@ -187,16 +192,16 @@ function App() {
             data-aos="fade-left"
           >
             <img
-              src={happy_chef}
-              alt="Happy chef with fruits"
-              className="-ml-12 lg:-ml-28"
+              src={smiling_chef}
+              alt="Professional Bunzo Chef"
+              className="-ml-12 lg:-ml-28 w-full max-w-md object-contain"
               data-aos="fade-left"
               data-aos-delay="300"
             />
             <StickyObject image={tomato} customClass=" bottom-1/5 -left-5" />
-            <StickyObject image={beef} customClass="top-1 left-1/10" />
+            <StickyObject image={signature_icon} customClass="top-1 left-1/10 size-16" />
             <StickyObject image={onion} customClass="top-1/6 left-4/6" />
-            <StickyObject image={veggies} customClass="top-4/12 left-10/12" />
+            <StickyObject image={traditional_icon} customClass="top-4/12 left-10/12 size-20" />
           </div>
         </div>
       </section>

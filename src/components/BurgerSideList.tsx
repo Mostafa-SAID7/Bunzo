@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import useBurger from "../hooks/useBurger";
 import { ShuffleArray } from "../utils/arrayHelpers";
 import useAOS from "../hooks/useAOS";
+import thumbs_badge from "../assets/images/thumbs_badge.png";
 
 export default function BurgerSideList() {
   const { burgerData } = useBurger();
@@ -35,14 +36,11 @@ export default function BurgerSideList() {
                 {burger.name}
               </p>
               <div className="flex gap-1 items-center">
-                {[...Array(5)].map((_, i) => (
-                  <img
-                    key={i}
-                    src={"/images/star.svg"} // Assuming starRating is a path to an image, replaced with a placeholder
-                    alt="rating star"
-                    className="w-3 h-3"
-                  />
-                ))}
+                <img
+                  src={thumbs_badge}
+                  alt="rating"
+                  className="h-4"
+                />
               </div>
             </div>
           </Link>

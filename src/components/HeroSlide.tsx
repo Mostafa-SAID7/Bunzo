@@ -65,14 +65,14 @@ export default function HeroSlide({
 
       <div
         className="w-1/2 hidden sm:block bg-cover bg-center"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        style={{ backgroundImage: `url("${backgroundImage}")` }}
       ></div>
 
       <div className="absolute left-1/2 top-10 transform -translate-x-1/2 hidden sm:block">
         <img
           src={thumbs_badge}
-          alt="Thumbs badge"
-          className="lg:size-24 md:size-20 sm:size-14 size-10 rotate-30"
+          alt="Thumbs Badge"
+          className="lg:size-32 md:size-24 sm:size-16 size-12 drop-shadow-2xl"
         />
       </div>
     </div>
