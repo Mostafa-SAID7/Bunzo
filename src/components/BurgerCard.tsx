@@ -1,14 +1,14 @@
-import { Badge, Dropdown } from "../utils/Utils";
+import { Badge, Dropdown } from "./ui";
 import timer from "../assets/icons/Timer.svg";
 import forkKnife from "../assets/icons/ForkKnife.svg";
 import heart_fill from "../assets/icons/heart_fill.svg";
 import heart_blank from "../assets/icons/heart_blank.svg";
 import { Link } from "react-router-dom";
-import { RecipeCardType } from "../types/recipe";
+import { BurgerCardType } from "../types/burger";
 import React from "react";
 import { useGlobalContext } from "../GlobalContext";
 
-const Recipe = React.memo(
+const Burger = React.memo(
   ({
     id,
     image,
@@ -21,7 +21,7 @@ const Recipe = React.memo(
     handleOpenEditForm,
     handleToggleFavorite,
     animation,
-  }: RecipeCardType) => {
+  }: BurgerCardType) => {
     const { role } = useGlobalContext();
 
     return (
@@ -37,7 +37,7 @@ const Recipe = React.memo(
             >
               <img src={isFavorite ? heart_fill : heart_blank} alt="fav" />
             </div>
-            <Link to={`/recipes/${id}`} className="relative">
+            <Link to={`/burgers/${id}`} className="relative">
               <img
                 src={image}
                 alt={name}
@@ -48,7 +48,7 @@ const Recipe = React.memo(
 
           <div className="flex flex-col gap-4">
             <Link
-              to={`/recipes/${id}`}
+              to={`/burgers/${id}`}
               className="text-xl font-semibold hover:text-emerald-600 transition-colors"
             >
               {name}
@@ -74,4 +74,4 @@ const Recipe = React.memo(
   }
 );
 
-export default Recipe;
+export default Burger;

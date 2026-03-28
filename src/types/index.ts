@@ -1,5 +1,5 @@
-// Recipe types
-export * from './recipe';
+// Burger types
+export * from './burger';
 
 // Blog types
 export * from './blog';

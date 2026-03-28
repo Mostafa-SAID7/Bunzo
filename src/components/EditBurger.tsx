@@ -5,34 +5,36 @@ import {
   DialogPanel,
   DialogTitle,
 } from "@headlessui/react";
-import { RecipeType } from "../types/recipe";
+import { BurgerType } from "../types/burger";
+import { BURGER_CATEGORIES } from "../utils/constants";
 
-export default function AddRecipeForm({
+export default function EditBurgerForm({
   handleForm,
-  AddRecipe,
+  editBurger,
+  initialBurger,
 }: {
   handleForm: () => void;
-  AddRecipe: (recipe: RecipeType) => Promise<void>;
+  editBurger: (
+    id: number | undefined,
+    burger: BurgerType
+  ) => Promise<BurgerType | void>;
+  initialBurger: BurgerType | null;
 }) {
-  const [recipe, setRecipe] = useState<RecipeType>({
-    name: "",
-    time: 0,
-    category: "",
-    image: "",
-    isFavorite: false,
-  });
+  const [burger, setBurger] = useState<BurgerType>(
+    initialBurger || {
+      id: 0,
+      name: "",
+      image: "",
+      time: 0,
+      category: "",
+      isFavorite: false,
+    }
+  );
 
-  async function handleAddRecipe(e: React.FormEvent) {
+  async function handleEditBurger(e: React.FormEvent) {
     e.preventDefault();
-    if (recipe.name && recipe.image && recipe.time && recipe.category) {
-      await AddRecipe(recipe);
-      setRecipe({
-        name: "",
-        time: 0,
-        category: "",
-        image: "",
-        isFavorite: false,
-      });
+    if (burger.name && burger.image && burger.time && burger.category) {
+      await editBurger(burger.id, burger);
       handleForm();
     } else {
       alert("Please fill out all fields");
@@ -43,7 +45,7 @@ export default function AddRecipeForm({
     <Dialog open={true} onClose={handleForm} className="relative z-10">
       <DialogBackdrop className="fixed inset-0 bg-gray-500/75 transition-opacity" />
 
-      <div className="fixed inset-0 z-10 w-screen overflow-y-auto no-scrollbar">
+      <div className="fixed inset-0 z-10 w-full overflow-y-auto no-scrollbar">
         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
           <DialogPanel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
             <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
@@ -53,34 +55,34 @@ export default function AddRecipeForm({
                     as="h3"
                     className="text-base font-semibold text-gray-900"
                   >
-                    Add Recipe
+                    Edit Burger
                   </DialogTitle>
                   <p className="mt-1 text-sm text-gray-600">
-                    Please fill out the form below to add a new recipe.
+                    Please update the form below to edit the burger.
                   </p>
                 </div>
               </div>
             </div>
 
-            <form className="bg-white px-4 sm:px-6" onSubmit={handleAddRecipe}>
+            <form className="bg-white px-4 sm:px-6" onSubmit={handleEditBurger}>
               <div className="mt-5 w-full">
                 <div className="sm:col-span-4">
                   <label
-                    htmlFor="recipe-name"
+                    htmlFor="burger-name"
                     className="block text-sm font-medium text-gray-900"
                   >
                     Name
                   </label>
                   <div className="mt-2">
                     <input
-                      id="recipe-name"
-                      name="recipe-name"
+                      id="burger-name"
+                      name="burger-name"
                       type="text"
-                      value={recipe.name}
+                      value={burger.name}
                       onChange={(e) =>
-                        setRecipe({ ...recipe, name: e.target.value })
+                        setBurger({ ...burger, name: e.target.value })
                       }
-                      placeholder="Recipe name"
+                      placeholder="Burger name"
                       className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-emerald-600 sm:text-sm"
                     />
                   </div>
@@ -90,20 +92,20 @@ export default function AddRecipeForm({
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="cooking-time"
-                      className="block text-sm font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-900 leading-6"
                     >
-                      Cooking Time
+                      Prep Time
                     </label>
                     <div className="mt-2">
                       <input
                         id="cooking-time"
                         name="cooking-time"
-                        value={recipe.time}
+                        value={burger.time}
                         onChange={(e) =>
-                          setRecipe({ ...recipe, time: Number(e.target.value) })
+                          setBurger({ ...burger, time: Number(e.target.value) })
                         }
                         type="number"
-                        placeholder="Cooking time in mins"
+                        placeholder="Prep time in mins"
                         className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-emerald-600 sm:text-sm"
                       />
                     </div>
@@ -120,44 +122,39 @@ export default function AddRecipeForm({
                       <select
                         id="category"
                         name="category"
-                        value={recipe.category}
+                        value={burger.category}
                         onChange={(e) =>
-                          setRecipe({ ...recipe, category: e.target.value })
+                          setBurger({ ...burger, category: e.target.value })
                         }
                         className="block w-full rounded-md bg-white py-1.5 px-3 text-base text-gray-900 outline-1 outline-gray-300 focus:outline-2 focus:outline-emerald-600 sm:text-sm"
                       >
                         <option>Select a category</option>
-                        <option value="breakfast">Breakfast</option>
-                        <option value="snack">Snack</option>
-                        <option value="healthy">Healthy</option>
-                        <option value="meat">Meat</option>
-                        <option value="noodles">Noodles</option>
-                        <option value="sweet">Sweet</option>
-                        <option value="western">Western</option>
-                        <option value="eastern">Eastern</option>
-                        <option value="japanese">Japanese</option>
-                        <option value="seafood">Seafood</option>
+                        {BURGER_CATEGORIES.map((category) => (
+                          <option key={category.id} value={category.id}>
+                            {category.name}
+                          </option>
+                        ))}
                       </select>
                     </div>
                   </div>
 
                   <div className="col-span-full">
                     <label
-                      htmlFor="recipe-image"
+                      htmlFor="burger-image"
                       className="block text-sm font-medium text-gray-900"
                     >
-                      Recipe Image
+                      Burger Image
                     </label>
                     <div className="mt-2">
                       <input
-                        id="recipe-image"
-                        name="recipe-image"
+                        id="burger-image"
+                        name="burger-image"
                         type="url"
-                        value={recipe.image}
+                        value={burger.image}
                         onChange={(e) =>
-                          setRecipe({ ...recipe, image: e.target.value })
+                          setBurger({ ...burger, image: e.target.value })
                         }
-                        placeholder="Paste recipe image URL"
+                        placeholder="Paste burger image URL"
                         className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-emerald-600 sm:text-sm"
                       />
                     </div>
@@ -170,7 +167,7 @@ export default function AddRecipeForm({
                   type="submit"
                   className="inline-flex w-full justify-center rounded-md bg-emerald-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-emerald-500 sm:ml-3 sm:w-auto"
                 >
-                  Add Recipe
+                  Save Changes
                 </button>
                 <button
                   type="button"

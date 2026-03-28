@@ -5,7 +5,7 @@ import {
   DialogPanel,
   DialogTitle,
 } from "@headlessui/react";
-import RichTextEditor from "./RichTextEditor";
+import RichTextEditor from "./ui/RichTextEditor";
 import { BlogCardProps } from "../types/blog";
 
 export default function EditBlog({
@@ -48,7 +48,7 @@ export default function EditBlog({
     <Dialog open={true} onClose={handleForm} className="relative z-50">
       <DialogBackdrop className="fixed inset-0 bg-gray-500/75 transition-opacity" />
 
-      <div className="fixed inset-0 z-10 w-screen overflow-y-auto no-scrollbar">
+      <div className="fixed inset-0 z-10 w-full overflow-y-auto no-scrollbar">
         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
           <DialogPanel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-[80%]">
             <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">

@@ -4,7 +4,7 @@ import forkKnife from "../assets/icons/ForkKnife.svg";
 import user_dp from "../assets/images/user_dp.png";
 import play_icon from "../assets/icons/play_icon.svg";
 import thumbs_badge from "../assets/images/thumbs_badge.png";
-import { Badge, Button, UserBox } from "../utils/Utils";
+import { Badge, Button, UserBox } from "./ui";
 import { HeroSlideProps } from "../types/hero";
 
 export default function HeroSlide({
@@ -19,10 +19,10 @@ export default function HeroSlide({
 
   return (
     <div className="w-full min-h-10/12 flex relative rounded-2xl sm:rounded-3xl md:rounded-4xl lg:rounded-5xl overflow-hidden">
-      <div className="relative py-8 px-4 sm:px-4 sm:py-10 md:px-6 md:py-8 bg-[#E7FAFE] sm:w-1/2 flex flex-col justify-around">
+      <div className="relative py-8 px-4 sm:px-4 sm:py-10 md:px-6 md:py-8 bg-emerald-50 sm:w-1/2 flex flex-col justify-around">
         <Badge
           icon={scroll}
-          text="Hot recipe"
+          text="Hot burger"
           fontWeight="semibold"
           customClass="bg-white absolute top-3 left-3 sm:top-5 sm:left-5 md:top-7 md:left-7 lg:top-7 lg:left-7 z-10"
         />
@@ -45,7 +45,7 @@ export default function HeroSlide({
                 icon={badge.icon === "timer" ? timer : forkKnife}
                 text={badge.text}
                 fontWeight="medium"
-                customClass={"bg-[#DBEDF1]"}
+                customClass={"bg-emerald-100"}
               />
             ))}
           </div>

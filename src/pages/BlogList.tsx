@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Button, Heading, LoadingSpinner, SubHeading } from "../utils/Utils";
+import { Button, Heading, LoadingSpinner, SubHeading } from "../components/ui";
 import Newsletter from "../components/Newsletter";
 import BlogCard from "../components/BlogCard";
-import Pagination from "../utils/Pagination";
+import Pagination from "../components/ui/Pagination";
 import GreenCard from "../components/GreenCard";
-import RecipeSideList from "../utils/RecipeSideList";
+import BurgerSideList from "../components/BurgerSideList";
 import AddBlog from "../components/AddBlog";
 import useBlog from "../hooks/useBlog";
 import { BlogCardProps } from "../types/blog";
@@ -55,7 +55,7 @@ export default function BlogList() {
 
   return (
     <>
-      <div className="pb-20 relative inter">
+      <div className="relative inter">
         <section className="relative flex justify-center items-center mt-10 gap-20">
           <div className="w-[95%] sm:w-[90%] flex flex-col justify-center items-center gap-5">
             <div className="relative flex flex-col justify-center items-center w-full col-span-3 sm:col-span-3 md:col-span-2">
@@ -113,8 +113,8 @@ export default function BlogList() {
 
             <div className="col-span-1 grid md:items-center md:grid-cols-2 lg:grid-cols-1 gap-16 w-full h-fit">
               <div className="w-full">
-                <Heading text="Other Recipes" />
-                <RecipeSideList />
+                <Heading text="Other Burgers" />
+                <BurgerSideList />
               </div>
               <GreenCard animation="fade-left" data-aos-delay="200" />
             </div>
@@ -130,7 +130,7 @@ export default function BlogList() {
           />
         </section>
 
-        <div className="my-20">
+        <div className="my-20 mb-32">
           <Newsletter />
         </div>
 

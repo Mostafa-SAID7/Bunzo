@@ -1,10 +1,10 @@
-import { Heading, SubHeading } from "../utils/Utils";
+import { Heading, SubHeading } from "../components/ui";
 import lady_cooking from "../assets/images/lady_cooking.png";
 import happy_chef from "../assets/images/happy_chef.png";
 
 export default function About() {
   return (
-    <div className="pb-20 relative inter">
+    <div className="relative inter">
       
       <section className="relative bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-20">
         <div className="w-[95%] sm:w-[90%] mx-auto flex flex-col items-center gap-6">
@@ -127,6 +127,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      <div className="mb-20" />
     </div>
   );
 }

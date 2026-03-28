@@ -1,18 +1,18 @@
 import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 
-import { RecipeType } from "../types/recipe";
-import { RecipeService } from "../services/recipeService";
+import { BurgerType } from "../types/burger";
+import { BurgerService } from "../services/burgerService";
 import {
   Heading,
   UserBox,
   Badge,
   LoadingSpinner,
   OutputIcon,
-} from "../utils/Utils";
+} from "../components/ui";
 
 import Newsletter from "../components/Newsletter";
-import RecipeShortList from "../utils/RecipeShortList";
+import BurgerShortList from "../components/BurgerShortList";
 import ItemsList from "../components/ItemsList";
 
 import printer from "../assets/icons/printer.svg";
@@ -21,12 +21,12 @@ import user_dp from "../assets/images/user_dp.png";
 import Timer from "../assets/icons/Timer.svg";
 import ForkKnife from "../assets/icons/ForkKnife.svg";
 import GreenCard from "../components/GreenCard";
-import RecipeSideList from "../utils/RecipeSideList";
+import BurgerSideList from "../components/BurgerSideList";
 import useAOS from "../hooks/useAOS";
 
-export default function RecipeDetails() {
+export default function BurgerDetails() {
   const { id } = useParams<{ id: string }>();
-  const [recipe, setRecipe] = useState<RecipeType | null>(null);
+  const [burger, setBurger] = useState<BurgerType | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   useAOS({
@@ -34,22 +34,22 @@ export default function RecipeDetails() {
     easing: "ease-in-out",
   });
 
-  const fetchRecipeDetails = useCallback(async () => {
+  const fetchBurgerDetails = useCallback(async () => {
     setIsLoading(true);
     setError(null);
     try {
-      const recipeData = await RecipeService.getRecipeById(parseInt(id || '0'));
-      if (!recipeData) {
-        throw new Error("Recipe not found");
+      const burgerData = await BurgerService.getBurgerById(parseInt(id || '0'));
+      if (!burgerData) {
+        throw new Error("Burger not found");
       }
-      setRecipe(recipeData);
+      setBurger(burgerData);
     } catch (err: unknown) {
       if (err instanceof Error) {
         setError(
-          err.message || "An error occurred while fetching recipe details"
+          err.message || "An error occurred while fetching burger details"
         );
       } else {
-        setError("An unknown error occurred while fetching recipe details");
+        setError("An unknown error occurred while fetching burger details");
       }
     } finally {
       setIsLoading(false);
@@ -57,8 +57,8 @@ export default function RecipeDetails() {
   }, [id]);
 
   useEffect(() => {
-    fetchRecipeDetails();
-  }, [fetchRecipeDetails]);
+    fetchBurgerDetails();
+  }, [fetchBurgerDetails]);
 
   if (error) {
     return (
@@ -72,13 +72,13 @@ export default function RecipeDetails() {
     <>
       {isLoading ? (
         <LoadingSpinner />
-      ) : recipe ? (
-        <div className="pb-20 relative inter">
+      ) : burger ? (
+        <div className="relative inter">
           <section className="relative flex justify-center items-center mt-10 gap-20">
             <div className="w-[95%] sm:w-[90%] flex flex-col justify-center items-center gap-5">
               <div className="w-full flex flex-col sm:grid sm:grid-cols-4 justify-between gap-4 md:gap-6">
                 <div className="relative flex flex-col w-full col-span-3 gap-6">
-                  <Heading text={recipe.name} customClass="mb-4 text-center sm:text-start" animation="fade-right" data-aos-delay="100" />
+                  <Heading text={burger.name} customClass="mb-4 text-center sm:text-start" animation="fade-right" data-aos-delay="100" />
                   <div className="grid grid-cols-1 sm:grid-cols-3 sm:gap-2 md:gap-4 w-full">
                     <div className="grid grid-cols-2 sm:grid-cols-1 sm:gap-4 w-full">
                       <UserBox
@@ -97,16 +97,16 @@ export default function RecipeDetails() {
                       <div className="flex justify-center sm:justify-start items-center py-1 sm:border-b-0 sm:border-l rounded-none border-black/20" data-aos="fade-left" data-aos-delay="200">
                         <Badge
                           icon={Timer}
-                          text="COOK TIME"
+                          text="PREP TIME"
                           fontWeight="medium"
-                          time={`${recipe.time} minutes`}
+                          time={`${burger.time} minutes`}
                           customClass="gap-4 text-xs md:text-sm px-0"
                         />
                       </div>
                       <div className="flex justify-center sm:justify-start items-center h-full py-1 sm:border-l rounded-none border-black/20" data-aos="fade-left" data-aos-delay="300">
                         <Badge
                           icon={ForkKnife}
-                          text={recipe.category}
+                          text={burger.category}
                           fontWeight="normal"
                           customClass="gap-4 text-xs md:text-sm px-0"
                         />
@@ -124,8 +124,8 @@ export default function RecipeDetails() {
               <div className="w-full grid md:grid-cols-2 justify-center lg:justify-between gap-6 md:gap-4 lg:gap-6 mt-12">
                 <div className="md:col-span-1 w-full overflow-hidden rounded-3xl" data-aos="fade-up" data-aos-delay="200">
                   <img
-                    src={recipe.image}
-                    alt={recipe.name}
+                    src={burger.image}
+                    alt={burger.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -135,7 +135,7 @@ export default function RecipeDetails() {
                       Nutrition Information
                     </h2>
                     <ul className="flex flex-col gap-2 lg:gap-4">
-                      {recipe.nutritionInfo?.map((info, index) => {
+                      {burger.nutritionInfo?.map((info, index) => {
                         return (
                           <li
                             key={index}
@@ -168,13 +168,13 @@ export default function RecipeDetails() {
           <section className="flex justify-center items-center mt-20">
             <div className="w-[95%] sm:w-[90%] grid lg:grid-cols-3 gap-6 lg:gap-8">
               <div className="flex flex-col gap-10 col-span-1 lg:col-span-2">
-                <ItemsList items={recipe.ingredients} title="Ingredients" />
-                <ItemsList items={recipe.directions} title="Directions" />
+                <ItemsList items={burger.ingredients} title="Ingredients" />
+                <ItemsList items={burger.directions} title="Build Description" />
               </div>
               <div className="col-span-1 grid md:grid-cols-2 lg:grid-cols-1 gap-16 w-full h-fit">
                 <div className="w-full">
-                  <Heading text="Other Recipes" animation="fade-left" data-aos-delay="300" />
-                  <RecipeSideList />
+                  <Heading text="Other Burgers" animation="fade-left" data-aos-delay="300" />
+                  <BurgerSideList />
                 </div>
                 <GreenCard animation="fade-left" data-aos-delay="200" />
               </div>
@@ -185,13 +185,13 @@ export default function RecipeDetails() {
             <Newsletter />
           </div>
 
-          <div className="mt-10 sm:mt-20 md:mt-30 lg:mt-40" data-aos="fade-right" data-aos-delay="200">
-            <RecipeShortList headingText="You may like these recipe too" />
+          <div className="mt-10 sm:mt-20 md:mt-30 lg:mt-40 mb-20" data-aos="fade-right" data-aos-delay="200">
+            <BurgerShortList headingText="You may like these burgers too" />
           </div>
         </div>
       ) : (
         <div className="flex justify-center items-center h-screen text-gray-500">
-          Recipe not found.
+          Burger not found.
         </div>
       )}
     </>

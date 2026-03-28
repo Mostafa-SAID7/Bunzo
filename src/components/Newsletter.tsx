@@ -1,4 +1,4 @@
-import { Heading, SubHeading } from "../utils/Utils";
+import { Heading, SubHeading } from "./ui";
 import food20 from "../assets/images/food20.png";
 import two_fork_salad from "../assets/images/two_fork_salad.png";
 import useAOS from "../hooks/useAOS";
@@ -10,12 +10,12 @@ export default function Newsletter() {
       <div className="w-[95%] sm:w-[90%] relative bg-gradient-to-br from-emerald-50 to-emerald-100 flex flex-col justify-center items-center gap-16 rounded-3xl pt-18 px-4 overflow-hidden">
         <div className="flex flex-col justify-center items-center gap-6">
           <Heading
-            text="Egyptian flavors to your inbox"
+            text="Fresh Egyptian burgers to your inbox"
             customClass="text-black text-center"
             animation="fade-right"
           />
           <SubHeading
-            text="Join the Bunzo family and be the first to know about new Egyptian burger creations, special offers, and authentic street food stories from Cairo!"
+            text="Join the Bunzo family and be the first to know about new Egyptian burger creations, exclusive burger deals, limited-time flavors, and authentic Cairo street food stories!"
             customClass="text-center text-gray-600 max-w-4/5"
             animation="fade-left"
             data-aos-delay="300"
@@ -26,7 +26,7 @@ export default function Newsletter() {
           <div className="bg-white flex justify-between items-center py-4 px-6 w-full h-full col-span-3">
             <input
               type="email"
-              placeholder="Enter your email for Egyptian updates"
+              placeholder="Enter your email for exclusive burger deals"
               className="text-xs sm:text-sm md:text-base leading-normal text-gray-700 outline-0 w-full h-full placeholder:text-gray-400"
               data-aos="fade-right"
             />

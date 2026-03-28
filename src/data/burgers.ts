@@ -14,18 +14,14 @@ export interface BurgerData {
   image: string;
   category: string;
   spiceLevel: 'Mild' | 'Medium' | 'Hot' | 'Sahara Fire';
-  cookingTime: number;
+  time: number; // Changed from cookingTime to time to match BurgerType
   ingredients: string[];
+  directions: string[]; // Added directions
   story: string;
   chef: string;
   isFavorite: boolean;
   isSignature: boolean;
-  nutritionInfo: {
-    calories: number;
-    protein: string;
-    carbs: string;
-    fat: string;
-  };
+  nutritionInfo: { name: string; measure: string }[]; // Changed to array of objects
 }
 
 export const egyptianBurgers: BurgerData[] = [
@@ -35,9 +31,9 @@ export const egyptianBurgers: BurgerData[] = [
     description: "Royal Egyptian experience with spiced beef, tahini sauce, and traditional herbs",
     price: 85,
     image: food3,
-    category: "Signature",
+    category: "beef",
     spiceLevel: "Medium",
-    cookingTime: 15,
+    time: 15, // Changed from cookingTime to time
     ingredients: [
       "Premium Egyptian beef",
       "Tahini sauce",
@@ -51,12 +47,18 @@ export const egyptianBurgers: BurgerData[] = [
     chef: "Chef Ahmed",
     isFavorite: true,
     isSignature: true,
-    nutritionInfo: {
-      calories: 650,
-      protein: "35g",
-      carbs: "45g",
-      fat: "28g"
-    }
+    directions: [
+      "Grill the premium Egyptian beef to perfection",
+      "Spread fresh tahini sauce on the Baladi bread bun",
+      "Layer with traditional herbs and pickled turnips",
+      "Serve hot with crispy onions"
+    ],
+    nutritionInfo: [
+      { name: "Calories", measure: "650" },
+      { name: "Protein", measure: "35g" },
+      { name: "Carbs", measure: "45g" },
+      { name: "Fat", measure: "28g" }
+    ]
   },
   {
     id: 2,
@@ -64,9 +66,9 @@ export const egyptianBurgers: BurgerData[] = [
     description: "Authentic street food flavors with traditional spices and our secret sauce",
     price: 65,
     image: food7,
-    category: "Classic",
+    category: "beef",
     spiceLevel: "Mild",
-    cookingTime: 12,
+    time: 12,
     ingredients: [
       "Fresh ground beef",
       "Egyptian street spice blend",
@@ -80,12 +82,18 @@ export const egyptianBurgers: BurgerData[] = [
     chef: "Chef Fatma",
     isFavorite: false,
     isSignature: true,
-    nutritionInfo: {
-      calories: 580,
-      protein: "30g",
-      carbs: "42g",
-      fat: "24g"
-    }
+    directions: [
+      "Prepare the street-style beef patty with spice blend",
+      "Toast the sesame seed bun until golden",
+      "Apply secret garlic sauce generously",
+      "Assemble with fresh lettuce, tomatoes, and red onions"
+    ],
+    nutritionInfo: [
+      { name: "Calories", measure: "580" },
+      { name: "Protein", measure: "30g" },
+      { name: "Carbs", measure: "42g" },
+      { name: "Fat", measure: "24g" }
+    ]
   },
   {
     id: 3,
@@ -93,9 +101,9 @@ export const egyptianBurgers: BurgerData[] = [
     description: "Fresh falafel and herbs straight from the Nile Valley farms",
     price: 55,
     image: food10,
-    category: "Vegetarian",
+    category: "vegan",
     spiceLevel: "Mild",
-    cookingTime: 10,
+    time: 10,
     ingredients: [
       "House-made falafel",
       "Fresh herbs from Nile Valley",
@@ -109,12 +117,18 @@ export const egyptianBurgers: BurgerData[] = [
     chef: "Chef Yasmin",
     isFavorite: true,
     isSignature: false,
-    nutritionInfo: {
-      calories: 420,
-      protein: "18g",
-      carbs: "52g",
-      fat: "16g"
-    }
+    directions: [
+      "Fry the house-made falafel in clean oil",
+      "Spread cooling cucumber yogurt sauce on whole wheat bun",
+      "Top with fresh Nile Valley herbs and arugula",
+      "Add cherry tomatoes and red cabbage for crunch"
+    ],
+    nutritionInfo: [
+      { name: "Calories", measure: "420" },
+      { name: "Protein", measure: "18g" },
+      { name: "Carbs", measure: "52g" },
+      { name: "Fat", measure: "16g" }
+    ]
   },
   {
     id: 4,
@@ -122,9 +136,9 @@ export const egyptianBurgers: BurgerData[] = [
     description: "Harissa-marinated chicken with jalapeños and fiery desert sauce",
     price: 75,
     image: food12,
-    category: "Spicy",
+    category: "chicken",
     spiceLevel: "Sahara Fire",
-    cookingTime: 18,
+    time: 18,
     ingredients: [
       "Harissa-marinated chicken",
       "Jalapeño peppers",
@@ -138,12 +152,18 @@ export const egyptianBurgers: BurgerData[] = [
     chef: "Chef Omar",
     isFavorite: false,
     isSignature: true,
-    nutritionInfo: {
-      calories: 620,
-      protein: "32g",
-      carbs: "38g",
-      fat: "26g"
-    }
+    directions: [
+      "Marinate chicken in authentic harissa paste",
+      "Grill until tender and slightly charred",
+      "Apply fiery desert sauce to brioche bun",
+      "Layer with jalapeños and cooling cucumber"
+    ],
+    nutritionInfo: [
+      { name: "Calories", measure: "620" },
+      { name: "Protein", measure: "32g" },
+      { name: "Carbs", measure: "38g" },
+      { name: "Fat", measure: "26g" }
+    ]
   },
   {
     id: 5,
@@ -151,9 +171,9 @@ export const egyptianBurgers: BurgerData[] = [
     description: "Fresh fish with Egyptian spices and coastal herbs from Alexandria",
     price: 95,
     image: food5,
-    category: "Seafood",
+    category: "specialty",
     spiceLevel: "Medium",
-    cookingTime: 20,
+    time: 20,
     ingredients: [
       "Fresh Mediterranean fish",
       "Coastal herb blend",
@@ -167,12 +187,18 @@ export const egyptianBurgers: BurgerData[] = [
     chef: "Chef Mariam",
     isFavorite: true,
     isSignature: true,
-    nutritionInfo: {
-      calories: 540,
-      protein: "28g",
-      carbs: "35g",
-      fat: "22g"
-    }
+    directions: [
+      "Prepare fresh Mediterranean fish fillet with coastal herbs",
+      "Lightly pan-fry until golden brown",
+      "Spread lemon tahini sauce on artisan bun",
+      "Top with dill, capers, and pickled vegetables"
+    ],
+    nutritionInfo: [
+      { name: "Calories", measure: "540" },
+      { name: "Protein", measure: "28g" },
+      { name: "Carbs", measure: "35g" },
+      { name: "Fat", measure: "22g" }
+    ]
   },
   {
     id: 6,
@@ -180,9 +206,9 @@ export const egyptianBurgers: BurgerData[] = [
     description: "Traditional lamb with desert spices and mint yogurt sauce",
     price: 90,
     image: food20,
-    category: "Traditional",
+    category: "lamb",
     spiceLevel: "Medium",
-    cookingTime: 22,
+    time: 22,
     ingredients: [
       "Premium lamb meat",
       "Bedouin spice mix",
@@ -196,22 +222,27 @@ export const egyptianBurgers: BurgerData[] = [
     chef: "Chef Ahmed",
     isFavorite: false,
     isSignature: false,
-    nutritionInfo: {
-      calories: 680,
-      protein: "38g",
-      carbs: "40g",
-      fat: "30g"
-    }
+    directions: [
+      "Slow-cook premium lamb with Bedouin spice mix",
+      "Prepare mint yogurt sauce",
+      "Grill seasonal vegetables",
+      "Stuff everything into a fresh pita bread bun with pomegranate seeds"
+    ],
+    nutritionInfo: [
+      { name: "Calories", measure: "680" },
+      { name: "Protein", measure: "38g" },
+      { name: "Carbs", measure: "40g" },
+      { name: "Fat", measure: "30g" }
+    ]
   }
 ];
 
 export const burgerCategories = [
-  { id: 1, name: "Signature", count: 4, description: "Our most celebrated Egyptian creations" },
-  { id: 2, name: "Classic", count: 2, description: "Traditional street food favorites" },
-  { id: 3, name: "Vegetarian", count: 1, description: "Plant-based Egyptian delights" },
-  { id: 4, name: "Spicy", count: 1, description: "For those who love the heat" },
-  { id: 5, name: "Seafood", count: 1, description: "Fresh from the Mediterranean" },
-  { id: 6, name: "Traditional", count: 1, description: "Ancient recipes, modern presentation" }
+  { id: "beef", name: "Beef Burgers", count: 2, description: "Our most celebrated Egyptian creations" },
+  { id: "chicken", name: "Chicken Burgers", count: 1, description: "Spicy and flavorful poultry" },
+  { id: "vegan", name: "Vegan Burgers", count: 1, description: "Plant-based Egyptian delights" },
+  { id: "lamb", name: "Lamb Burgers", count: 1, description: "Traditional authentic lamb cuts" },
+  { id: "specialty", name: "Specialty", count: 1, description: "Fresh and unique flavors" }
 ];
 
 export const featuredBurgers = egyptianBurgers.filter(burger => burger.isSignature);

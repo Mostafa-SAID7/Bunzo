@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
-import { Button, Heading, LoadingSpinner, SubHeading } from "../utils/Utils";
-import RecipeCard from "../components/RecipeCard";
-import Pagination from "../utils/Pagination";
-import { RecipeType } from "../types/recipe";
-import SelectDropdown from "../utils/SelectDropdown";
-import useRecipe from "../hooks/useRecipe";
-import EditRecipeForm from "../components/EditRecipe";
-import AddRecipeForm from "../components/AddRecipe";
+import { Button, Heading, LoadingSpinner, SubHeading } from "../components/ui";
+import BurgerCard from "../components/BurgerCard";
+import Pagination from "../components/ui/Pagination";
+import { BurgerType } from "../types/burger";
+import SelectDropdown from "../components/ui/SelectDropdown";
+import useBurger from "../hooks/useBurger";
+import EditBurgerForm from "../components/EditBurger";
+import AddBurgerForm from "../components/AddBurger";
 import { useGlobalContext } from "../GlobalContext";
 import useAOS from "../hooks/useAOS";
+import { CATEGORY_OPTIONS as categoryOptions, TIME_OPTIONS as timeOptions } from "../utils/constants";
 
-export default function Recipes() {
+export default function Burgers() {
   const { role } = useGlobalContext();
   useAOS({
     duration: 500,
@@ -18,16 +19,16 @@ export default function Recipes() {
   });
 
   const {
-    recipeData,
+    burgerData,
     isLoading,
     error,
     toggleFavorite,
-    editRecipe,
-    deleteRecipe,
-    addRecipe,
-  } = useRecipe();
+    editBurger,
+    deleteBurger,
+    addBurger,
+  } = useBurger();
 
-  const [filteredRecipes, setFilteredRecipes] = useState<RecipeType[]>([]);
+  const [filteredBurgers, setFilteredBurgers] = useState<BurgerType[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedTime, setSelectedTime] = useState<string>("all");
   const [selectedSearch, setSelectedSearch] = useState<string>("");
@@ -35,58 +36,58 @@ export default function Recipes() {
 
   const [showEditForm, setShowEditForm] = useState<boolean>(false);
   const [showAddForm, setShowAddForm] = useState<boolean>(false);
-  const [selectedRecipe, setSelectedRecipe] = useState<RecipeType | null>(null);
+  const [selectedBurger, setSelectedBurger] = useState<BurgerType | null>(null);
 
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const recipesPerPage = 8;
+  const burgersPerPage = 8;
 
   useEffect(() => {
-    const filtered = recipeData.filter((recipe) => {
-      const matchesFavorites = !showFavorites || recipe.isFavorite;
+    const filtered = burgerData.filter((burger) => {
+      const matchesFavorites = !showFavorites || burger.isFavorite;
       const matchesCategory =
         selectedCategory === "all" ||
-        recipe.category.toLowerCase() === selectedCategory.toLowerCase();
+        burger.category.toLowerCase() === selectedCategory.toLowerCase();
       const matchesTime =
         selectedTime === "all" ||
-        (selectedTime === "<30mins" && recipe.time < 30) ||
-        (selectedTime === "<60mins" && recipe.time < 60) ||
-        (selectedTime === "<90mins" && recipe.time < 90) ||
-        (selectedTime === "<120mins" && recipe.time < 120);
+        (selectedTime === "<30mins" && burger.time < 30) ||
+        (selectedTime === "<60mins" && burger.time < 60) ||
+        (selectedTime === "<90mins" && burger.time < 90) ||
+        (selectedTime === "<120mins" && burger.time < 120);
       const matchesSearch =
         selectedSearch === "" ||
-        recipe.name.toLowerCase().includes(selectedSearch.toLowerCase());
+        burger.name.toLowerCase().includes(selectedSearch.toLowerCase());
 
       return (
         matchesFavorites && matchesCategory && matchesTime && matchesSearch
       );
     });
 
-    setFilteredRecipes(filtered);
+    setFilteredBurgers(filtered);
     setCurrentPage(1);
   }, [
     selectedCategory,
     selectedTime,
     selectedSearch,
     showFavorites,
-    recipeData,
+    burgerData,
   ]);
 
-  const indexOfLastRecipe = currentPage * recipesPerPage;
-  const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
-  const currentRecipes = filteredRecipes.slice(
-    indexOfFirstRecipe,
-    indexOfLastRecipe
+  const indexOfLastBurger = currentPage * burgersPerPage;
+  const indexOfFirstBurger = indexOfLastBurger - burgersPerPage;
+  const currentBurgers = filteredBurgers.slice(
+    indexOfFirstBurger,
+    indexOfLastBurger
   );
 
-  const totalPages = Math.ceil(filteredRecipes.length / recipesPerPage);
+  const totalPages = Math.ceil(filteredBurgers.length / burgersPerPage);
 
-  function handleOpenEditForm(recipe: RecipeType) {
-    setSelectedRecipe(recipe);
+  function handleOpenEditForm(burger: BurgerType) {
+    setSelectedBurger(burger);
     setShowEditForm(true);
   }
 
   function handleCloseEditForm() {
-    setSelectedRecipe(null);
+    setSelectedBurger(null);
     setShowEditForm(false);
   }
 
@@ -99,13 +100,13 @@ export default function Recipes() {
   }
 
   return (
-    <div className="pb-20 relative inter">
+    <div className="relative inter">
       <section className="relative flex justify-center items-center mt-10 gap-20">
         <div className="w-[95%] sm:w-[90%] flex flex-col justify-center items-center gap-5">
           <div className="flex flex-col justify-between items-center">
-            <Heading text="Recipes" customClass="text-center mb-4" animation="fade-left" />
+            <Heading text="Egyptian Burgers" customClass="text-center mb-4" animation="fade-left" />
             <SubHeading
-              text="Here is a list of all the recipes we have to offer. Use the filters below to find your favorite recipes."
+              text="Discover our authentic Egyptian burger collection. Use the filters below to find your perfect burger experience."
               customClass="text-center text-gray-500 mb-8" animation="fade-right"
             />
           </div>
@@ -113,7 +114,7 @@ export default function Recipes() {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full" data-aos="fade-up" data-aos-delay="100">
             <input
               type="text"
-              placeholder="Search for a recipe..."
+              placeholder="Search for a burger..."
               value={selectedSearch}
               onChange={(e) => setSelectedSearch(e.target.value)}
               className="w-full sm:w-[50%] rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
@@ -130,19 +131,19 @@ export default function Recipes() {
                     (option) => option.id === selectedCategory
                   ) || categoryOptions[0]
                 }
-                onChange={(option) => setSelectedCategory(option.id as string)}
+                onChange={(option: any) => setSelectedCategory(option.id as string)}
               />
             </div>
 
             <div className="flex flex-col" data-aos="fade-up" data-aos-delay="200">
               <SelectDropdown
-                label="Filter by Cooking Time"
+                label="Filter by Preparation Time"
                 options={timeOptions}
                 selected={
                   timeOptions.find((option) => option.id === selectedTime) ||
                   timeOptions[0]
                 }
-                onChange={(option) => setSelectedTime(option.id as string)}
+                onChange={(option: any) => setSelectedTime(option.id as string)}
               />
             </div>
 
@@ -152,7 +153,7 @@ export default function Recipes() {
                 className={`flex gap-2.5 justify-between items-center w-full cursor-default rounded bg-white text-left text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-600 text-xs sm:text-sm py-2 px-1 lg:py-4 lg:px-3 mt-2`}
                 onClick={() => setShowFavorites(!showFavorites)}
               >
-                {showFavorites ? "Show All Recipes" : "Show Favorites"}
+                {showFavorites ? "Show All Burgers" : "Show Favorites"}
               </button>
             </div>
           </div>
@@ -161,61 +162,62 @@ export default function Recipes() {
             <LoadingSpinner />
           ) : error ? (
             <div className="text-center text-red-500">{error}</div>
-          ) : currentRecipes.length > 0 ? (
+          ) : currentBurgers.length > 0 ? (
             <div className="flex flex-col justify-center items-center">
               {role === "admin" && (
                 <Button
-                  text={"Add New Recipe"}
+                  text={"Add New Burger"}
                   customFunction={handleOpenAddForm}
                 />
               )}
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl gap-2.5 mt-10">
-                {currentRecipes.map((recipe) => (
-                  <RecipeCard
-                    key={recipe.id}
-                    id={recipe.id}
-                    image={recipe.image}
-                    name={recipe.name}
-                    time={recipe.time}
-                    category={recipe.category}
-                    isFavorite={recipe.isFavorite}
-                    handleDeleteItem={() => deleteRecipe(recipe.id)}
-                    handleOpenEditForm={() => handleOpenEditForm(recipe)}
-                    handleToggleFavorite={() => toggleFavorite(recipe.id)}
-                    animation={recipe.id && recipe.id % 2 === 0 ? "fade-up" : "fade-down"}
+                {currentBurgers.map((burger) => (
+                  <BurgerCard
+                    key={burger.id}
+                    id={burger.id}
+                    image={burger.image}
+                    name={burger.name}
+                    time={burger.time}
+                    category={burger.category}
+                    isFavorite={burger.isFavorite}
+                    handleDeleteItem={() => deleteBurger(burger.id)}
+                    handleOpenEditForm={() => handleOpenEditForm(burger)}
+                    handleToggleFavorite={() => toggleFavorite(burger.id)}
+                    animation={burger.id && burger.id % 2 === 0 ? "fade-up" : "fade-down"}
                   />
                 ))}
               </div>
             </div>
           ) : (
             <div className="col-span-full text-center text-gray-500">
-              <p>No recipes found. Try adjusting your filters.</p>
+              <p>No burgers found. Try adjusting your filters.</p>
             </div>
           )}
 
-          {filteredRecipes.length > recipesPerPage && (
+          {filteredBurgers.length > burgersPerPage && (
             <Pagination
               currentPage={currentPage}
               totalPages={totalPages}
-              onPageChange={(page) => setCurrentPage(page)}
+              onPageChange={(page: number) => setCurrentPage(page)}
             />
           )}
         </div>
       </section>
+      <div className="mb-20" />
 
       {showEditForm && (
-        <EditRecipeForm
+        <EditBurgerForm
           handleForm={handleCloseEditForm}
-          editRecipe={editRecipe}
-          initialRecipe={selectedRecipe}
+          editBurger={editBurger}
+          initialBurger={selectedBurger}
         />
       )}
 
       {showAddForm && (
-        <AddRecipeForm
-          AddRecipe={async (recipe) => {
-            await addRecipe(recipe);
+        <AddBurgerForm
+          addBurger={async (burger) => {
+            await addBurger(burger);
             handleCloseAddForm();
           }}
           handleForm={handleCloseAddForm}
@@ -225,20 +227,4 @@ export default function Recipes() {
   );
 }
 
-const categoryOptions = [
-  { id: "all", name: "All Categories" },
-  { id: "signature", name: "Signature" },
-  { id: "classic", name: "Classic" },
-  { id: "vegetarian", name: "Vegetarian" },
-  { id: "spicy", name: "Spicy" },
-  { id: "seafood", name: "Seafood" },
-  { id: "traditional", name: "Traditional" },
-];
 
-const timeOptions = [
-  { id: "all", name: "All Times" },
-  { id: "<30mins", name: "Less than 30 mins" },
-  { id: "<60mins", name: "Less than 60 mins" },
-  { id: "<90mins", name: "Less than 90 mins" },
-  { id: "<120mins", name: "Less than 120 mins" },
-];

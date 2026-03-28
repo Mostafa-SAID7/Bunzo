@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { EditorState, convertToRaw, convertFromRaw } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import "../styles/RichTextEditor.css";
+import "../../styles/RichTextEditor.css";
 
 export default function RichTextEditor({
   onChange,

@@ -1,4 +1,4 @@
-export interface RecipeType {
+export interface BurgerType {
   id?: number;
   name: string;
   time: number;
@@ -10,7 +10,7 @@ export interface RecipeType {
   nutritionInfo?: { name: string; measure: string }[];
 }
 
-export interface RecipeCardType {
+export interface BurgerCardType {
   id?: number;
   image: string;
   name: string;

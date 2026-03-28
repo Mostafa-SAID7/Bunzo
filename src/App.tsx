@@ -1,10 +1,7 @@
 import { useState } from "react";
 
-import rice from "./assets/images/rice.png";
 import veggies from "./assets/images/veggies.png";
 import beef from "./assets/images/beef.png";
-import cake from "./assets/images/cake.png";
-import chocolate from "./assets/images/chocolate.png";
 import bread from "./assets/images/bread.png";
 import happy_chef from "./assets/images/happy_chef.png";
 import tomato from "./assets/images/tomato.png";
@@ -22,15 +19,15 @@ import {
   LoadingSpinner,
   StickyObject,
   SubHeading,
-} from "./utils/Utils";
-import { RecipeType } from "./types/recipe";
+} from "./components/ui";
+import { BurgerType } from "./types/burger";
 
-import Recipe from "./components/RecipeCard";
+import Burger from "./components/BurgerCard";
 import Newsletter from "./components/Newsletter";
-import EditRecipeForm from "./components/EditRecipe";
+import EditBurgerForm from "./components/EditBurger";
 import HeroSection from "./components/HomeHeroSection";
 
-import useRecipe from "./hooks/useRecipe";
+import useBurger from "./hooks/useBurger";
 import useAOS from "./hooks/useAOS";
 function App() {
   useAOS({
@@ -39,45 +36,45 @@ function App() {
   });
 
   const {
-    recipeData,
+    burgerData,
     isLoading,
     error,
-    editRecipe,
-    deleteRecipe,
+    editBurger,
+    deleteBurger,
     toggleFavorite,
-  } = useRecipe();
+  } = useBurger();
 
   const [showEditForm, setShowEditForm] = useState<boolean>(false);
-  const [selectedRecipe, setSelectedRecipe] = useState<RecipeType | null>(null);
+  const [selectedBurger, setSelectedBurger] = useState<BurgerType | null>(null);
 
   const categories = [
-    { image: rice, name: "Classic", bgColor: "#F7F8F4" },
-    { image: veggies, name: "Veggie", bgColor: "#FAFDF8" },
-    { image: beef, name: "Beef", bgColor: "#FBECEB" },
-    { image: cake, name: "Chicken", bgColor: "#FEF7E9" },
-    { image: bread, name: "Egyptian", bgColor: "#F4F4F4" },
-    { image: chocolate, name: "Spicy", bgColor: "#F5F5F5" },
+    { image: beef, name: "Signature", bgColor: "#F7F8F4" },
+    { image: veggies, name: "Classic", bgColor: "#FAFDF8" },
+    { image: bread, name: "Vegetarian", bgColor: "#FBECEB" },
+    { image: tomato, name: "Spicy", bgColor: "#FEF7E9" },
+    { image: onion, name: "Seafood", bgColor: "#F4F4F4" },
+    { image: beef, name: "Traditional", bgColor: "#F5F5F5" },
   ];
   const posts = [
-    { image: post1, name: "Cairo Street Burger" },
-    { image: post2, name: "Pharaoh's Special" },
-    { image: post3, name: "Nile Valley Veggie" },
-    { image: post4, name: "Spicy Sahara" },
+    { image: post1, name: "The Pharaoh's Burger Special" },
+    { image: post2, name: "Cairo Street Classic Burger" },
+    { image: post3, name: "Nile Valley Veggie Burger" },
+    { image: post4, name: "Spicy Sahara Burger Heat" },
   ];
 
 
-  function handleOpenEditForm(recipe: RecipeType) {
-    setSelectedRecipe(recipe);
+  function handleOpenEditForm(burger: BurgerType) {
+    setSelectedBurger(burger);
     setShowEditForm(true);
   }
 
   function handleCloseEditForm() {
-    setSelectedRecipe(null);
+    setSelectedBurger(null);
     setShowEditForm(false);
   }
 
   return (
-    <div className="pt-10 pb-40 overflow-x-hidden relative inter">
+    <div className="pt-10 relative inter">
       <HeroSection />
 
       <section className="flex justify-center items-center mt-40">
@@ -125,24 +122,24 @@ function App() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-7xl">
             {isLoading && <LoadingSpinner />}
             {error && <p className="text-red-500">{error}</p>}
-            {recipeData &&
-              recipeData
+            {burgerData &&
+              burgerData
                 .slice(0, 9)
-                .map((recipe: RecipeType) => (
-                  <Recipe
-                    key={recipe.id}
-                    id={recipe.id}
-                    image={recipe.image}
-                    name={recipe.name}
-                    time={recipe.time}
-                    category={recipe.category}
-                    isFavorite={recipe.isFavorite}
-                    handleDeleteItem={() => deleteRecipe(recipe.id)}
-                    handleOpenEditForm={() => handleOpenEditForm(recipe)}
-                    handleToggleFavorite={() => toggleFavorite(recipe.id)}
+                .map((burger: BurgerType) => (
+                  <Burger
+                    key={burger.id}
+                    id={burger.id}
+                    image={burger.image}
+                    name={burger.name}
+                    time={burger.time}
+                    category={burger.category}
+                    isFavorite={burger.isFavorite}
+                    handleDeleteItem={() => deleteBurger(burger.id)}
+                    handleOpenEditForm={() => handleOpenEditForm(burger)}
+                    handleToggleFavorite={() => toggleFavorite(burger.id)}
                     customClass="p-2.5"
                     animation={
-                      recipe.id && recipe.id % 2 === 0 ? "fade-up" : "fade-down"
+                      burger.id && burger.id % 2 === 0 ? "fade-up" : "fade-down"
                     }
                   />
                 ))}
@@ -150,13 +147,13 @@ function App() {
         </div>
 
         {showEditForm && (
-          <EditRecipeForm
-            editRecipe={async (id, recipe) => {
-              await editRecipe(id, recipe);
+          <EditBurgerForm
+            editBurger={async (id, burger) => {
+              await editBurger(id, burger);
               handleCloseEditForm();
             }}
             handleForm={handleCloseEditForm}
-            initialRecipe={selectedRecipe}
+            initialBurger={selectedBurger}
           />
         )}
       </section>
@@ -279,51 +276,9 @@ function App() {
         </div>
       </section>
 
-      <section className="relative mb-32 flex justify-center items-center">
-        <div className="w-[95%] sm:w-[90%] flex flex-col justify-center items-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 w-full gap-5 sm:gap-20">
-            <Heading
-              text="Taste the authentic flavors that make Egypt legendary"
-              customClass="w-full"
-              animation="fade-right"
-            />
-            <SubHeading
-              text="Every burger is a journey through Egyptian culinary heritage. From ancient spice blends passed down through generations to modern cooking techniques that enhance traditional flavors - experience the taste that connects past and present."
-              customClass="w-full text-gray-500"
-              animation="fade-left"
-              data-aos-delay="300"
-            />
-          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl gap-0 mt-10">
-            {isLoading && <LoadingSpinner />}
-            {recipeData &&
-              recipeData
-                ?.slice(-8)
-                .map((recipe: RecipeType) => (
-                  <Recipe
-                    key={recipe.id}
-                    id={recipe.id}
-                    image={recipe.image}
-                    name={recipe.name}
-                    time={recipe.time}
-                    category={recipe.category}
-                    isFavorite={recipe.isFavorite}
-                    handleDeleteItem={() => deleteRecipe(recipe.id)}
-                    handleOpenEditForm={() => handleOpenEditForm(recipe)}
-                    handleToggleFavorite={() => toggleFavorite(recipe.id)}
-                    customClass="p-2.5"
-                    animation={
-                      recipe.id && recipe.id % 2 === 0 ? "fade-up" : "fade-down"
-                    }
-                    data-aos-delay={100}
-                  />
-                ))}
-          </div>
-        </div>
-      </section>
 
-      <section data-aos="fade-left">
+      <section data-aos="fade-left" className="mb-20">
         <Newsletter />
       </section>
     </div>

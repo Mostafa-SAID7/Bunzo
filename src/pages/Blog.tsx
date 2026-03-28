@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import { Heading, LoadingSpinner, UserBox } from "../utils/Utils";
+import { Heading, LoadingSpinner, UserBox } from "../components/ui";
 import Newsletter from "../components/Newsletter";
-import RecipeShortList from "../utils/RecipeShortList";
+import BurgerShortList from "../components/BurgerShortList";
 import { useState, useEffect } from "react";
 import { BlogCardProps } from "../types/blog";
 import { BlogService } from "../services/blogService";
@@ -58,7 +58,7 @@ export default function Blog() {
   return (
     <>
       {blog ? (
-        <div className="pb-20 relative inter">
+        <div className="relative inter">
           <section className="relative flex justify-center items-center mt-10 gap-20">
             <div className="w-[95%] sm:w-[90%] flex flex-col gap-5">
               <div className="flex flex-col justify-between items-center mb-2 sm:mb-10">
@@ -124,8 +124,8 @@ export default function Blog() {
             <Newsletter />
           </div>
 
-          <div className="mt-10 sm:mt-20 md:mt-30 lg:mt-40">
-            <RecipeShortList headingText="You may like these recipes too" />
+          <div className="mt-10 sm:mt-20 md:mt-30 lg:mt-40 mb-20">
+            <BurgerShortList headingText="You may like these burgers too" />
           </div>
         </div>
       ) : (

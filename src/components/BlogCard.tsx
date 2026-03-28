@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { BlogCardProps } from "../types/blog";
-import { Dropdown } from "../utils/Utils";
+import { Dropdown } from "./ui";
 import { formatDate } from "../utils/utilFunctions";
 import { useGlobalContext } from "../GlobalContext";
 

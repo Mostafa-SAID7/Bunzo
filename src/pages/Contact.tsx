@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Button, FormInput, Heading, SubHeading } from "../utils/Utils";
+import { Button, FormInput, Heading, SubHeading } from "../components/ui";
 import smiling_chef from "../assets/images/smiling_chef.png";
 import Newsletter from "../components/Newsletter";
-import SelectDropdown from "../utils/SelectDropdown";
+import SelectDropdown from "../components/ui/SelectDropdown";
 import { OptionType } from "../types/form";
-import RecipeShortList from "../utils/RecipeShortList";
+import BurgerShortList from "../components/BurgerShortList";
 import useAOS from "../hooks/useAOS";
 
 const enquiryTypeOptions = [
@@ -22,7 +22,7 @@ export default function Contact() {
   useAOS();
 
   return (
-    <div className="pb-20 relative inter">
+    <div className="relative inter">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-20 mb-20">
         <div className="w-[95%] sm:w-[90%] mx-auto flex flex-col items-center gap-6">
@@ -174,7 +174,9 @@ export default function Contact() {
         <Newsletter />
       </section>
 
-      <RecipeShortList headingText="Try our signature Egyptian burgers" />
+      <div className="mb-20">
+        <BurgerShortList headingText="Try our signature Egyptian burgers" />
+      </div>
     </div>
   );
 }

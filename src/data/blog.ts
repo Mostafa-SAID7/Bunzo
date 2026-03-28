@@ -26,27 +26,27 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "The Ancient Spice Routes: How Egyptian Flavors Shaped Our Burgers",
-    excerpt: "Discover the fascinating journey of Egyptian spices from ancient trade routes to modern Bunzo burgers.",
+    title: "The Secret Behind Our Signature Egyptian Burger Spices",
+    excerpt: "Discover how ancient Egyptian spice blends create the unique flavors in every Bunzo burger.",
     content: `
-      <p>Egypt has been the crossroads of spice trade for over 4,000 years. From the bustling markets of ancient Memphis to today's Khan el-Khalili, spices have been the soul of Egyptian cuisine.</p>
+      <p>Egypt has been the crossroads of spice trade for over 4,000 years. At Bunzo, we honor this rich heritage by incorporating traditional spice blends into every burger we craft.</p>
       
-      <p>At Bunzo, we honor this rich heritage by incorporating traditional spice blends that have been passed down through generations. Our signature spice mix includes:</p>
+      <p>Our signature burger spice mix includes:</p>
       
       <ul>
-        <li><strong>Dukkah</strong> - A blend of nuts, seeds, and spices that adds texture and flavor</li>
-        <li><strong>Baharat</strong> - The seven-spice blend that brings warmth to our beef</li>
-        <li><strong>Za'atar</strong> - Wild thyme blend that connects us to the Mediterranean</li>
-        <li><strong>Harissa</strong> - North African chili paste for our spicy creations</li>
+        <li><strong>Dukkah</strong> - A blend of nuts, seeds, and spices that adds texture to our burger patties</li>
+        <li><strong>Baharat</strong> - The seven-spice blend that brings warmth to our premium beef</li>
+        <li><strong>Za'atar</strong> - Wild thyme blend that elevates our Mediterranean-style burgers</li>
+        <li><strong>Harissa</strong> - North African chili paste for our Spicy Sahara burger</li>
       </ul>
       
-      <p>Each burger tells a story of these ancient trade routes, bringing flavors that once traveled by camel caravan directly to your table.</p>
+      <p>Each burger tells a story of these ancient trade routes, bringing flavors that once traveled by camel caravan directly to your burger experience.</p>
     `,
     image: post1,
     author: {
       name: "Chef Ahmed Hassan",
       avatar: user_dp,
-      role: "Head Chef & Spice Master"
+      role: "Head Chef & Burger Master"
     },
     category: "Heritage",
     tags: ["spices", "history", "egyptian-cuisine", "tradition"],
@@ -56,90 +56,90 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 2,
-    title: "Street Food Culture: From Cairo's Alleys to Bunzo's Kitchen",
-    excerpt: "Experience the vibrant street food culture of Cairo and how it inspired our modern burger creations.",
+    title: "From Cairo Streets to Gourmet Burgers: The Bunzo Story",
+    excerpt: "Experience how authentic Cairo street food inspired our signature burger creations at Bunzo.",
     content: `
-      <p>Walking through the narrow alleys of Old Cairo, you'll encounter a symphony of sizzling pans, aromatic spices, and the cheerful calls of street vendors. This is where Bunzo's heart truly lies.</p>
+      <p>Walking through the bustling streets of Cairo, you'll encounter sizzling grills, aromatic burger spices, and the cheerful calls of street food vendors. This vibrant culture inspired every Bunzo burger.</p>
       
-      <p>Our Cairo Street Classic burger is a direct homage to the <em>kofta</em> sandwiches sold by street vendors who have perfected their craft over decades. The secret lies in:</p>
+      <p>Our Cairo Street Classic burger pays homage to the legendary <em>kofta</em> sandwiches and street burgers that have made Cairo famous. The magic lies in:</p>
       
       <ul>
-        <li>Hand-mixed spice blends prepared fresh daily</li>
-        <li>Cooking techniques passed down through families</li>
-        <li>The perfect balance of heat, flavor, and texture</li>
-        <li>Using only the freshest local ingredients</li>
+        <li>Hand-seasoned burger patties prepared fresh daily</li>
+        <li>Grilling techniques perfected by generations of street cooks</li>
+        <li>The perfect balance of Egyptian spices in every burger bite</li>
+        <li>Using only the freshest local ingredients for our burgers</li>
       </ul>
       
-      <p>When you bite into our Cairo Street Classic, you're not just eating a burger – you're experiencing centuries of culinary evolution that has made Egyptian street food legendary worldwide.</p>
+      <p>When you bite into our Cairo Street Classic burger, you're experiencing centuries of Egyptian street food evolution in modern burger form.</p>
     `,
     image: post2,
     author: {
       name: "Fatma El-Masry",
       avatar: user_dp,
-      role: "Street Food Historian"
+      role: "Burger Development Chef"
     },
     category: "Culture",
-    tags: ["street-food", "cairo", "culture", "tradition"],
+    tags: ["street-food", "cairo-burgers", "burger-culture", "egyptian-burgers"],
     publishedDate: "2024-03-10",
     readTime: 4,
     isFeatured: true
   },
   {
     id: 3,
-    title: "The Art of Egyptian Hospitality: More Than Just a Meal",
-    excerpt: "Learn about the deep-rooted tradition of Egyptian hospitality and how it shapes the Bunzo experience.",
+    title: "Egyptian Hospitality: The Heart of Every Bunzo Burger Experience",
+    excerpt: "Discover how traditional Egyptian hospitality enhances every burger meal at Bunzo.",
     content: `
-      <p>In Egypt, food is never just about sustenance – it's about connection, community, and the ancient art of hospitality known as <em>karam</em>.</p>
+      <p>In Egypt, sharing a meal is never just about food – it's about connection, community, and the ancient art of hospitality. At Bunzo, this tradition elevates every burger experience.</p>
       
-      <p>At Bunzo, we've woven this tradition into every aspect of our service. From the moment you enter our restaurant, you become part of our extended family. This philosophy influences:</p>
+      <p>Our Egyptian hospitality philosophy influences every burger we serve:</p>
       
       <ul>
-        <li><strong>Generous portions</strong> - Because no guest should leave hungry</li>
-        <li><strong>Warm service</strong> - Every interaction reflects genuine care</li>
-        <li><strong>Sharing culture</strong> - Our platters are designed for communal dining</li>
-        <li><strong>Storytelling</strong> - Each dish comes with its cultural narrative</li>
+        <li><strong>Generous burger portions</strong> - Because no guest should leave hungry</li>
+        <li><strong>Warm service</strong> - Every burger order comes with genuine Egyptian care</li>
+        <li><strong>Sharing platters</strong> - Our burger combos are perfect for families</li>
+        <li><strong>Cultural stories</strong> - Learn about each burger's Egyptian heritage</li>
       </ul>
       
-      <p>When tourists visit Bunzo, they don't just taste Egyptian flavors – they experience the warmth and generosity that has made Egyptian hospitality legendary throughout history.</p>
+      <p>When you visit Bunzo, you don't just order a burger – you experience the warmth and generosity that makes Egyptian hospitality legendary worldwide.</p>
     `,
     image: post3,
     author: {
       name: "Yasmin Farouk",
       avatar: user_dp,
-      role: "Cultural Experience Manager"
+      role: "Customer Experience Manager"
     },
     category: "Hospitality",
-    tags: ["hospitality", "culture", "experience", "tourism"],
+    tags: ["hospitality", "burger-experience", "egyptian-culture", "customer-service"],
     publishedDate: "2024-03-05",
     readTime: 3,
     isFeatured: false
   },
   {
     id: 4,
-    title: "Youth Culture Meets Ancient Flavors: The Bunzo Revolution",
-    excerpt: "How we're bridging the gap between Egypt's rich culinary heritage and modern youth culture.",
+    title: "Modern Egyptian Burgers: Where Ancient Flavors Meet Contemporary Taste",
+    excerpt: "How Bunzo revolutionizes Egyptian cuisine by creating Instagram-worthy burgers with authentic flavors.",
     content: `
-      <p>Egypt's youth are proud of their heritage but hungry for innovation. At Bunzo, we've created a space where ancient flavors meet contemporary culture.</p>
+      <p>Egypt's youth love their heritage but crave innovation. At Bunzo, we've created the perfect fusion: ancient Egyptian flavors in modern, gourmet burger form.</p>
       
-      <p>Our approach to modernizing Egyptian cuisine includes:</p>
+      <p>Our approach to modernizing Egyptian burgers includes:</p>
       
       <ul>
-        <li><strong>Instagram-worthy presentation</strong> - Traditional flavors in modern, photogenic formats</li>
-        <li><strong>Fusion techniques</strong> - Combining Egyptian spices with international cooking methods</li>
-        <li><strong>Sustainable practices</strong> - Honoring the land that gives us these incredible ingredients</li>
-        <li><strong>Community engagement</strong> - Creating spaces for young Egyptians to connect over food</li>
+        <li><strong>Instagram-worthy presentation</strong> - Traditional Egyptian spices in photogenic burger formats</li>
+        <li><strong>Fusion techniques</strong> - Combining Egyptian seasonings with international burger styles</li>
+        <li><strong>Sustainable practices</strong> - Honoring Egyptian land with locally-sourced burger ingredients</li>
+        <li><strong>Community spaces</strong> - Creating burger experiences that bring people together</li>
       </ul>
       
-      <p>The result? A dining experience that makes young Egyptians proud of their culinary heritage while attracting food lovers from around the world who want to experience authentic Egyptian flavors in a contemporary setting.</p>
+      <p>The result? Gourmet Egyptian burgers that make locals proud of their culinary heritage while attracting international food lovers seeking authentic Egyptian burger experiences.</p>
     `,
     image: post4,
     author: {
       name: "Omar Khalil",
       avatar: user_dp,
-      role: "Youth Culture Specialist"
+      role: "Modern Burger Innovation Chef"
     },
     category: "Innovation",
-    tags: ["youth-culture", "innovation", "modern-egyptian", "social-media"],
+    tags: ["modern-burgers", "egyptian-innovation", "gourmet-burgers", "social-media"],
     publishedDate: "2024-02-28",
     readTime: 4,
     isFeatured: true
@@ -147,10 +147,10 @@ export const blogPosts: BlogPost[] = [
 ];
 
 export const blogCategories = [
-  { id: 1, name: "Heritage", count: 1, description: "Stories of Egyptian culinary history" },
-  { id: 2, name: "Culture", count: 1, description: "Egyptian food culture and traditions" },
-  { id: 3, name: "Hospitality", count: 1, description: "The art of Egyptian welcome" },
-  { id: 4, name: "Innovation", count: 1, description: "Modern takes on ancient flavors" }
+  { id: 1, name: "Heritage", count: 1, description: "Stories of Egyptian burger traditions" },
+  { id: 2, name: "Culture", count: 1, description: "Cairo street food meets modern burgers" },
+  { id: 3, name: "Hospitality", count: 1, description: "The Bunzo burger experience" },
+  { id: 4, name: "Innovation", count: 1, description: "Modern Egyptian burger creations" }
 ];
 
 export const featuredPosts = blogPosts.filter(post => post.isFeatured);

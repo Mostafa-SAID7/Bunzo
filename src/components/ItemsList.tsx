@@ -1,5 +1,5 @@
 import { ItemsListProps } from "../types/common";
-import { Heading } from "../utils/Utils";
+import { Heading } from "./ui";
 import useAOS from "../hooks/useAOS";
 
 export default function ItemsList({ title, items }: ItemsListProps) {

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import bunzo_logo from "../assets/bunzo_logo.svg";
 import SocialMediaBox from "./SocialMediaBox";
 
 export default function Header() {
@@ -10,13 +9,6 @@ export default function Header() {
     <header className="flex justify-center items-center sticky top-0 z-[50] backdrop-blur-3xl inter border-b border-black/20 bg-white">
       <div className="py-8 w-[90%] max-w-[1440px] flex gap-2.5 justify-between items-center">
         <div className="flex items-center gap-3">
-          <figure>
-            <img
-              src={bunzo_logo}
-              alt="Bunzo Egyptian Burgers"
-              className="w-12 h-12 md:w-14 md:h-14"
-            />
-          </figure>
           <div className="flex flex-col">
             <h1 className="text-xl md:text-2xl font-bold text-gray-900 lobster-regular">
               Bunzo
@@ -67,21 +59,9 @@ export default function Header() {
           >
             Home
           </NavLink>
+
           <NavLink
-            to={"/recipes"}
-            className={({ isActive }) =>
-              `text-xs sm:text-sm md:text-base transition-colors py-1 md:py-2 px-2 md:px-3 rounded-lg ${
-                isActive
-                  ? "bg-emerald-600 text-white"
-                  : "text-gray-800 hover:bg-emerald-600 focus:bg-emerald-600 hover:text-white focus:text-white"
-              }`
-            }
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Burgers
-          </NavLink>
-          <NavLink
-            to={"/menu"}
+            to={"/burgers"}
             className={({ isActive }) =>
               `text-xs sm:text-sm md:text-base transition-colors py-1 md:py-2 px-2 md:px-3 rounded-lg ${
                 isActive
