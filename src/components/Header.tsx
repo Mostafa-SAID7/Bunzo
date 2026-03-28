@@ -41,11 +41,32 @@ export default function Header() {
           ></span>
         </button>
 
+        {/* Backdrop overlay */}
+        <div
+          className={`fixed inset-0 bg-black/40 z-[55] sm:hidden transition-opacity duration-300 ${
+            isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
+          onClick={() => setIsMenuOpen(false)}
+        />
+
         <nav
-          className={`${
-            isMenuOpen ? "flex" : "hidden"
-          } sm:flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 lg:gap-6 absolute sm:static top-16 left-0 w-full sm:w-auto bg-white sm:bg-transparent shadow-md sm:shadow-none p-6 sm:p-0`}
+          className={`flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 lg:gap-6 fixed top-0 right-0 h-screen w-72 sm:w-auto sm:h-auto sm:static bg-white sm:bg-transparent shadow-2xl sm:shadow-none p-8 pt-20 sm:p-0 transition-transform duration-300 ease-in-out z-[60] ${
+            isMenuOpen
+              ? "translate-x-0"
+              : "translate-x-full sm:translate-x-0"
+          }`}
         >
+          {/* Close button inside the menu */}
+          <button
+            className="sm:hidden absolute top-6 right-6 w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Close Menu"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
           <NavLink
             to={"/"}
             className={({ isActive }) =>

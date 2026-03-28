@@ -27,6 +27,22 @@
   background: #f1f5f9;
 }
 
+/* Remove scrollbar arrows (top/bottom/left/right buttons) */
+::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment,
+::-webkit-scrollbar-button:start:increment,
+::-webkit-scrollbar-button:end:decrement {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
 /* Firefox Scrollbar */
 * {
   scrollbar-width: thin;
