@@ -11,13 +11,13 @@
 [![Tailwind](https://img.shields.io/badge/Tailwind-4.1-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
 
-[🌐 Live Demo](#) • [📖 Documentation](./docs) • [🐛 Report Bug](https://github.com/Mostafa-SAID7/Bunzo/issues) • [✨ Request Feature](https://github.com/Mostafa-SAID7/Bunzo/issues)
+[🌐 Live Demo](#) • [📖 Documentation](./docs) • [🐞 Report Bug](https://github.com/Mostafa-SAID7/Bunzo/issues) • [🚀 Request Feature](https://github.com/Mostafa-SAID7/Bunzo/issues)
 
 </div>
 
 ---
 
-## 🎯 About Bunzo
+## 🎯 Our Mission
 
 **"من الشارع المصري إلى طاولتك"** - *From Egyptian Streets to Your Table*
 
@@ -31,7 +31,7 @@ Bunzo is Egypt's premier modern burger restaurant that celebrates the rich culin
 - **Tourist Appeal**: Authentic Egyptian experience that tells our cultural story
 - **Street-Style**: Capturing the essence of Cairo's bustling food scene
 
-### ✨ Signature Experiences
+### ✨ Signature Menu
 
 - 🍔 **The Pharaoh's Burger** - Royal Egyptian experience with spiced beef and tahini
 - 🌶️ **Spicy Sahara** - Harissa-marinated chicken with desert heat
@@ -120,7 +120,7 @@ Visit `http://localhost:5173` to experience Egyptian street burger culture!
 - 📊 Menu and content management dashboard
 
 ### Cultural Features
-- ⚡ **Egyptian Heritage** - Every burger tells a story of Egyptian culture
+- 🏛️ **Egyptian Heritage** - Every burger tells a story of Egyptian culture
 - 🎯 **Authentic Flavors** - Traditional spices and cooking methods
 - 🎨 **Modern Presentation** - Contemporary plating with cultural respect
 - 🔄 **Tourist-Friendly** - English/Arabic cultural explanations

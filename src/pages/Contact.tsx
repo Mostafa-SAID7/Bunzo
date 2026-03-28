@@ -6,6 +6,7 @@ import SelectDropdown from "../components/ui/SelectDropdown";
 import { OptionType } from "../types/form";
 import BurgerShortList from "../components/BurgerShortList";
 import useAOS from "../hooks/useAOS";
+import { MapPinIcon, PhoneIcon, ClockIcon } from "@heroicons/react/24/solid";
 
 const enquiryTypeOptions = [
   { id: 1, name: "Restaurant Visit" },
@@ -145,25 +146,43 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
               <h3 className="text-lg font-semibold text-emerald-600 mb-4">Downtown Cairo</h3>
-              <p className="text-gray-600 mb-2">📍 Tahrir Square Area</p>
-              <p className="text-gray-600 mb-2">📞 +20 100 123 4567</p>
-              <p className="text-gray-600 mb-2">🕒 Daily: 11:00 AM - 2:00 AM</p>
+              <p className="text-gray-600 mb-2 flex items-center gap-2">
+                <MapPinIcon className="size-4 text-emerald-500" /> Tahrir Square Area
+              </p>
+              <p className="text-gray-600 mb-2 flex items-center gap-2">
+                <PhoneIcon className="size-4 text-emerald-500" /> +20 100 123 4567
+              </p>
+              <p className="text-gray-600 mb-2 flex items-center gap-2">
+                <ClockIcon className="size-4 text-emerald-500" /> Daily: 11:00 AM - 2:00 AM
+              </p>
               <p className="text-sm text-gray-500">The heart of Egyptian street food culture</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
               <h3 className="text-lg font-semibold text-emerald-600 mb-4">Zamalek</h3>
-              <p className="text-gray-600 mb-2">📍 26th July Street</p>
-              <p className="text-gray-600 mb-2">📞 +20 100 123 4568</p>
-              <p className="text-gray-600 mb-2">🕒 Daily: 11:00 AM - 2:00 AM</p>
+              <p className="text-gray-600 mb-2 flex items-center gap-2">
+                <MapPinIcon className="size-4 text-emerald-500" /> 26th July Street
+              </p>
+              <p className="text-gray-600 mb-2 flex items-center gap-2">
+                <PhoneIcon className="size-4 text-emerald-500" /> +20 100 123 4568
+              </p>
+              <p className="text-gray-600 mb-2 flex items-center gap-2">
+                <ClockIcon className="size-4 text-emerald-500" /> Daily: 11:00 AM - 2:00 AM
+              </p>
               <p className="text-sm text-gray-500">Modern dining with Nile views</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="400">
               <h3 className="text-lg font-semibold text-emerald-600 mb-4">New Capital</h3>
-              <p className="text-gray-600 mb-2">📍 Central Business District</p>
-              <p className="text-gray-600 mb-2">📞 +20 100 123 4569</p>
-              <p className="text-gray-600 mb-2">🕒 Daily: 11:00 AM - 2:00 AM</p>
+              <p className="text-gray-600 mb-2 flex items-center gap-2">
+                <MapPinIcon className="size-4 text-emerald-500" /> Central Business District
+              </p>
+              <p className="text-gray-600 mb-2 flex items-center gap-2">
+                <PhoneIcon className="size-4 text-emerald-500" /> +20 100 123 4569
+              </p>
+              <p className="text-gray-600 mb-2 flex items-center gap-2">
+                <ClockIcon className="size-4 text-emerald-500" /> Daily: 11:00 AM - 2:00 AM
+              </p>
               <p className="text-sm text-gray-500">Contemporary Egyptian dining</p>
             </div>
           </div>

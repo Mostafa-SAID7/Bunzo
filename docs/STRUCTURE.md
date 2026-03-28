@@ -1,6 +1,6 @@
 # Project Structure
 
-Comprehensive guide to the architecture and organization of Foodieland.
+Comprehensive guide to the architecture and organization of Bunzo Egyptian Burgers.
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@ Comprehensive guide to the architecture and organization of Foodieland.
 ## Directory Structure
 
 ```
-foodieland/
+Bunzo/
 ├── .github/                     # GitHub configuration
 │   ├── workflows/              # CI/CD workflows
 │   │   ├── code-quality.yml
@@ -45,9 +45,9 @@ foodieland/
 │   │   └── use-toast.ts
 │   ├── pages/                  # Page components
 │   │   ├── Home.tsx
-│   │   ├── RecipeDetail.tsx
+│   │   ├── Burgers.tsx
 │   │   ├── Blog.tsx
-│   │   └── Admin.tsx
+│   │   └── About.tsx
 │   ├── styles/                 # Global CSS
 │   ├── utils/                  # Utilities and types
 │   ├── GlobalContext.tsx       # Global state
@@ -107,9 +107,9 @@ export function ExampleComponent() {
 **Purpose**: Structural components used across pages
 
 **Examples**:
-- `Navigation.tsx` - Header navigation
+- `Navigation.tsx` - Header navigation (Header.tsx)
 - `Footer.tsx` - Site footer
-- `HeroSection.tsx` - Hero banner
+- `HeroSection.tsx` - Hero banner (HomeHeroSection.tsx)
 
 #### 3. Feature Components
 **Location**: `src/components/`
@@ -117,9 +117,9 @@ export function ExampleComponent() {
 **Purpose**: Specific feature implementations
 
 **Examples**:
-- `RecipeCard.tsx` - Recipe display card
-- `FilterBar.tsx` - Search and filter controls
-- `BlogEditor.tsx` - Rich text editor
+- `BurgerCard.tsx` - Burger display card
+- `FilterBar.tsx` - Search and filter controls (if implemented)
+- `BlogEditor.tsx` - Rich text editor (AddBlog.tsx/EditBlog.tsx)
 
 #### 4. UI Components
 **Location**: `src/components/ui/`
@@ -137,15 +137,15 @@ export function ExampleComponent() {
 #### Props (Parent to Child)
 ```tsx
 // Parent
-<RecipeCard recipe={recipeData} onFavorite={handleFavorite} />
+<BurgerCard burger={burgerData} onFavorite={handleFavorite} />
 
 // Child
-interface RecipeCardProps {
-  recipe: Recipe;
+interface BurgerCardProps {
+  burger: Burger;
   onFavorite: (id: string) => void;
 }
 
-export function RecipeCard({ recipe, onFavorite }: RecipeCardProps) {
+export function BurgerCard({ burger, onFavorite }: BurgerCardProps) {
   // Component logic
 }
 ```
@@ -158,7 +158,7 @@ export function RecipeCard({ recipe, onFavorite }: RecipeCardProps) {
 </GlobalContext.Provider>
 
 // Consumer
-const { recipes, favorites } = useContext(GlobalContext);
+const { burgers, favorites } = useContext(GlobalContext);
 ```
 
 ## File Organization
@@ -180,7 +180,7 @@ import type { Recipe } from '@/utils/types';
 
 // Types/Interfaces
 interface ComponentProps {
-  data: Recipe;
+  data: Burger;
 }
 
 // Component
@@ -240,11 +240,11 @@ export function ComponentName({ data }: ComponentProps) {
 **Purpose**: Share state across the application
 
 **State Includes**:
-- Recipe data
+- Burger data
 - Blog data
 - Favorites list
 - Filter settings
-- Admin state
+- Admin state (Role-based)
 
 **Usage**:
 ```tsx
@@ -252,7 +252,7 @@ import { useContext } from 'react';
 import { GlobalContext } from './GlobalContext';
 
 function Component() {
-  const { recipes, favorites, toggleFavorite } = useContext(GlobalContext);
+  const { burgers, favorites, toggleFavorite } = useContext(GlobalContext);
   
   return (
     // Use state
@@ -292,9 +292,9 @@ const favorites = saved ? JSON.parse(saved) : [];
 ```tsx
 <Routes>
   <Route path="/" element={<Home />} />
-  <Route path="/recipe/:id" element={<RecipeDetail />} />
+  <Route path="/burgers/:id" element={<BurgerDetails />} />
   <Route path="/blog" element={<Blog />} />
-  <Route path="/admin" element={<Admin />} />
+  <Route path="/contact" element={<Contact />} />
   <Route path="*" element={<NotFound />} />
 </Routes>
 ```
@@ -305,11 +305,11 @@ const favorites = saved ? JSON.parse(saved) : [];
 import { Link, useNavigate } from 'react-router-dom';
 
 // Link component
-<Link to="/recipe/123">View Recipe</Link>
+<Link to="/burgers/123">View Burger</Link>
 
 // Programmatic navigation
 const navigate = useNavigate();
-navigate('/recipe/123');
+navigate('/burgers/123');
 ```
 
 ## Data Flow
@@ -355,25 +355,24 @@ Success/Error
 ## TypeScript Types
 
 ### Location
-`src/utils/types.ts`
+`src/types/`
 
 ### Common Types
 
 ```typescript
-interface Recipe {
-  id: string;
-  title: string;
+interface Burger {
+  id: number;
+  name: string;
   description: string;
   image: string;
-  cookingTime: number;
-  servings: number;
+  time: number;
   category: string;
   ingredients: string[];
-  instructions: string[];
+  directions: string[];
 }
 
 interface BlogPost {
-  id: string;
+  id: number;
   title: string;
   content: string;
   image: string;
@@ -495,15 +494,15 @@ Each component should include:
 
 ```tsx
 /**
- * RecipeCard component displays a recipe with image, title, and metadata.
+ * BurgerCard component displays a burger with image, title, and metadata.
  * 
- * @param recipe - Recipe object with all details
+ * @param burger - Burger object with all details
  * @param onFavorite - Callback when favorite button is clicked
  * 
  * @example
- * <RecipeCard recipe={recipeData} onFavorite={handleFavorite} />
+ * <BurgerCard burger={burgerData} onFavorite={handleFavorite} />
  */
-export function RecipeCard({ recipe, onFavorite }: RecipeCardProps) {
+export function BurgerCard({ burger, onFavorite }: BurgerCardProps) {
   // Implementation
 }
 ```

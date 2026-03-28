@@ -1,6 +1,6 @@
 # Features Documentation
 
-Comprehensive guide to all features in Foodieland recipe platform.
+Comprehensive guide to all features in Bunzo Egyptian Burgers platform.
 
 ## Table of Contents
 
@@ -38,34 +38,34 @@ Comprehensive guide to all features in Foodieland recipe platform.
 
 **Location**: `src/components/HeroSection.tsx`
 
-### 3. Recipe Browsing
+### 3. Burger Browsing
 
-**Description**: Browse and discover recipes with filtering.
+**Description**: Browse and discover Egyptian burgers with filtering.
 
 **Features**:
-- Grid layout of recipe cards
+- Grid layout of burger cards
 - Category filtering
-- Cooking time filtering
+- Spice level indicators
 - Favorites filtering
-- Recipe images and metadata
+- Burger images and storytelling
 - Responsive grid (1-4 columns)
 
-**Location**: `src/pages/Home.tsx`
+**Location**: `src/pages/Burgers.tsx`
 
-### 4. Recipe Detail Page
+### 4. Burger Detail Page
 
-**Description**: Detailed view of individual recipes.
+**Description**: Detailed view of individual burgers.
 
 **Features**:
-- Recipe title and description
-- Cooking time and servings
+- Burger name and description
+- Prep time and category
 - Ingredients list
-- Step-by-step instructions
-- Recipe images
-- Category tags
+- Build description (instructions)
+- Burger images
+- Nutrition information
 - Favorite button
 
-**Location**: `src/pages/RecipeDetail.tsx`
+**Location**: `src/pages/BurgerDetails.tsx`
 
 ### 5. Blog Platform
 
@@ -79,36 +79,33 @@ Comprehensive guide to all features in Foodieland recipe platform.
 - Category tags
 - Responsive cards
 
-**Location**: `src/pages/Blog.tsx`
+**Location**: `src/pages/BlogList.tsx` / `src/pages/Blog.tsx`
 
 ### 6. Search and Filter
 
-**Description**: Find recipes quickly with smart filtering.
+**Description**: Find burgers quickly with smart filtering.
 
 **Features**:
-- Category filter (All, Breakfast, Lunch, Dinner, Dessert, Snack)
-- Cooking time filter (All, Quick <30min, Medium 30-60min, Long >60min)
+- Category filter (Beef, Chicken, Vegan, Lamb, Specialty)
+- Spice level filter (Mild, Medium, Hot, Sahara Fire)
 - Favorites filter
 - Real-time filtering
-- Clear filter options
 
-**Data**: `src/utils/types.ts`
+**Data**: `src/data/burgers.ts`
 
 ### 7. Favorites System
 
-**Description**: Save favorite recipes for quick access.
+**Description**: Save favorite burgers for quick access.
 
 **Features**:
 - Toggle favorite status
 - Filter by favorites
-- Persistent favorites (localStorage)
-- Visual indicators
-
-**Implementation**: Global context state
+- Persistent favorites (Global Context)
+- Visual indicators (Heart icons)
 
 ### 8. Swiper Carousel
 
-**Description**: Interactive content carousel for featured recipes.
+**Description**: Interactive content carousel for featured burgers.
 
 **Features**:
 - Touch/swipe support
@@ -135,30 +132,29 @@ Comprehensive guide to all features in Foodieland recipe platform.
 
 ### 1. Admin Dashboard
 
-**Description**: Content management interface for admins.
+**Description**: Content management interface for Egyptian burger admins.
 
 **Features**:
-- Recipe management
+- Burger management
 - Blog management
 - CRUD operations
 - Rich text editor
-- Image upload support
+- Image upload support (simulated)
 
 **Location**: `src/pages/Admin.tsx`
 
-### 2. Recipe Management
+### 2. Burger Management
 
-**Description**: Create, edit, and delete recipes.
+**Description**: Create, edit, and delete Egyptian burgers.
 
 **Features**:
-- Add new recipes with form
-- Edit existing recipes
-- Delete recipes with confirmation
-- Image upload
-- Category selection
-- Cooking time input
-- Ingredients list management
-- Instructions editor
+- Add new burgers with form
+- Edit existing burgers
+- Delete burgers with confirmation
+- Image selection
+- Category and spice level selection
+- Prep time input
+- Ingredients and directions management
 
 ### 3. Blog Management
 
@@ -244,11 +240,11 @@ Comprehensive guide to all features in Foodieland recipe platform.
 **Description**: Context API for shared state.
 
 **Features**:
-- Recipe data
+- Burger data
 - Blog data
 - Favorites state
 - Filter state
-- Admin state
+- User Role (Admin/User) state
 
 **Location**: `src/GlobalContext.tsx`
 
@@ -406,7 +402,7 @@ Comprehensive guide to all features in Foodieland recipe platform.
 
 **Implementation**:
 ```tsx
-<img src="recipe.jpg" alt="Delicious chocolate cake with frosting" />
+<img loading="lazy" src="..." alt="..." />
 ```
 
 ## Future Features
@@ -419,36 +415,36 @@ Comprehensive guide to all features in Foodieland recipe platform.
    - Password reset
    - OAuth integration
 
-2. **Recipe Ratings & Reviews**
+2. **Burger Ratings & Reviews**
    - Star ratings
    - Written reviews
    - Review moderation
    - Average rating display
 
 3. **Social Features**
-   - Share recipes
+   - Share burgers
    - Follow users
-   - Recipe collections
+   - Burger collections
    - Activity feed
 
 4. **Advanced Search**
    - Ingredient-based search
-   - Dietary restrictions filter
-   - Cuisine type filter
-   - Difficulty level filter
+   - Dietary restrictions filter (Vegan focus)
+   - Spice level filter
+   - Difficulty level filter (Build complexity)
 
 5. **Meal Planning**
    - Weekly meal planner
    - Shopping list generator
    - Nutritional information
-   - Calorie tracking
+   - Calorie tracking (Egyptian focus)
 
-6. **Recipe Features**
-   - Recipe scaling (adjust servings)
-   - Print-friendly view
-   - Recipe videos
-   - Cooking timer
-   - Ingredient substitutions
+6. **Burger Features**
+   - Burger scaling (double/triple patty)
+   - Print-friendly menu
+   - Prep videos
+   - Order timer
+   - Ingredient substitutions (Custom toppings)
 
 7. **Mobile App**
    - Progressive Web App (PWA)
@@ -457,10 +453,10 @@ Comprehensive guide to all features in Foodieland recipe platform.
    - Install prompt
 
 8. **Community Features**
-   - User-submitted recipes
-   - Recipe contests
+   - User-submitted burger builds
+   - Burger contests
    - Chef profiles
-   - Cooking classes
+   - Cooking classes (Traditional Egyptian spices)
 
 ---
 

@@ -7,7 +7,10 @@ import {
   HomeModernIcon, 
   BoltIcon, 
   UserGroupIcon, 
-  MapPinIcon 
+  MapPinIcon,
+  PhoneIcon,
+  ClockIcon,
+  HeartIcon
 } from "@heroicons/react/24/solid";
 
 export default function Footer() {
@@ -34,10 +37,19 @@ export default function Footer() {
                 the story of Egyptian culinary heritage.
               </p>
             </div>
-            <div className="flex flex-col gap-1 pl-10" data-aos="fade-right" data-aos-delay="400">
-              <p className="text-emerald-400 font-semibold text-xs tracking-wider uppercase">📍 Cairo Locations:</p>
+            <div className="flex flex-col gap-2 pl-10" data-aos="fade-right" data-aos-delay="400">
+              <p className="text-emerald-400 font-semibold text-xs tracking-wider uppercase flex items-center gap-2">
+                <MapPinIcon className="size-4" /> Cairo Locations:
+              </p>
               <p className="text-gray-300 text-xs">Downtown • Zamalek • New Capital</p>
-              <p className="text-gray-400 text-[10px] mt-1">📞 +20 100 123 4567 | 🕒 11:00 AM - 2:00 AM</p>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-gray-400 text-[10px] mt-1">
+                <span className="flex items-center gap-1.5 leading-none">
+                  <PhoneIcon className="size-3 text-emerald-500/70" /> +20 100 123 4567
+                </span>
+                <span className="flex items-center gap-1.5 leading-none">
+                  <ClockIcon className="size-3 text-emerald-500/70" /> 11:00 AM - 2:00 AM
+                </span>
+              </div>
             </div>
           </div>
 
@@ -85,8 +97,8 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-gray-700 pt-6">
           <div className="text-center sm:text-left text-sm text-gray-400">
-            <p>
-              &copy; {currentYear} Bunzo Egyptian Burgers. Crafted with ❤️ in Cairo.
+            <p className="flex items-center justify-center sm:justify-start gap-1.5">
+              &copy; {currentYear} Bunzo Egyptian Burgers. Crafted with <HeartIcon className="size-3.5 text-red-500 inline-block animate-pulse" /> in Cairo.
             </p>
             <p className="mt-1">
               Bringing Egyptian street food culture to the world, one burger at a time.

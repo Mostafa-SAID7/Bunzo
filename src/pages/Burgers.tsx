@@ -4,6 +4,7 @@ import BurgerCard from "../components/BurgerCard";
 import Pagination from "../components/ui/Pagination";
 import { BurgerType } from "../types/burger";
 import SelectDropdown from "../components/ui/SelectDropdown";
+import { OptionType } from "../types/form";
 import useBurger from "../hooks/useBurger";
 import EditBurgerForm from "../components/EditBurger";
 import AddBurgerForm from "../components/AddBurger";
@@ -131,7 +132,7 @@ export default function Burgers() {
                     (option) => option.id === selectedCategory
                   ) || categoryOptions[0]
                 }
-                onChange={(option: any) => setSelectedCategory(option.id as string)}
+                onChange={(option: OptionType) => setSelectedCategory(option.id as string)}
               />
             </div>
 
@@ -143,7 +144,7 @@ export default function Burgers() {
                   timeOptions.find((option) => option.id === selectedTime) ||
                   timeOptions[0]
                 }
-                onChange={(option: any) => setSelectedTime(option.id as string)}
+                onChange={(option: OptionType) => setSelectedTime(option.id as string)}
               />
             </div>
 

@@ -2,6 +2,13 @@ import { Heading, SubHeading } from "../components/ui";
 import heart_story_img from "../assets/images/The Heart of Every Bunzo Burger Experience.jpg";
 import ancient_flavors_img from "../assets/images/Where Ancient Flavors Meet Contemporary Taste.jpg";
 import { chefTeam } from "../data/restaurant";
+import { 
+  SparklesIcon, 
+  FireIcon, 
+  UserGroupIcon, 
+  GlobeAltIcon, 
+  HomeModernIcon 
+} from "@heroicons/react/24/solid";
 
 export default function About() {
   return (
@@ -47,11 +54,26 @@ export default function About() {
                 We bridge the gap between traditional street food culture and contemporary dining expectations.
               </p>
               <ul className="space-y-2">
-                <li>🏺 <strong>Preserve Heritage:</strong> Authentic Egyptian spices and cooking methods</li>
-                <li>🌶️ <strong>Modern Innovation:</strong> Contemporary techniques with traditional flavors</li>
-                <li>👥 <strong>Youth Culture:</strong> Vibrant atmosphere that speaks to Egypt's dynamic youth</li>
-                <li>🎭 <strong>Tourist Experience:</strong> Cultural storytelling through food</li>
-                <li>🥙 <strong>Street Authenticity:</strong> Capturing the essence of Cairo's food scene</li>
+                <li className="flex items-center gap-3">
+                  <SparklesIcon className="size-5 text-emerald-500 shrink-0" /> 
+                  <span><strong>Preserve Heritage:</strong> Authentic Egyptian spices and cooking methods</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <FireIcon className="size-5 text-emerald-500 shrink-0" /> 
+                  <span><strong>Modern Innovation:</strong> Contemporary techniques with traditional flavors</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <UserGroupIcon className="size-5 text-emerald-500 shrink-0" /> 
+                  <span><strong>Youth Culture:</strong> Vibrant atmosphere that speaks to Egypt's dynamic youth</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <GlobeAltIcon className="size-5 text-emerald-500 shrink-0" /> 
+                  <span><strong>Tourist Experience:</strong> Cultural storytelling through food</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <HomeModernIcon className="size-5 text-emerald-500 shrink-0" /> 
+                  <span><strong>Street Authenticity:</strong> Capturing the essence of Cairo's food scene</span>
+                </li>
               </ul>
             </div>
           </div>

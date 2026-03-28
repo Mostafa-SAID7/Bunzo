@@ -1,6 +1,6 @@
 # Deployment Guide
 
-Complete guide for deploying Bunzo to various platforms.
+Complete guide for deploying Bunzo Egyptian Burgers to various platforms.
 
 ## Table of Contents
 
@@ -107,7 +107,7 @@ netlify deploy --prod --dir=dist
 
 1. Go to [netlify.com](https://netlify.com)
 2. Click "Add new site" → "Import an existing project"
-3. Connect to GitHub and select `joesef127/foodieland`
+3. Connect to GitHub and select `Mostafa-SAID7/Bunzo`
 4. Configure:
    - Build command: `npm run build`
    - Publish directory: `dist`
@@ -137,7 +137,7 @@ netlify deploy --prod --dir=dist
 ### Dockerfile
 
 ```dockerfile
-FROM node:18-alpine as build
+FROM node:20-alpine as build
 
 WORKDIR /app
 COPY package*.json ./
@@ -192,14 +192,14 @@ npm run build
 ### 2. Create S3 Bucket
 
 ```bash
-aws s3 mb s3://foodieland-website
-aws s3 website s3://foodieland-website --index-document index.html --error-document index.html
+aws s3 mb s3://bunzo-website
+aws s3 website s3://bunzo-website --index-document index.html --error-document index.html
 ```
 
 ### 3. Upload Files
 
 ```bash
-aws s3 sync dist/ s3://foodieland-website --delete
+aws s3 sync dist/ s3://bunzo-website --delete
 ```
 
 ### 4. Set Bucket Policy
@@ -213,7 +213,7 @@ aws s3 sync dist/ s3://foodieland-website --delete
       "Effect": "Allow",
       "Principal": "*",
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::foodieland-website/*"
+      "Resource": "arn:aws:s3:::bunzo-website/*"
     }
   ]
 }
@@ -249,7 +249,7 @@ npm install -D gh-pages
 
 ```typescript
 export default defineConfig({
-  base: '/foodieland/',
+  base: '/Bunzo/',
   // ... other config
 })
 ```
@@ -260,7 +260,7 @@ export default defineConfig({
 npm run deploy
 ```
 
-Your site will be at: `https://joesef127.github.io/foodieland/`
+Your site will be at: `https://Mostafa-SAID7.github.io/Bunzo/`
 
 ---
 
@@ -291,8 +291,8 @@ Create `.htaccess` in the root:
 ```nginx
 server {
     listen 80;
-    server_name foodieland.com;
-    root /var/www/foodieland;
+    server_name bunzo-burgers.com;
+    root /var/www/bunzo;
     index index.html;
 
     location / {
@@ -359,7 +359,7 @@ VITE_API_BASE_URL=http://localhost:8000
 ### Production (Vercel)
 
 Set in Vercel dashboard:
-- `VITE_API_BASE_URL=https://foodielandbackend.vercel.app`
+- `VITE_API_BASE_URL=https://bunzo-backend.vercel.app`
 
 ### Accessing in Code
 
@@ -467,8 +467,8 @@ Ensure server is configured for SPA:
 - Review GitHub Actions runs
 
 ### Contact
-- Repository: https://github.com/joesef127/foodieland
-- Issues: https://github.com/joesef127/foodieland/issues
+- Repository: https://github.com/Mostafa-SAID7/Bunzo
+- Issues: https://github.com/Mostafa-SAID7/Bunzo/issues
 
 ---
 

@@ -8,7 +8,7 @@
 
 ## 🎯 Project Overview
 
-**Bunzo** is a modern recipe and cooking blog platform built with React 18, Vite 6, and TypeScript, featuring a beautiful UI with Tailwind CSS and rich content editing capabilities.
+**Bunzo** is a modern Egyptian burger restaurant platform built with React 18, Vite 6, and TypeScript, featuring a beautiful UI with Tailwind CSS and rich content editing capabilities for Egyptian culinary stories.
 
 - **Live URL:** https://bunzo-vert.vercel.app
 - **Repository:** https://github.com/Mostafa-SAID7/Bunzo
@@ -19,27 +19,27 @@
 ## ✅ Completed Features
 
 ### 1. Core Application - **Working** ✅
-- ✅ **Recipe browsing and discovery**
+- ✅ **Burger browsing and discovery**
   - Grid layout with responsive design
-  - Category filtering (Breakfast, Lunch, Dinner, Dessert, Snack)
-  - Cooking time filtering (Quick, Medium, Long)
+  - Category filtering (Beef, Chicken, Vegan, Lamb, Specialty)
+  - Spice level filtering (Mild, Medium, Hot, Sahara Fire)
   - Favorites filtering
-- ✅ **Recipe detail pages**
-  - Full recipe information
+- ✅ **Burger detail pages**
+  - Full burger information and storytelling
   - Ingredients list
-  - Step-by-step instructions
-  - Cooking time and servings
-  - Category tags
+  - Build description (instructions)
+  - Prep time and nutrition info
+  - Category and spice level tags
 - ✅ **Blog platform**
   - Blog post listing
   - Rich text content
   - Featured images
   - Category organization
 - ✅ **Admin dashboard**
-  - Recipe management (CRUD)
+  - Burger management (CRUD)
   - Blog management (CRUD)
   - Rich text editor (Draft.js)
-  - Image upload support
+  - Image selection support
 
 ### 2. UI Components - **Working** ✅
 - ✅ **Navigation**
@@ -49,12 +49,12 @@
 - ✅ **Hero section**
   - Eye-catching design
   - Call-to-action buttons
-- ✅ **Recipe cards**
+- ✅ **Burger cards**
   - Image display
-  - Metadata (time, category)
+  - Metadata (prep time, category)
   - Favorite button
 - ✅ **Swiper carousel**
-  - Touch/swipe support
+  - Touch/swipe support for Egyptian burger showcases
   - Navigation controls
   - Responsive breakpoints
 - ✅ **AOS animations**
@@ -64,11 +64,11 @@
 
 ### 3. State Management - **Working** ✅
 - ✅ **Global Context**
-  - Recipe data
+  - Burger data
   - Blog data
   - Favorites state
   - Filter state
-  - Admin state
+  - User Role (Admin/User) state
 - ✅ **Local Storage**
   - Persistent favorites
   - User preferences
@@ -79,7 +79,7 @@
   - SQLite database
   - CRUD endpoints
 - ✅ **API integration**
-  - Fetch recipes
+  - Fetch burgers
   - Fetch blogs
   - Create/update/delete operations
 
@@ -121,7 +121,7 @@ src/
 ├── components/          # Reusable React components
 ├── pages/              # Page components
 │   ├── Home.tsx
-│   ├── RecipeDetail.tsx
+│   ├── Burgers.tsx
 │   ├── Blog.tsx
 │   └── Admin.tsx
 ├── hooks/              # Custom React hooks
@@ -170,7 +170,7 @@ src/
 ## 🚀 Deployment
 
 ### Vercel (Current)
-- **URL:** https://foodieland-demo.vercel.app
+- **URL:** https://bunzo-vert.vercel.app
 - **Auto-deploy:** Enabled on push to main
 - **Build Command:** npm run build
 - **Output Directory:** dist
@@ -233,15 +233,15 @@ The following 13 labels are configured for automated PR labeling:
 
 ### Application Features
 1. User authentication system
-2. User profiles and recipe collections
-3. Recipe rating and reviews
+2. User profiles and burger collections
+3. Burger rating and reviews
 4. Social sharing integration
-5. Recipe recommendations
+5. Burger recommendations
 6. Meal planning features
 7. Shopping list generator
-8. Nutritional information
-9. Recipe scaling (adjust servings)
-10. Print-friendly recipe cards
+8. Nutritional information (Detailed)
+9. Burger scaling (Double/Triple patty)
+10. Print-friendly menus
 
 ### Technical Enhancements
 1. Progressive Web App (PWA)
@@ -267,13 +267,13 @@ The following 13 labels are configured for automated PR labeling:
 ## 📞 Support & Resources
 
 ### Repository
-- **GitHub:** https://github.com/joesef127/foodieland
-- **Issues:** https://github.com/joesef127/foodieland/issues
-- **Pull Requests:** https://github.com/joesef127/foodieland/pulls
+- **GitHub:** https://github.com/Mostafa-SAID7/Bunzo
+- **Issues:** https://github.com/Mostafa-SAID7/Bunzo/issues
+- **Pull Requests:** https://github.com/Mostafa-SAID7/Bunzo/pulls
 
 ### Deployment
 - **Vercel Dashboard:** https://vercel.com/dashboard
-- **Live Site:** https://foodieland-demo.vercel.app
+- **Live Site:** https://bunzo-vert.vercel.app
 
 ### Documentation
 - **React Docs:** https://react.dev
@@ -291,12 +291,12 @@ The following 13 labels are configured for automated PR labeling:
 ### Achieved
 - ✅ Modern React 18 architecture
 - ✅ Full TypeScript coverage
-- ✅ Responsive design
-- ✅ Admin dashboard with CRUD
-- ✅ Rich text editor for blogs
-- ✅ Search and filter functionality
+- ✅ Responsive Egyptian-themed design
+- ✅ Admin dashboard with CRUD for burgers
+- ✅ Rich text editor for Egyptian blog stories
+- ✅ Search and filter functionality (Spice levels)
 - ✅ Favorites system
-- ✅ Smooth animations
+- ✅ Smooth Egyptian-inspired animations
 - ✅ Fast loading times
 - ✅ CI/CD workflows configured
 - ✅ Comprehensive documentation
@@ -306,5 +306,5 @@ The following 13 labels are configured for automated PR labeling:
 
 **Status:** ✅ **PRODUCTION READY**
 
-Bunzo is a fully functional recipe platform with modern architecture, comprehensive features, and production-ready deployment configuration.
+Bunzo is a fully functional Egyptian burger restaurant platform with modern architecture, comprehensive features, and production-ready deployment configuration.
 
