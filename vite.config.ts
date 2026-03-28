@@ -22,8 +22,8 @@ export default defineConfig({
     // Chunk size warnings
     chunkSizeWarningLimit: 1000,
     
-    // Rolldown options (replaces rollupOptions in Vite 8)
-    rolldownOptions: {
+    // Rollup/Rolldown output options
+    rollupOptions: {
       output: {
         // Manual chunk splitting for better caching
         manualChunks: {
