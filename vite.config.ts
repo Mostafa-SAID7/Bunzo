@@ -26,13 +26,12 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // Manual chunk splitting for better caching
-        manualChunks: {
-          // Vendor chunks
-          'react-vendor': ['react', 'react-dom'],
-          'router-vendor': ['react-router-dom'],
-          'ui-vendor': ['@headlessui/react', '@heroicons/react'],
-          'editor-vendor': ['draft-js', 'react-draft-wysiwyg', 'draft-js-export-html'],
-          'animation-vendor': ['aos', 'swiper'],
+        manualChunks(id) {
+          if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/')) return 'react-vendor';
+          if (id.includes('node_modules/react-router-dom/')) return 'router-vendor';
+          if (id.includes('node_modules/@headlessui/') || id.includes('node_modules/@heroicons/')) return 'ui-vendor';
+          if (id.includes('node_modules/draft-js') || id.includes('node_modules/react-draft-wysiwyg')) return 'editor-vendor';
+          if (id.includes('node_modules/aos/') || id.includes('node_modules/swiper/')) return 'animation-vendor';
         },
         
         // Asset file naming
