@@ -23,11 +23,11 @@ export default function SelectDropdown({
   return (
     <Listbox value={selected} onChange={onChange}>
       {({ open }) => (
-        <div className={`relative ${open ? "z-[200]" : "z-100"}`} data-aos={animation}>
+        <div className="relative" data-aos={animation}>
           {/* Overlay Backdrop */}
           {open && (
             <div 
-              className="fixed inset-0 bg-black/40  z-[60] transition-opacity duration-300" 
+              className="fixed inset-0  z-[50] transition-opacity duration-300" 
               aria-hidden="true" 
             />
           )}
@@ -49,8 +49,9 @@ export default function SelectDropdown({
             </ListboxButton>
 
             <ListboxOptions
+              anchor="bottom start"
               transition
-              className="absolute z-[70] mt-2 max-h-72 w-full overflow-auto rounded-2xl bg-white p-2 text-base shadow-[0_20px_50px_rgba(0,0,0,0.1)] ring-1 ring-black/5 focus:outline-none data-[closed]:data-[leave]:opacity-0 data-[leave]:transition data-[leave]:duration-200 data-[leave]:ease-in sm:text-sm no-scrollbar border border-emerald-50/50"
+              className="z-[100] mt-2 max-h-72 w-[var(--button-width)] overflow-auto rounded-2xl bg-white p-2 text-base shadow-[0_20px_50px_rgba(0,0,0,0.1)] ring-1 ring-black/5 focus:outline-none data-[closed]:data-[leave]:opacity-0 data-[leave]:transition data-[leave]:duration-200 data-[leave]:ease-in sm:text-sm no-scrollbar border border-emerald-50/50"
             >
               {options.map((option) => (
                 <ListboxOption

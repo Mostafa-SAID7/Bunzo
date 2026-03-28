@@ -126,7 +126,7 @@ export default function Burgers() {
             />
           </div>
 
-          <div className="w-full flex flex-col sm:flex-row sm:justify-center sm:items-baseline gap-2 sm:gap-8 min-h-[100px]">
+          <div className="w-full flex flex-col sm:flex-row sm:justify-center sm:items-baseline gap-2 sm:gap-8 min-h-[100px] relative z-[60]">
             <div className="flex flex-col w-full sm:w-auto" data-aos="fade-right" data-aos-delay="200">
               <SelectDropdown
                 label="Filter by Category"
