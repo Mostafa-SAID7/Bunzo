@@ -13,8 +13,8 @@ export default defineConfig({
   
   // Build optimizations
   build: {
-    // Enable minification
-    minify: 'terser',
+    // Vite 8 uses Rolldown's built-in oxc minifier (faster than terser)
+    minify: true,
     
     // Generate source maps for debugging (disable in production)
     sourcemap: false,
@@ -22,8 +22,8 @@ export default defineConfig({
     // Chunk size warnings
     chunkSizeWarningLimit: 1000,
     
-    // Rollup options for better optimization
-    rollupOptions: {
+    // Rolldown options (replaces rollupOptions in Vite 8)
+    rolldownOptions: {
       output: {
         // Manual chunk splitting for better caching
         manualChunks: {
@@ -36,7 +36,7 @@ export default defineConfig({
         },
         
         // Asset file naming
-        assetFileNames: (assetInfo) => {
+        assetFileNames: (assetInfo: { name?: string }) => {
           const info = assetInfo.name?.split('.') || [];
           const extType = info[info.length - 1];
           
@@ -52,14 +52,6 @@ export default defineConfig({
         // Chunk file naming
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
-      },
-    },
-    
-    // Terser options for better minification
-    terserOptions: {
-      compress: {
-        drop_console: true, // Remove console.log in production
-        drop_debugger: true,
       },
     },
   },
@@ -89,3 +81,4 @@ export default defineConfig({
     },
   },
 });
+
