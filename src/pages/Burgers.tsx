@@ -10,7 +10,11 @@ import EditBurgerForm from "../components/EditBurger";
 import AddBurgerForm from "../components/AddBurger";
 import { useGlobalContext } from "../GlobalContext";
 import useAOS from "../hooks/useAOS";
-import { CATEGORY_OPTIONS as categoryOptions, TIME_OPTIONS as timeOptions } from "../utils/constants";
+import { 
+  CATEGORY_OPTIONS as categoryOptions, 
+  TIME_OPTIONS as timeOptions 
+} from "../utils/constants";
+import { CheckIcon } from "@heroicons/react/20/solid";
 
 export default function Burgers() {
   const { role } = useGlobalContext();
@@ -122,8 +126,8 @@ export default function Burgers() {
             />
           </div>
 
-          <div className="w-full flex flex-col sm:flex-row sm:justify-center sm:items-baseline gap-4 sm:gap-8">
-            <div className="flex flex-col" data-aos="fade-right" data-aos-delay="200">
+          <div className="w-full flex flex-col sm:flex-row sm:justify-center sm:items-baseline gap-2 sm:gap-8 min-h-[100px]">
+            <div className="flex flex-col w-full sm:w-auto" data-aos="fade-right" data-aos-delay="200">
               <SelectDropdown
                 label="Filter by Category"
                 options={categoryOptions}
@@ -136,7 +140,7 @@ export default function Burgers() {
               />
             </div>
 
-            <div className="flex flex-col" data-aos="fade-up" data-aos-delay="200">
+            <div className="flex flex-col w-full sm:w-auto" data-aos="fade-up" data-aos-delay="200">
               <SelectDropdown
                 label="Filter by Preparation Time"
                 options={timeOptions}
@@ -148,13 +152,16 @@ export default function Burgers() {
               />
             </div>
 
-            <div className="flex flex-col" data-aos="fade-left" data-aos-delay="200">
-              <h5 className={`block `}>Filter by favorites</h5>
+            <div className="flex flex-col w-full sm:w-auto" data-aos="fade-left" data-aos-delay="200">
+              <h5 className="block text-xs font-semibold uppercase tracking-wider text-emerald-700/80 mb-1 ml-1 text-left">Filter by favorites</h5>
               <button
-                className={`flex gap-2.5 justify-between items-center w-full cursor-default rounded bg-white text-left text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-600 text-xs sm:text-sm py-2 px-1 lg:py-4 lg:px-3 mt-2`}
+                className={`flex gap-2.5 justify-between items-center w-full cursor-default rounded-xl border border-emerald-100 bg-white/80 backdrop-blur-md text-left text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50 text-xs sm:text-sm py-2.5 px-4 lg:py-4 lg:px-5 transition-all duration-300 font-medium hover:bg-white hover:border-emerald-200 active:scale-[0.98] ${
+                  showFavorites ? "ring-2 ring-emerald-600 border-emerald-600 text-emerald-700" : ""
+                }`}
                 onClick={() => setShowFavorites(!showFavorites)}
               >
-                {showFavorites ? "Show All Burgers" : "Show Favorites"}
+                <span className="truncate">{showFavorites ? "Show All Burgers" : "Show Favorites Only"}</span>
+                <CheckIcon className={`size-5 text-emerald-600 transition-opacity duration-200 ${showFavorites ? "opacity-100" : "opacity-0"}`} />
               </button>
             </div>
           </div>
